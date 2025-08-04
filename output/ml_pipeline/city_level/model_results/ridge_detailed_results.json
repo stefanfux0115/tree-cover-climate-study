@@ -1,0 +1,15 @@
+{
+  "model_name": "ridge",
+  "hyperparameters": {
+    "alpha": 1000.0
+  },
+  "performance_metrics": {
+    "train_r2": 0.6468282574606652,
+    "validation_r2": 0.07714652416439427,
+    "train_rmse": 0.7145273998897886,
+    "validation_rmse": 1.1750339976930302,
+    "train_mae": 0.5599267860507461,
+    "validation_mae": 0.9899649463684895,
+    "cv_rmse": 0.7522214206598955
+  }
+}

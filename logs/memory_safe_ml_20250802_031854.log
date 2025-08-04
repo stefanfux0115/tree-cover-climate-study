@@ -1,0 +1,6 @@
+2025-08-02 03:18:54,143 - __main__ - INFO - Starting memory-safe ML pipeline...
+2025-08-02 03:18:54,143 - __main__ - INFO - Loading data with 30.0% sample...
+2025-08-02 03:18:54,143 - __main__ - INFO - Selected features: 39
+2025-08-02 03:18:55,604 - __main__ - INFO - Loaded validation: (2717703, 81)
+2025-08-02 03:18:55,604 - __main__ - INFO - Loaded test: (2717694, 81)
+2025-08-02 03:18:57,387 - __main__ - ERROR - Error in ML pipeline: 

@@ -1,0 +1,18 @@
+{
+  "model_name": "random_forest",
+  "hyperparameters": {
+    "max_depth": 10,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 100
+  },
+  "performance_metrics": {
+    "train_r2": 0.9484090226530674,
+    "validation_r2": 0.19882472140025098,
+    "train_rmse": 0.27309439757197734,
+    "validation_rmse": 1.094832866437378,
+    "train_mae": 0.19731017848198626,
+    "validation_mae": 0.9090663068042097,
+    "cv_rmse": 0.7657495769922978
+  }
+}

@@ -1,0 +1,57 @@
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - ============================================================
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - ERA5-Land Temperature Data Download Pipeline
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - ============================================================
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - Target years: 2019-2019 (1 years)
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - Running pre-flight checks...
+2025-07-30 04:33:59,892 - root - INFO - Python version check passed: 3.12
+2025-07-30 04:33:59,892 - root - INFO - Disk space check passed. Available: 1422.95GB
+2025-07-30 04:33:59,892 - scripts.download_utils - INFO - All pre-flight checks passed
+2025-07-30 04:33:59,992 - root - INFO - CDS credentials loaded from config file
+2025-07-30 04:34:01,553 - ecmwf.datastores.legacy_client - INFO - [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2025-07-30 04:34:01,553 - scripts.download_utils - INFO - CDS API client initialized successfully
+2025-07-30 04:34:01,553 - scripts.download_utils - INFO - Monthly download mode enabled - will download data month by month
+2025-07-30 04:34:01,553 - scripts.download_utils - INFO - Estimated download size: 3.0GB for 1 years
+2025-07-30 04:34:01,553 - scripts.download_utils - INFO - 
+Estimated download: ~3.0GB
+2025-07-30 04:34:01,553 - scripts.download_utils - INFO - Starting downloads in 5 seconds... (Press Ctrl+C to cancel)
+2025-07-30 04:34:06,555 - scripts.download_utils - INFO - Starting ERA5 downloads for 1 years: 2019-2019
+2025-07-30 04:34:06,555 - scripts.download_utils - INFO - 
+Progress: 1/1 years
+2025-07-30 04:34:06,555 - scripts.download_utils - INFO - Downloading year 2019 month by month...
+2025-07-30 04:34:06,555 - scripts.download_utils - INFO - File for 2019-01 already exists (458.0MB). Skipping.
+2025-07-30 04:34:08,556 - scripts.download_utils - INFO - Downloading 2019-02...
+2025-07-30 04:34:09,432 - ecmwf.datastores.legacy_client - INFO - Request ID is a62f31b9-2c43-4dc9-9149-58c30f6d7d51
+2025-07-30 04:34:09,890 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:34:25,202 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:34:26,129 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/2d300a899a6daf5ca3f59e6ae4c69a0a.zip
+2025-07-30 04:36:20,567 - scripts.download_utils - INFO - Downloaded 2019-02: 414.6MB in 2m 12s
+2025-07-30 04:36:22,568 - scripts.download_utils - INFO - Downloading 2019-03...
+2025-07-30 04:36:24,763 - ecmwf.datastores.legacy_client - INFO - Request ID is f12d199b-7d90-469d-8f2f-eb03b3694520
+2025-07-30 04:36:25,157 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:39:21,927 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 04:44:54,387 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:44:55,183 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3744d5cbb2168b9ed05205fd6953e959.zip
+2025-07-30 04:46:21,704 - root - WARNING - Attempt 1 failed: [Errno 22] Invalid argument. Retrying in 5s...
+2025-07-30 04:46:29,266 - ecmwf.datastores.legacy_client - INFO - Request ID is 80d65cba-17c4-4241-a6b3-5158af91dc5d
+2025-07-30 04:46:29,679 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:48:27,083 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:48:29,108 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3744d5cbb2168b9ed05205fd6953e959.zip
+2025-07-30 04:48:30,636 - root - WARNING - Attempt 2 failed: [Errno 22] Invalid argument. Retrying in 10s...
+2025-07-30 04:48:41,671 - ecmwf.datastores.legacy_client - INFO - Request ID is 8ea1c330-8744-4c79-8413-6d336d6c3908
+2025-07-30 04:48:42,148 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:48:51,930 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 04:48:57,374 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:48:58,286 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3744d5cbb2168b9ed05205fd6953e959.zip
+2025-07-30 04:48:59,826 - root - ERROR - Failed after 3 attempts: [Errno 22] Invalid argument
+2025-07-30 04:48:59,826 - scripts.download_utils - ERROR - Failed to download 2019-03: [Errno 22] Invalid argument
+2025-07-30 04:49:01,828 - scripts.download_utils - INFO - Downloading 2019-04...
+2025-07-30 04:49:02,790 - ecmwf.datastores.legacy_client - INFO - Request ID is e3f2abe3-fb7a-46c6-9457-8494e8e7cffd
+2025-07-30 04:49:03,203 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:49:12,928 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 04:53:27,762 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:53:28,553 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/f662826a1b6726f03414216a4f7319d5.zip
+2025-07-30 04:53:30,078 - root - WARNING - Attempt 1 failed: [Errno 22] Invalid argument. Retrying in 5s...
+2025-07-30 04:53:35,954 - ecmwf.datastores.legacy_client - INFO - Request ID is d46d7222-9745-495b-977a-e83180ded1d2
+2025-07-30 04:53:36,351 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:53:46,095 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 04:53:51,553 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful

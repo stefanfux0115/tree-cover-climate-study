@@ -1,0 +1,831 @@
+2025-07-30 05:30:42,855 - scripts.download_utils - INFO - ============================================================
+2025-07-30 05:30:42,855 - scripts.download_utils - INFO - ERA5-Land Temperature Data Download Pipeline
+2025-07-30 05:30:42,871 - scripts.download_utils - INFO - ============================================================
+2025-07-30 05:30:42,871 - scripts.download_utils - INFO - Target years: 2012-2019 (8 years)
+2025-07-30 05:30:42,871 - scripts.download_utils - INFO - Running pre-flight checks...
+2025-07-30 05:30:42,871 - root - INFO - Python version check passed: 3.12
+2025-07-30 05:30:42,871 - root - INFO - Disk space check passed. Available: 1422.10GB
+2025-07-30 05:30:42,871 - scripts.download_utils - INFO - All pre-flight checks passed
+2025-07-30 05:30:42,871 - root - INFO - CDS credentials loaded from config file
+2025-07-30 05:30:45,653 - ecmwf.datastores.legacy_client - INFO - [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2025-07-30 05:30:45,653 - scripts.download_utils - INFO - CDS API client initialized successfully
+2025-07-30 05:30:45,655 - scripts.download_utils - INFO - Monthly download mode enabled - will download data month by month
+2025-07-30 05:30:45,655 - scripts.download_utils - INFO - Estimated download size: 24.0GB for 8 years
+2025-07-30 05:30:45,655 - scripts.download_utils - INFO - 
+Estimated download: ~24.0GB
+2025-07-30 05:30:45,655 - scripts.download_utils - INFO - Starting downloads in 5 seconds... (Press Ctrl+C to cancel)
+2025-07-30 05:30:50,656 - scripts.download_utils - INFO - Starting ERA5 downloads for 8 years: 2012-2019
+2025-07-30 05:30:50,656 - scripts.download_utils - INFO - 
+Progress: 1/8 years
+2025-07-30 05:30:50,656 - scripts.download_utils - INFO - Downloading year 2012 month by month...
+2025-07-30 05:30:50,656 - scripts.download_utils - INFO - File for 2012-01 already exists (456.1MB). Skipping.
+2025-07-30 05:30:52,658 - scripts.download_utils - INFO - Downloading 2012-02...
+2025-07-30 05:30:53,563 - ecmwf.datastores.legacy_client - INFO - Request ID is 47034fe4-f7b0-4077-a929-ac7ec43e2e6d
+2025-07-30 05:30:54,004 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 05:32:13,756 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 05:32:14,604 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/f5eb899ccfa99ddead0ba123016567d7.zip
+2025-07-30 05:34:17,137 - scripts.download_utils - INFO - Downloaded 2012-02: 433.5MB in 3m 24s
+2025-07-30 05:34:19,140 - scripts.download_utils - INFO - Downloading 2012-03...
+2025-07-30 05:34:21,205 - ecmwf.datastores.legacy_client - INFO - Request ID is 5ec40bc4-29c3-4ecf-bb43-4f99e51facaa
+2025-07-30 05:34:21,616 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 05:34:37,585 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 05:42:50,722 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 05:42:51,632 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3441826426c23966e8d11ba192d67d7c.zip
+2025-07-30 05:48:20,687 - scripts.download_utils - INFO - Downloaded 2012-03: 461.7MB in 14m 1s
+2025-07-30 05:48:22,691 - scripts.download_utils - INFO - Downloading 2012-04...
+2025-07-30 05:48:24,716 - ecmwf.datastores.legacy_client - INFO - Request ID is 2e8f3b94-db0f-4bf2-bf2a-256e2f6f8e1f
+2025-07-30 05:48:25,168 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 05:48:34,947 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 05:52:50,752 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 05:52:51,591 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/db1d62fbf043fc1638e7c280cdb183c4.zip
+2025-07-30 05:54:51,049 - scripts.download_utils - INFO - Downloaded 2012-04: 444.5MB in 6m 28s
+2025-07-30 05:54:53,052 - scripts.download_utils - INFO - Downloading 2012-05...
+2025-07-30 05:54:55,412 - ecmwf.datastores.legacy_client - INFO - Request ID is b5f6d537-247b-4c91-8fb3-06a545c70c32
+2025-07-30 05:54:55,832 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 05:55:05,712 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 05:59:20,955 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 05:59:21,807 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/79e699c4c24dd5dd5a5153767b88e42a.zip
+2025-07-30 06:02:44,759 - scripts.download_utils - INFO - Downloaded 2012-05: 458.5MB in 7m 51s
+2025-07-30 06:02:46,762 - scripts.download_utils - INFO - Downloading 2012-06...
+2025-07-30 06:02:48,890 - ecmwf.datastores.legacy_client - INFO - Request ID is 1500aaef-e44b-48b5-b370-87dd3849331d
+2025-07-30 06:02:49,330 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:03:13,001 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:07:15,523 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:07:16,483 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/6e9fa28f2b11186cf83d4a4f014a3377.zip
+2025-07-30 06:08:41,155 - scripts.download_utils - INFO - Downloaded 2012-06: 435.9MB in 5m 54s
+2025-07-30 06:08:43,159 - scripts.download_utils - INFO - Downloading 2012-07...
+2025-07-30 06:08:45,195 - ecmwf.datastores.legacy_client - INFO - Request ID is f5adf272-1dd8-474d-8af7-f7b1ed646215
+2025-07-30 06:08:45,595 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:08:55,425 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:13:11,349 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:13:12,169 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/f4993fbb942411d7f7fb34643141452c.zip
+2025-07-30 06:14:22,221 - scripts.download_utils - INFO - Downloaded 2012-07: 449.4MB in 5m 39s
+2025-07-30 06:14:24,222 - scripts.download_utils - INFO - Downloading 2012-08...
+2025-07-30 06:14:26,590 - ecmwf.datastores.legacy_client - INFO - Request ID is 32c3dcba-0f6a-4ace-95f9-69e2215990d2
+2025-07-30 06:14:27,030 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:14:50,560 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:20:53,906 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:20:54,725 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/5c40047115667d63f29af76d5484d5a4.zip
+2025-07-30 06:24:15,244 - scripts.download_utils - INFO - Downloaded 2012-08: 451.7MB in 9m 51s
+2025-07-30 06:24:17,260 - scripts.download_utils - INFO - Downloading 2012-09...
+2025-07-30 06:24:19,378 - ecmwf.datastores.legacy_client - INFO - Request ID is 5f70ee91-69b3-49a1-868f-bc9936d2d6fa
+2025-07-30 06:24:19,779 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:24:30,049 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:30:48,606 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:30:49,436 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/8f1ab7c6ed0501b25e8d4396b9dcccd8.zip
+2025-07-30 06:31:56,607 - scripts.download_utils - INFO - Downloaded 2012-09: 436.0MB in 7m 39s
+2025-07-30 06:31:58,610 - scripts.download_utils - INFO - Downloading 2012-10...
+2025-07-30 06:32:00,586 - ecmwf.datastores.legacy_client - INFO - Request ID is 5e5f8cf6-5a79-4f73-bbb4-ee2460969c8b
+2025-07-30 06:32:01,026 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:32:12,018 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:32:18,096 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:32:26,087 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:36:27,650 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:36:28,513 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/78d12542d1726ec255dec8650d894ae0.zip
+2025-07-30 06:37:41,535 - scripts.download_utils - INFO - Downloaded 2012-10: 458.1MB in 5m 42s
+2025-07-30 06:37:43,551 - scripts.download_utils - INFO - Downloading 2012-11...
+2025-07-30 06:37:45,641 - ecmwf.datastores.legacy_client - INFO - Request ID is 7dc07137-4d23-446a-a6b0-ab4bd7523d61
+2025-07-30 06:37:46,032 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:37:52,382 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:42:11,355 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:42:12,285 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/994a0ff115b86713d84c1f5cd6ab3421.zip
+2025-07-30 06:43:41,867 - scripts.download_utils - INFO - Downloaded 2012-11: 442.9MB in 5m 58s
+2025-07-30 06:43:43,871 - scripts.download_utils - INFO - Downloading 2012-12...
+2025-07-30 06:43:46,037 - ecmwf.datastores.legacy_client - INFO - Request ID is 7ba0cb3d-9ad4-45ca-b267-82127b1936e0
+2025-07-30 06:43:46,467 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:44:01,818 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:50:12,893 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:50:13,714 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/a9b55fdbe6c2673b49a0479993ab0d3f.zip
+2025-07-30 06:53:28,386 - scripts.download_utils - INFO - Downloaded 2012-12: 458.6MB in 9m 44s
+2025-07-30 06:53:28,386 - scripts.download_utils - INFO - Year 2012: 12/12 months downloaded successfully
+2025-07-30 06:53:28,386 - scripts.download_utils - INFO - Merging monthly files for year 2012...
+2025-07-30 06:53:28,474 - scripts.download_utils - ERROR - Failed to merge files for 2012: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 06:53:30,477 - scripts.download_utils - INFO - 
+Progress: 2/8 years
+2025-07-30 06:53:30,477 - scripts.download_utils - INFO - Downloading year 2013 month by month...
+2025-07-30 06:53:30,477 - scripts.download_utils - INFO - Downloading 2013-01...
+2025-07-30 06:53:32,767 - ecmwf.datastores.legacy_client - INFO - Request ID is d6b5f30e-f385-4332-bab9-19d26a6bc4a0
+2025-07-30 06:53:33,186 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 06:53:43,007 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 06:57:57,880 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 06:57:58,720 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/69b40448a21a5023b575a3a07b67d4c6.zip
+2025-07-30 07:01:59,041 - scripts.download_utils - INFO - Downloaded 2013-01: 461.5MB in 8m 28s
+2025-07-30 07:02:01,044 - scripts.download_utils - INFO - Downloading 2013-02...
+2025-07-30 07:02:03,285 - ecmwf.datastores.legacy_client - INFO - Request ID is daa92527-dd51-4a92-be12-197ba8b75abf
+2025-07-30 07:02:03,923 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:02:14,123 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:06:29,488 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:06:30,279 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/47dd637b40ef094a884e4d8ccfeb370a.zip
+2025-07-30 07:08:01,773 - scripts.download_utils - INFO - Downloaded 2013-02: 411.6MB in 6m 0s
+2025-07-30 07:08:03,775 - scripts.download_utils - INFO - Downloading 2013-03...
+2025-07-30 07:08:05,919 - ecmwf.datastores.legacy_client - INFO - Request ID is 33baa640-2ea9-497f-9620-4e3b36f80d7a
+2025-07-30 07:08:06,329 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:08:16,139 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:12:31,413 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:12:32,223 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/9ee7e6656d118a71bdd07bae4154bab5.zip
+2025-07-30 07:22:38,006 - scripts.download_utils - INFO - Downloaded 2013-03: 463.8MB in 14m 34s
+2025-07-30 07:22:40,008 - scripts.download_utils - INFO - Downloading 2013-04...
+2025-07-30 07:22:43,063 - ecmwf.datastores.legacy_client - INFO - Request ID is fe4b0712-62d0-449c-b0ad-9174a6adc238
+2025-07-30 07:22:43,463 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:22:53,222 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:27:09,218 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:27:10,027 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/d6813174ba0eadc3fbd6a102a6c449c1.zip
+2025-07-30 07:30:55,463 - scripts.download_utils - INFO - Downloaded 2013-04: 444.3MB in 8m 15s
+2025-07-30 07:30:57,466 - scripts.download_utils - INFO - Downloading 2013-05...
+2025-07-30 07:30:59,510 - ecmwf.datastores.legacy_client - INFO - Request ID is 25016341-e769-4e02-a337-924dc141d844
+2025-07-30 07:30:59,921 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:31:15,201 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:35:25,715 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:35:26,575 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/f7a8cf7c75ba1914b0e4c2eb1ed98027.zip
+2025-07-30 07:38:01,449 - scripts.download_utils - INFO - Downloaded 2013-05: 460.2MB in 7m 3s
+2025-07-30 07:38:03,452 - scripts.download_utils - INFO - Downloading 2013-06...
+2025-07-30 07:38:05,487 - ecmwf.datastores.legacy_client - INFO - Request ID is 1a57c9cf-3022-4289-bc64-aaf387756980
+2025-07-30 07:38:05,949 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:38:11,928 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:41:02,698 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:41:03,560 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/63aa25e2bfbc69b7caebba63d4504a1e.zip
+2025-07-30 07:44:19,479 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(287509696 bytes read, 170297271 more expected)', IncompleteRead(287509696 bytes read, 170297271 more expected))], attempt 1 of 500
+2025-07-30 07:44:19,479 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 07:46:19,481 - multiurl.http - INFO - Retrying now...
+2025-07-30 07:46:19,481 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/63aa25e2bfbc69b7caebba63d4504a1e.zip
+2025-07-30 07:46:21,054 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2013_06.nc.tmp: resuming download from byte 287309824
+2025-07-30 07:47:08,344 - scripts.download_utils - INFO - Downloaded 2013-06: 436.6MB in 9m 4s
+2025-07-30 07:47:10,345 - scripts.download_utils - INFO - Downloading 2013-07...
+2025-07-30 07:47:12,446 - ecmwf.datastores.legacy_client - INFO - Request ID is c7ac30fe-73ee-4d4c-8962-e846a1f553e9
+2025-07-30 07:47:12,856 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:47:19,075 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:51:38,501 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:51:39,490 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/321576b0fdd67adc38734a0e89e744e7.zip
+2025-07-30 07:53:57,729 - scripts.download_utils - INFO - Downloaded 2013-07: 449.8MB in 6m 47s
+2025-07-30 07:53:59,744 - scripts.download_utils - INFO - Downloading 2013-08...
+2025-07-30 07:54:01,812 - ecmwf.datastores.legacy_client - INFO - Request ID is 080c28f5-d81f-486e-aa14-cd25b29c28d0
+2025-07-30 07:54:02,233 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 07:54:12,762 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 07:58:28,086 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 07:58:28,896 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/ef817ebb6cab2784b44429830b5e4be4.zip
+2025-07-30 08:00:03,472 - scripts.download_utils - INFO - Downloaded 2013-08: 450.4MB in 6m 3s
+2025-07-30 08:00:05,472 - scripts.download_utils - INFO - Downloading 2013-09...
+2025-07-30 08:00:07,648 - ecmwf.datastores.legacy_client - INFO - Request ID is 235fa2eb-f8bb-4b74-bdcb-42e5f0321f94
+2025-07-30 08:00:08,068 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:00:17,958 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:04:34,243 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:04:35,051 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/1ed11f574333757b62a39696415e29f0.zip
+2025-07-30 08:06:33,599 - scripts.download_utils - INFO - Downloaded 2013-09: 437.1MB in 6m 28s
+2025-07-30 08:06:35,612 - scripts.download_utils - INFO - Downloading 2013-10...
+2025-07-30 08:06:37,896 - ecmwf.datastores.legacy_client - INFO - Request ID is 7ce5ec60-6cdd-4c32-a1db-72f2a3c91f28
+2025-07-30 08:06:38,295 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:06:48,604 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:11:03,848 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:11:04,879 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/193204b2b6774f876214403bed5e1e58.zip
+2025-07-30 08:12:42,358 - scripts.download_utils - INFO - Downloaded 2013-10: 457.4MB in 6m 6s
+2025-07-30 08:12:44,363 - scripts.download_utils - INFO - Downloading 2013-11...
+2025-07-30 08:12:46,619 - ecmwf.datastores.legacy_client - INFO - Request ID is 0dd78c97-6529-4b70-84f2-d53209215194
+2025-07-30 08:12:47,070 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:12:56,870 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:19:13,597 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:19:14,527 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/3ecffc3d7bbaa68472ceb90fd4a39010.zip
+2025-07-30 08:20:50,126 - scripts.download_utils - INFO - Downloaded 2013-11: 441.7MB in 8m 5s
+2025-07-30 08:20:52,129 - scripts.download_utils - INFO - Downloading 2013-12...
+2025-07-30 08:20:54,278 - ecmwf.datastores.legacy_client - INFO - Request ID is 49014200-26ed-490d-ada0-565c9861794d
+2025-07-30 08:20:54,698 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:21:04,568 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:25:19,693 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:25:20,482 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/3639e16296e44b34c1997f63e642b590.zip
+2025-07-30 08:27:09,895 - scripts.download_utils - INFO - Downloaded 2013-12: 457.4MB in 6m 17s
+2025-07-30 08:27:09,895 - scripts.download_utils - INFO - Year 2013: 12/12 months downloaded successfully
+2025-07-30 08:27:09,896 - scripts.download_utils - INFO - Merging monthly files for year 2013...
+2025-07-30 08:27:09,910 - scripts.download_utils - ERROR - Failed to merge files for 2013: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 08:27:11,912 - scripts.download_utils - INFO - 
+Progress: 3/8 years
+2025-07-30 08:27:11,912 - scripts.download_utils - INFO - Downloading year 2014 month by month...
+2025-07-30 08:27:11,912 - scripts.download_utils - INFO - Downloading 2014-01...
+2025-07-30 08:27:13,843 - ecmwf.datastores.legacy_client - INFO - Request ID is b60a443d-bfb7-4d98-a1b4-06e922cabf68
+2025-07-30 08:27:14,234 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:27:20,195 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:31:40,508 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:31:41,298 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b4a917a69063b2272f3c6156c0ee73ae.zip
+2025-07-30 08:34:04,938 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(481864896 bytes read, 448488 more expected)', IncompleteRead(481864896 bytes read, 448488 more expected))], attempt 1 of 500
+2025-07-30 08:34:04,938 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 08:36:04,941 - multiurl.http - INFO - Retrying now...
+2025-07-30 08:36:04,941 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b4a917a69063b2272f3c6156c0ee73ae.zip
+2025-07-30 08:36:06,472 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_01.nc.tmp: resuming download from byte 481296384
+2025-07-30 08:36:10,369 - scripts.download_utils - INFO - Downloaded 2014-01: 460.0MB in 8m 58s
+2025-07-30 08:36:12,371 - scripts.download_utils - INFO - Downloading 2014-02...
+2025-07-30 08:36:14,741 - ecmwf.datastores.legacy_client - INFO - Request ID is 0be8bae8-a4d7-4f6c-a15c-eafc08f0ba9c
+2025-07-30 08:36:15,902 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:36:26,022 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:40:44,366 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:40:45,177 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/de0a85350df47385656168f3ce476828.zip
+2025-07-30 08:42:58,652 - scripts.download_utils - INFO - Downloaded 2014-02: 412.9MB in 6m 46s
+2025-07-30 08:43:00,666 - scripts.download_utils - INFO - Downloading 2014-03...
+2025-07-30 08:43:02,930 - ecmwf.datastores.legacy_client - INFO - Request ID is 2ac5db09-0b63-4a41-9b73-4fc7fe8e2434
+2025-07-30 08:43:03,409 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:43:13,229 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 08:51:42,557 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 08:51:43,408 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/dca8ab16dc4ce0a11d4201bb792eb9bb.zip
+2025-07-30 08:56:30,856 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(483953152 bytes read, 139632 more expected)', IncompleteRead(483953152 bytes read, 139632 more expected))], attempt 1 of 500
+2025-07-30 08:56:30,856 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 08:58:30,857 - multiurl.http - INFO - Retrying now...
+2025-07-30 08:58:30,857 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/dca8ab16dc4ce0a11d4201bb792eb9bb.zip
+2025-07-30 08:58:32,484 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_03.nc.tmp: resuming download from byte 483393536
+2025-07-30 08:58:35,877 - scripts.download_utils - INFO - Downloaded 2014-03: 461.7MB in 15m 35s
+2025-07-30 08:58:37,883 - scripts.download_utils - INFO - Downloading 2014-04...
+2025-07-30 08:58:39,954 - ecmwf.datastores.legacy_client - INFO - Request ID is 764fde7f-53f6-45be-a899-f531127740da
+2025-07-30 08:58:40,364 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 08:58:50,143 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:03:05,851 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:03:07,298 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/57e95c009794e9d972275a3a20b45ec2.zip
+2025-07-30 09:04:27,537 - scripts.download_utils - INFO - Downloaded 2014-04: 444.1MB in 5m 49s
+2025-07-30 09:04:29,543 - scripts.download_utils - INFO - Downloading 2014-05...
+2025-07-30 09:04:31,570 - ecmwf.datastores.legacy_client - INFO - Request ID is 9ad003de-c87d-4dc6-a1ff-468859855c86
+2025-07-30 09:04:32,300 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:04:42,400 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:08:57,645 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:08:59,014 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/a0eeca54dcb3c03d0a0bbe1b970c2afa.zip
+2025-07-30 09:12:21,026 - scripts.download_utils - INFO - Downloaded 2014-05: 458.2MB in 7m 51s
+2025-07-30 09:12:23,036 - scripts.download_utils - INFO - Downloading 2014-06...
+2025-07-30 09:12:25,907 - ecmwf.datastores.legacy_client - INFO - Request ID is 4169a601-639d-40b8-8961-e4202ce757b1
+2025-07-30 09:12:26,457 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:12:36,507 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:16:52,611 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:16:53,492 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/6feefc0c5061783042e4018aec1e03ea.zip
+2025-07-30 09:19:52,452 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(448115200 bytes read, 9552586 more expected)', IncompleteRead(448115200 bytes read, 9552586 more expected))], attempt 1 of 500
+2025-07-30 09:19:52,452 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 09:21:52,464 - multiurl.http - INFO - Retrying now...
+2025-07-30 09:21:52,464 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/6feefc0c5061783042e4018aec1e03ea.zip
+2025-07-30 09:21:54,095 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_06.nc.tmp: resuming download from byte 447741952
+2025-07-30 09:22:00,240 - scripts.download_utils - INFO - Downloaded 2014-06: 436.5MB in 9m 37s
+2025-07-30 09:22:02,242 - scripts.download_utils - INFO - Downloading 2014-07...
+2025-07-30 09:22:04,387 - ecmwf.datastores.legacy_client - INFO - Request ID is 44c57de7-89eb-433b-9e56-0d876ea71363
+2025-07-30 09:22:04,787 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:22:10,957 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:26:33,021 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:26:34,440 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/d7e8692985db248bfd3ca15c596b527.zip
+2025-07-30 09:32:08,604 - scripts.download_utils - INFO - Downloaded 2014-07: 451.5MB in 10m 6s
+2025-07-30 09:32:10,617 - scripts.download_utils - INFO - Downloading 2014-08...
+2025-07-30 09:32:13,426 - ecmwf.datastores.legacy_client - INFO - Request ID is 0263ed12-3b5b-4583-a19a-1082ca4a4306
+2025-07-30 09:32:14,035 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:32:20,927 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:36:42,549 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:36:43,420 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/caaf8cad58d37d623201fc54069eb62e.zip
+2025-07-30 09:40:36,380 - scripts.download_utils - INFO - Downloaded 2014-08: 453.2MB in 8m 25s
+2025-07-30 09:40:38,381 - scripts.download_utils - INFO - Downloading 2014-09...
+2025-07-30 09:40:40,793 - ecmwf.datastores.legacy_client - INFO - Request ID is b22edd5a-30fd-4400-8bc2-1522018c1de0
+2025-07-30 09:40:41,463 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:40:51,404 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:45:07,247 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:45:08,127 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/3487ddfe5299bf4e4f19034487b91286.zip
+2025-07-30 09:50:54,877 - scripts.download_utils - INFO - Downloaded 2014-09: 436.7MB in 10m 16s
+2025-07-30 09:50:56,878 - scripts.download_utils - INFO - Downloading 2014-10...
+2025-07-30 09:50:59,261 - ecmwf.datastores.legacy_client - INFO - Request ID is 8cd96361-9f48-4b4d-9fbd-b50de728c46e
+2025-07-30 09:50:59,692 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 09:51:15,094 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 09:55:27,446 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 09:55:28,356 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/6933a4446de0cacf15ecfa3a0b1894f1.zip
+2025-07-30 10:01:42,518 - scripts.download_utils - INFO - Downloaded 2014-10: 456.5MB in 10m 45s
+2025-07-30 10:01:44,521 - scripts.download_utils - INFO - Downloading 2014-11...
+2025-07-30 10:01:46,641 - ecmwf.datastores.legacy_client - INFO - Request ID is 92f3c080-2686-478c-97c9-e7c2625aa21d
+2025-07-30 10:01:47,811 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 10:01:58,721 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 10:06:16,704 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 10:06:17,534 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/8d07fe4d9b78f85456e38aea3a64cfc0.zip
+2025-07-30 10:15:13,244 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(457303360 bytes read, 6673421 more expected)', IncompleteRead(457303360 bytes read, 6673421 more expected))], attempt 1 of 500
+2025-07-30 10:15:13,244 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 10:17:13,247 - multiurl.http - INFO - Retrying now...
+2025-07-30 10:17:13,247 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/8d07fe4d9b78f85456e38aea3a64cfc0.zip
+2025-07-30 10:17:15,162 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_11.nc.tmp: resuming download from byte 457179136
+2025-07-30 10:17:31,308 - scripts.download_utils - INFO - Downloaded 2014-11: 442.5MB in 15m 46s
+2025-07-30 10:17:33,320 - scripts.download_utils - INFO - Downloading 2014-12...
+2025-07-30 10:17:36,872 - ecmwf.datastores.legacy_client - INFO - Request ID is 63a1f7c8-c865-4b8d-bbd2-37303138056d
+2025-07-30 10:17:37,331 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 10:17:47,593 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 10:22:07,345 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 10:22:08,234 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b089ecefe28d6cccb4b90ef7bf6a1cca.zip
+2025-07-30 10:36:41,698 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(476919680 bytes read, 7076893 more expected)', IncompleteRead(476919680 bytes read, 7076893 more expected))], attempt 1 of 500
+2025-07-30 10:36:41,698 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 10:38:41,699 - multiurl.http - INFO - Retrying now...
+2025-07-30 10:38:41,700 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b089ecefe28d6cccb4b90ef7bf6a1cca.zip
+2025-07-30 10:38:43,535 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_12.nc.tmp: resuming download from byte 476053504
+2025-07-30 10:39:09,353 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(6185472 bytes read, 1757597 more expected)', IncompleteRead(6185472 bytes read, 1757597 more expected))], attempt 2 of 500
+2025-07-30 10:39:09,353 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 10:41:09,356 - multiurl.http - INFO - Retrying now...
+2025-07-30 10:41:09,357 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b089ecefe28d6cccb4b90ef7bf6a1cca.zip
+2025-07-30 10:41:11,139 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2014_12.nc.tmp: resuming download from byte 481296384
+2025-07-30 10:41:20,912 - scripts.download_utils - INFO - Downloaded 2014-12: 461.6MB in 23m 47s
+2025-07-30 10:41:20,913 - scripts.download_utils - INFO - Year 2014: 12/12 months downloaded successfully
+2025-07-30 10:41:20,913 - scripts.download_utils - INFO - Merging monthly files for year 2014...
+2025-07-30 10:41:20,915 - scripts.download_utils - ERROR - Failed to merge files for 2014: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 10:41:22,917 - scripts.download_utils - INFO - 
+Progress: 4/8 years
+2025-07-30 10:41:22,917 - scripts.download_utils - INFO - Downloading year 2015 month by month...
+2025-07-30 10:41:22,917 - scripts.download_utils - INFO - Downloading 2015-01...
+2025-07-30 10:41:26,559 - ecmwf.datastores.legacy_client - INFO - Request ID is 2163bc76-eff6-409b-82c6-6c4974fe6ac8
+2025-07-30 10:41:26,975 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 10:41:33,098 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 10:45:57,290 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 10:45:58,711 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/1de85b8a94c8e61359a5e4518c6ff28f.zip
+2025-07-30 10:55:28,782 - scripts.download_utils - INFO - Downloaded 2015-01: 461.1MB in 14m 5s
+2025-07-30 10:55:30,783 - scripts.download_utils - INFO - Downloading 2015-02...
+2025-07-30 10:55:33,958 - ecmwf.datastores.legacy_client - INFO - Request ID is 4c5015c2-e5c1-4329-b20a-bd04e19f55ea
+2025-07-30 10:55:34,408 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 10:55:46,027 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 11:02:13,422 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 11:02:14,313 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/d905c1e0db4d50e1330da9f93e67f593.zip
+2025-07-30 11:08:42,849 - scripts.download_utils - INFO - Downloaded 2015-02: 415.4MB in 13m 12s
+2025-07-30 11:08:44,850 - scripts.download_utils - INFO - Downloading 2015-03...
+2025-07-30 11:08:46,936 - ecmwf.datastores.legacy_client - INFO - Request ID is 3ad74626-63c2-4715-8848-f1254451376f
+2025-07-30 11:08:47,367 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 11:08:53,644 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 11:15:19,224 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 11:15:21,770 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/b29c440bffb1397e082d071f9b8306a3.zip
+2025-07-30 11:18:52,500 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(470826112 bytes read, 15342712 more expected)', IncompleteRead(470826112 bytes read, 15342712 more expected))], attempt 1 of 500
+2025-07-30 11:18:52,500 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 11:20:52,501 - multiurl.http - INFO - Retrying now...
+2025-07-30 11:20:52,501 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/b29c440bffb1397e082d071f9b8306a3.zip
+2025-07-30 11:20:54,734 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_03.nc.tmp: resuming download from byte 470810624
+2025-07-30 11:21:22,099 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(13370240 bytes read, 1987960 more expected)', IncompleteRead(13370240 bytes read, 1987960 more expected))], attempt 2 of 500
+2025-07-30 11:21:22,099 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 11:23:22,100 - multiurl.http - INFO - Retrying now...
+2025-07-30 11:23:22,100 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/b29c440bffb1397e082d071f9b8306a3.zip
+2025-07-30 11:23:25,306 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_03.nc.tmp: resuming download from byte 483393536
+2025-07-30 11:23:34,404 - scripts.download_utils - INFO - Downloaded 2015-03: 463.6MB in 14m 49s
+2025-07-30 11:23:36,405 - scripts.download_utils - INFO - Downloading 2015-04...
+2025-07-30 11:23:50,176 - ecmwf.datastores.legacy_client - INFO - Request ID is 12ed723b-9e29-4080-8526-48c2b7ed265c
+2025-07-30 11:23:50,676 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 11:23:57,856 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 11:28:18,889 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 11:28:20,239 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/7bbdb4fdd80144c96aa1d18cfd07f707.zip
+2025-07-30 11:38:34,512 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(455932160 bytes read, 9886175 more expected)', IncompleteRead(455932160 bytes read, 9886175 more expected))], attempt 1 of 500
+2025-07-30 11:38:34,512 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 11:40:34,514 - multiurl.http - INFO - Retrying now...
+2025-07-30 11:40:34,514 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/7bbdb4fdd80144c96aa1d18cfd07f707.zip
+2025-07-30 11:40:36,738 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_04.nc.tmp: resuming download from byte 455081984
+2025-07-30 11:40:59,974 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(10714112 bytes read, 22239 more expected)', IncompleteRead(10714112 bytes read, 22239 more expected))], attempt 2 of 500
+2025-07-30 11:40:59,975 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 11:42:59,976 - multiurl.http - INFO - Retrying now...
+2025-07-30 11:42:59,976 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/7bbdb4fdd80144c96aa1d18cfd07f707.zip
+2025-07-30 11:43:02,099 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_04.nc.tmp: resuming download from byte 465567744
+2025-07-30 11:43:05,991 - scripts.download_utils - INFO - Downloaded 2015-04: 444.2MB in 19m 29s
+2025-07-30 11:43:07,993 - scripts.download_utils - INFO - Downloading 2015-05...
+2025-07-30 11:43:10,421 - ecmwf.datastores.legacy_client - INFO - Request ID is b5346121-c466-4af6-8006-41a0a9d88f71
+2025-07-30 11:43:10,930 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 11:43:20,769 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 11:47:36,352 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 11:47:38,074 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/cc60a5df6914950618a2d8fbb4c09ae1.zip
+2025-07-30 12:00:29,062 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(471256640 bytes read, 11137840 more expected)', IncompleteRead(471256640 bytes read, 11137840 more expected))], attempt 1 of 500
+2025-07-30 12:00:29,062 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 12:02:29,064 - multiurl.http - INFO - Retrying now...
+2025-07-30 12:02:29,064 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/cc60a5df6914950618a2d8fbb4c09ae1.zip
+2025-07-30 12:02:30,992 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_05.nc.tmp: resuming download from byte 470810624
+2025-07-30 12:02:58,563 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(8196736 bytes read, 3387120 more expected)', IncompleteRead(8196736 bytes read, 3387120 more expected))], attempt 2 of 500
+2025-07-30 12:02:58,563 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 12:04:58,565 - multiurl.http - INFO - Retrying now...
+2025-07-30 12:04:58,565 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/cc60a5df6914950618a2d8fbb4c09ae1.zip
+2025-07-30 12:05:00,505 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_05.nc.tmp: resuming download from byte 478150656
+2025-07-30 12:05:21,475 - scripts.download_utils - INFO - Downloaded 2015-05: 460.0MB in 22m 13s
+2025-07-30 12:05:23,487 - scripts.download_utils - INFO - Downloading 2015-06...
+2025-07-30 12:05:26,305 - ecmwf.datastores.legacy_client - INFO - Request ID is 68995425-1369-40bb-8ae1-206282c5c69b
+2025-07-30 12:05:26,726 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:05:36,881 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:05:51,123 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:06:02,989 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:09:54,715 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 12:09:55,515 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/f201cf22505821df1619685e08fe5232.zip
+2025-07-30 12:18:01,620 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(457695040 bytes read, 1665545 more expected)', IncompleteRead(457695040 bytes read, 1665545 more expected))], attempt 1 of 500
+2025-07-30 12:18:01,620 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 12:20:01,622 - multiurl.http - INFO - Retrying now...
+2025-07-30 12:20:01,622 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/f201cf22505821df1619685e08fe5232.zip
+2025-07-30 12:20:06,215 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_06.nc.tmp: resuming download from byte 457179136
+2025-07-30 12:20:12,266 - scripts.download_utils - INFO - Downloaded 2015-06: 438.1MB in 14m 48s
+2025-07-30 12:20:14,274 - scripts.download_utils - INFO - Downloading 2015-07...
+2025-07-30 12:20:18,097 - ecmwf.datastores.legacy_client - INFO - Request ID is 35c28675-7a5f-434f-a226-fe3f167d8603
+2025-07-30 12:20:18,526 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:20:29,228 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:24:45,238 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 12:24:46,178 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/6980d858c119241b865630eea43dfccd.zip
+2025-07-30 12:28:39,110 - multiurl.http - WARNING - Recovering from connection error [('Connection broken: IncompleteRead(475614016 bytes read, 98739 more expected)', IncompleteRead(475614016 bytes read, 98739 more expected))], attempt 1 of 500
+2025-07-30 12:28:39,112 - multiurl.http - WARNING - Retrying in 120 seconds
+2025-07-30 12:30:39,113 - multiurl.http - INFO - Retrying now...
+2025-07-30 12:30:39,225 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/6980d858c119241b865630eea43dfccd.zip
+2025-07-30 12:30:40,912 - multiurl.http - INFO - G:\research\junmao-tang\code-test\code-space\data\raw\era5\t2m_2015_07.nc.tmp: resuming download from byte 475004928
+2025-07-30 12:30:47,760 - scripts.download_utils - INFO - Downloaded 2015-07: 453.7MB in 10m 33s
+2025-07-30 12:30:49,767 - scripts.download_utils - INFO - Downloading 2015-08...
+2025-07-30 12:30:53,592 - ecmwf.datastores.legacy_client - INFO - Request ID is 915ae330-bedf-42a5-b437-9b35c39d3c0c
+2025-07-30 12:30:54,760 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:31:04,537 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:35:19,896 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 12:35:20,866 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/7bf17e881472cc8b2428ae7b65b7cd1a.zip
+2025-07-30 12:39:55,065 - scripts.download_utils - INFO - Downloaded 2015-08: 450.0MB in 9m 5s
+2025-07-30 12:39:57,076 - scripts.download_utils - INFO - Downloading 2015-09...
+2025-07-30 12:40:00,381 - ecmwf.datastores.legacy_client - INFO - Request ID is e66f0478-6638-40c3-bfd7-52b89e1d9d66
+2025-07-30 12:40:00,810 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:40:12,079 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:44:28,173 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 12:44:29,018 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/fc7031f4e703e15fc426856176ce31f1.zip
+2025-07-30 12:50:29,177 - scripts.download_utils - INFO - Downloaded 2015-09: 435.9MB in 10m 32s
+2025-07-30 12:50:31,180 - scripts.download_utils - INFO - Downloading 2015-10...
+2025-07-30 12:50:33,333 - ecmwf.datastores.legacy_client - INFO - Request ID is 09e2c271-dc3b-418d-921b-63c1de2d23b8
+2025-07-30 12:50:33,752 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:50:40,614 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 12:55:03,305 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 12:55:04,682 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/8d50e9ef2ac28b4e77afdc75145f57d2.zip
+2025-07-30 12:59:38,115 - scripts.download_utils - INFO - Downloaded 2015-10: 458.7MB in 9m 6s
+2025-07-30 12:59:40,119 - scripts.download_utils - INFO - Downloading 2015-11...
+2025-07-30 12:59:42,983 - ecmwf.datastores.legacy_client - INFO - Request ID is cd755404-4f3a-4098-a026-c254410dbecf
+2025-07-30 12:59:43,395 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 12:59:54,535 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:04:10,248 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:04:11,106 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/82523044df51d48492a75720fdff351f.zip
+2025-07-30 13:07:57,549 - scripts.download_utils - INFO - Downloaded 2015-11: 439.9MB in 8m 17s
+2025-07-30 13:07:59,553 - scripts.download_utils - INFO - Downloading 2015-12...
+2025-07-30 13:08:01,541 - ecmwf.datastores.legacy_client - INFO - Request ID is e41b997d-6823-4263-8e79-39df7ffdb481
+2025-07-30 13:08:01,919 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:08:11,601 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:12:26,958 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:12:28,142 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/30d786d17b1cffc5db16f26b3ff611f9.zip
+2025-07-30 13:15:21,536 - scripts.download_utils - INFO - Downloaded 2015-12: 462.6MB in 7m 21s
+2025-07-30 13:15:21,549 - scripts.download_utils - INFO - Year 2015: 12/12 months downloaded successfully
+2025-07-30 13:15:21,549 - scripts.download_utils - INFO - Merging monthly files for year 2015...
+2025-07-30 13:15:21,561 - scripts.download_utils - ERROR - Failed to merge files for 2015: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 13:15:23,563 - scripts.download_utils - INFO - 
+Progress: 5/8 years
+2025-07-30 13:15:23,563 - scripts.download_utils - INFO - Downloading year 2016 month by month...
+2025-07-30 13:15:23,566 - scripts.download_utils - INFO - Downloading 2016-01...
+2025-07-30 13:15:25,559 - ecmwf.datastores.legacy_client - INFO - Request ID is 158218d7-b66a-41cb-8c16-2f79fe70b7f8
+2025-07-30 13:15:25,953 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:15:31,871 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:15:41,092 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:15:49,644 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:16:01,444 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:16:18,914 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:19:52,440 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:19:53,279 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/310344122bc90c2794b699b5b8a95d36.zip
+2025-07-30 13:22:55,491 - scripts.download_utils - INFO - Downloaded 2016-01: 459.7MB in 7m 31s
+2025-07-30 13:22:57,495 - scripts.download_utils - INFO - Downloading 2016-02...
+2025-07-30 13:22:59,411 - ecmwf.datastores.legacy_client - INFO - Request ID is ea78101e-3f52-4710-9f3b-8ef565a61ede
+2025-07-30 13:23:00,044 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:23:09,851 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:29:26,514 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:29:27,308 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/72eb1fd68e3aa97a8a03768359b9135e.zip
+2025-07-30 13:42:10,387 - scripts.download_utils - INFO - Downloaded 2016-02: 431.3MB in 19m 12s
+2025-07-30 13:42:12,400 - scripts.download_utils - INFO - Downloading 2016-03...
+2025-07-30 13:42:14,350 - ecmwf.datastores.legacy_client - INFO - Request ID is 912573a5-552d-4576-93b0-27419ebd23a3
+2025-07-30 13:42:14,828 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:42:24,545 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:46:39,562 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:46:40,401 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/6c476ccdaa6f2d3af0247b55d6ce472b.zip
+2025-07-30 13:52:50,496 - scripts.download_utils - INFO - Downloaded 2016-03: 459.4MB in 10m 38s
+2025-07-30 13:52:52,499 - scripts.download_utils - INFO - Downloading 2016-04...
+2025-07-30 13:52:54,586 - ecmwf.datastores.legacy_client - INFO - Request ID is b026a8dd-f91b-4bce-ab6e-32daac2cfac0
+2025-07-30 13:52:55,271 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:53:04,999 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 13:57:20,524 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 13:57:21,500 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/c92e142ac5159bd7cae35a0c6552116b.zip
+2025-07-30 13:59:46,488 - scripts.download_utils - INFO - Downloaded 2016-04: 443.0MB in 6m 53s
+2025-07-30 13:59:48,491 - scripts.download_utils - INFO - Downloading 2016-05...
+2025-07-30 13:59:50,452 - ecmwf.datastores.legacy_client - INFO - Request ID is c557ce27-c083-47f9-9bb7-abb8366780ba
+2025-07-30 13:59:50,850 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 13:59:56,811 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:04:15,814 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:04:16,641 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/2cfd9347ad642ee56da7f60adea8fe93.zip
+2025-07-30 14:07:38,806 - scripts.download_utils - INFO - Downloaded 2016-05: 458.6MB in 7m 50s
+2025-07-30 14:07:40,811 - scripts.download_utils - INFO - Downloading 2016-06...
+2025-07-30 14:07:43,019 - ecmwf.datastores.legacy_client - INFO - Request ID is c3806b85-81ee-41a2-b58f-fecdf7f289a9
+2025-07-30 14:07:43,417 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:07:53,534 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:12:08,397 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:12:09,266 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/804fe8652319a358f7656039285f2c96.zip
+2025-07-30 14:13:36,537 - scripts.download_utils - INFO - Downloaded 2016-06: 435.1MB in 5m 55s
+2025-07-30 14:13:38,542 - scripts.download_utils - INFO - Downloading 2016-07...
+2025-07-30 14:13:40,543 - ecmwf.datastores.legacy_client - INFO - Request ID is d78ca0df-353b-45d5-9aac-7aa19edc5572
+2025-07-30 14:13:40,936 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:13:56,116 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:18:05,697 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:18:06,503 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/954db9535de70b915a884c9804eeac33.zip
+2025-07-30 14:20:01,162 - scripts.download_utils - INFO - Downloaded 2016-07: 451.8MB in 6m 22s
+2025-07-30 14:20:03,170 - scripts.download_utils - INFO - Downloading 2016-08...
+2025-07-30 14:20:05,105 - ecmwf.datastores.legacy_client - INFO - Request ID is 6d1621cf-5dc4-425d-a4e8-b5eab27322bd
+2025-07-30 14:20:05,504 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:20:15,231 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:24:30,046 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:24:30,920 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/10b620574f978ad8881b8b5d4e278b6b.zip
+2025-07-30 14:25:49,615 - scripts.download_utils - INFO - Downloaded 2016-08: 450.5MB in 5m 46s
+2025-07-30 14:25:51,617 - scripts.download_utils - INFO - Downloading 2016-09...
+2025-07-30 14:25:53,533 - ecmwf.datastores.legacy_client - INFO - Request ID is 4742ace3-e631-42a4-a9d6-7a4b572d7f39
+2025-07-30 14:25:53,926 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:26:00,027 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:30:19,009 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:30:19,833 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/ae7475a59020e16cc0941bc8a19b857d.zip
+2025-07-30 14:34:12,339 - scripts.download_utils - INFO - Downloaded 2016-09: 436.1MB in 8m 20s
+2025-07-30 14:34:14,343 - scripts.download_utils - INFO - Downloading 2016-10...
+2025-07-30 14:34:16,385 - ecmwf.datastores.legacy_client - INFO - Request ID is e6536134-7d15-4b69-b082-a26ff944e44d
+2025-07-30 14:34:17,620 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:34:24,059 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:38:42,672 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:38:43,476 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/62cd89c3180b40ab94875831a7151f21.zip
+2025-07-30 14:40:08,464 - scripts.download_utils - INFO - Downloaded 2016-10: 457.8MB in 5m 54s
+2025-07-30 14:40:10,468 - scripts.download_utils - INFO - Downloading 2016-11...
+2025-07-30 14:40:12,311 - ecmwf.datastores.legacy_client - INFO - Request ID is 39865aae-f1a8-4f2e-baa9-7b89cb42a076
+2025-07-30 14:40:12,684 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:40:22,427 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:44:37,366 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:44:38,162 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3c8b6905e389fdb2efe74ad208cc3b18.zip
+2025-07-30 14:47:32,277 - scripts.download_utils - INFO - Downloaded 2016-11: 441.7MB in 7m 21s
+2025-07-30 14:47:34,280 - scripts.download_utils - INFO - Downloading 2016-12...
+2025-07-30 14:47:36,263 - ecmwf.datastores.legacy_client - INFO - Request ID is eb0c5f37-4f00-4820-bb81-2c54be34e379
+2025-07-30 14:47:36,657 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:47:46,353 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:47:52,044 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:48:00,012 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:52:01,361 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:52:02,150 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/60f85ac624c976cc5774041fd99f1230.zip
+2025-07-30 14:53:12,638 - scripts.download_utils - INFO - Downloaded 2016-12: 460.5MB in 5m 38s
+2025-07-30 14:53:12,638 - scripts.download_utils - INFO - Year 2016: 12/12 months downloaded successfully
+2025-07-30 14:53:12,638 - scripts.download_utils - INFO - Merging monthly files for year 2016...
+2025-07-30 14:53:12,638 - scripts.download_utils - ERROR - Failed to merge files for 2016: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 14:53:14,645 - scripts.download_utils - INFO - 
+Progress: 6/8 years
+2025-07-30 14:53:14,645 - scripts.download_utils - INFO - Downloading year 2017 month by month...
+2025-07-30 14:53:14,645 - scripts.download_utils - INFO - Downloading 2017-01...
+2025-07-30 14:53:16,506 - ecmwf.datastores.legacy_client - INFO - Request ID is b1953526-1f74-453a-97da-65866d575e76
+2025-07-30 14:53:16,875 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 14:53:26,610 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 14:57:41,479 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 14:57:42,354 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/19b09810909b92a6ae8e687561ef0a04.zip
+2025-07-30 15:00:49,669 - scripts.download_utils - INFO - Downloaded 2017-01: 460.3MB in 7m 35s
+2025-07-30 15:00:51,673 - scripts.download_utils - INFO - Downloading 2017-02...
+2025-07-30 15:00:53,718 - ecmwf.datastores.legacy_client - INFO - Request ID is bf84f355-e2c5-4ab8-970e-aab3af4dcc7f
+2025-07-30 15:00:54,102 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:01:09,336 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:05:18,926 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:05:19,836 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/5c8e911520911cf44c087938887aebf6.zip
+2025-07-30 15:06:55,729 - scripts.download_utils - INFO - Downloaded 2017-02: 416.4MB in 6m 4s
+2025-07-30 15:06:57,732 - scripts.download_utils - INFO - Downloading 2017-03...
+2025-07-30 15:06:59,653 - ecmwf.datastores.legacy_client - INFO - Request ID is 6a7ad982-e053-40fa-87db-708e3af8cc93
+2025-07-30 15:07:00,037 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:07:09,724 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:11:25,506 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:11:26,266 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/de471cc08ca86fa2ca9ce1245f7a27bd.zip
+2025-07-30 15:12:43,218 - scripts.download_utils - INFO - Downloaded 2017-03: 465.1MB in 5m 45s
+2025-07-30 15:12:45,220 - scripts.download_utils - INFO - Downloading 2017-04...
+2025-07-30 15:12:47,195 - ecmwf.datastores.legacy_client - INFO - Request ID is 33240177-4166-43ec-afd5-e8dd03631b7a
+2025-07-30 15:12:47,586 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:12:53,638 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:17:12,415 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:17:13,193 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/cc9ac912724558637acd3ad751229462.zip
+2025-07-30 15:18:53,245 - scripts.download_utils - INFO - Downloaded 2017-04: 442.5MB in 6m 8s
+2025-07-30 15:18:55,249 - scripts.download_utils - INFO - Downloading 2017-05...
+2025-07-30 15:18:57,246 - ecmwf.datastores.legacy_client - INFO - Request ID is 8c49a3fc-7cc1-494a-aad8-2fb02d0ec9a6
+2025-07-30 15:18:57,659 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:19:03,575 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:23:22,773 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:23:23,554 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/f496ff72f097e41d8d27d3635280a970.zip
+2025-07-30 15:24:58,674 - scripts.download_utils - INFO - Downloaded 2017-05: 460.7MB in 6m 3s
+2025-07-30 15:25:00,677 - scripts.download_utils - INFO - Downloading 2017-06...
+2025-07-30 15:25:02,637 - ecmwf.datastores.legacy_client - INFO - Request ID is 1fe8b512-a30e-491e-a24d-f1edca74c560
+2025-07-30 15:25:03,387 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:25:26,600 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:29:28,153 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:29:28,949 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/471c95286c35dfe0f1cb632bb1902a84.zip
+2025-07-30 15:30:59,556 - scripts.download_utils - INFO - Downloaded 2017-06: 438.6MB in 5m 58s
+2025-07-30 15:31:01,557 - scripts.download_utils - INFO - Downloading 2017-07...
+2025-07-30 15:31:03,588 - ecmwf.datastores.legacy_client - INFO - Request ID is 03bfcecc-0c27-43c8-9197-5401784a342c
+2025-07-30 15:31:04,126 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:31:14,157 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:41:34,171 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:41:34,957 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/edf5cbcbfb81553c689773581876ab0f.zip
+2025-07-30 15:42:54,425 - scripts.download_utils - INFO - Downloaded 2017-07: 450.7MB in 11m 52s
+2025-07-30 15:42:56,427 - scripts.download_utils - INFO - Downloading 2017-08...
+2025-07-30 15:42:58,382 - ecmwf.datastores.legacy_client - INFO - Request ID is 65649e1d-2e9c-45ef-a012-781260286fa4
+2025-07-30 15:42:58,772 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:43:08,500 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:47:23,657 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:47:24,619 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/d363a76ca1ebefddc212feefa81da60c.zip
+2025-07-30 15:48:35,201 - scripts.download_utils - INFO - Downloaded 2017-08: 449.1MB in 5m 38s
+2025-07-30 15:48:37,203 - scripts.download_utils - INFO - Downloading 2017-09...
+2025-07-30 15:48:39,206 - ecmwf.datastores.legacy_client - INFO - Request ID is 3f4204e0-68d9-4654-8f11-a7001c463c4f
+2025-07-30 15:48:39,589 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:48:55,100 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:53:04,972 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:53:05,878 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/b25dca506c3ef585f186cf64a39ee6bd.zip
+2025-07-30 15:54:21,168 - scripts.download_utils - INFO - Downloaded 2017-09: 436.3MB in 5m 43s
+2025-07-30 15:54:23,171 - scripts.download_utils - INFO - Downloading 2017-10...
+2025-07-30 15:54:25,209 - ecmwf.datastores.legacy_client - INFO - Request ID is 9329b715-fdf2-46c4-a545-850053683df5
+2025-07-30 15:54:25,737 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 15:54:35,574 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 15:58:54,476 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 15:58:55,295 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/3de7735996f97bad4e82c705ffdc88bd.zip
+2025-07-30 16:00:49,508 - scripts.download_utils - INFO - Downloaded 2017-10: 453.8MB in 6m 26s
+2025-07-30 16:00:51,512 - scripts.download_utils - INFO - Downloading 2017-11...
+2025-07-30 16:00:54,327 - ecmwf.datastores.legacy_client - INFO - Request ID is 8b01a6e0-ec8f-49ce-b4ac-ce400f24f9ab
+2025-07-30 16:00:54,734 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:01:00,736 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:05:19,615 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:05:20,406 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/845021c3bf8ddd71a3c2f09e2922b4a6.zip
+2025-07-30 16:06:44,675 - scripts.download_utils - INFO - Downloaded 2017-11: 441.9MB in 5m 53s
+2025-07-30 16:06:46,678 - scripts.download_utils - INFO - Downloading 2017-12...
+2025-07-30 16:06:48,595 - ecmwf.datastores.legacy_client - INFO - Request ID is 86ac70b9-a74d-446b-947b-69b7b5962c22
+2025-07-30 16:06:48,982 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:06:58,754 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:07:04,213 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:07:12,202 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:11:13,567 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:11:14,468 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/6fc2089a65fd5e8a282eb7f00af6e41e.zip
+2025-07-30 16:12:25,031 - scripts.download_utils - INFO - Downloaded 2017-12: 457.3MB in 5m 38s
+2025-07-30 16:12:25,031 - scripts.download_utils - INFO - Year 2017: 12/12 months downloaded successfully
+2025-07-30 16:12:25,031 - scripts.download_utils - INFO - Merging monthly files for year 2017...
+2025-07-30 16:12:25,031 - scripts.download_utils - ERROR - Failed to merge files for 2017: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 16:12:27,037 - scripts.download_utils - INFO - 
+Progress: 7/8 years
+2025-07-30 16:12:27,037 - scripts.download_utils - INFO - Downloading year 2018 month by month...
+2025-07-30 16:12:27,037 - scripts.download_utils - INFO - Downloading 2018-01...
+2025-07-30 16:12:29,201 - ecmwf.datastores.legacy_client - INFO - Request ID is f03bfaf2-5b24-49f6-8c75-9d8e7bf83e25
+2025-07-30 16:12:29,633 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:12:53,215 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:16:55,632 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:16:56,698 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/d3bb4d6798cddf8b409b3b9f3eb77b10.zip
+2025-07-30 16:18:05,996 - scripts.download_utils - INFO - Downloaded 2018-01: 456.0MB in 5m 38s
+2025-07-30 16:18:08,000 - scripts.download_utils - INFO - Downloading 2018-02...
+2025-07-30 16:18:09,885 - ecmwf.datastores.legacy_client - INFO - Request ID is 2cefa15b-6791-4023-81df-86d5945097f4
+2025-07-30 16:18:10,263 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:18:16,165 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:22:35,681 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:22:36,465 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/393ab19d0653a166dd34a306d5542b5d.zip
+2025-07-30 16:23:41,145 - scripts.download_utils - INFO - Downloaded 2018-02: 414.8MB in 5m 33s
+2025-07-30 16:23:43,149 - scripts.download_utils - INFO - Downloading 2018-03...
+2025-07-30 16:23:46,139 - ecmwf.datastores.legacy_client - INFO - Request ID is d06c717f-f805-439a-ba86-fe5db109b5cb
+2025-07-30 16:23:46,615 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:24:01,842 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:28:11,394 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:28:12,174 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/e8e34109ac8ed1c029f8d5f76918f5ac.zip
+2025-07-30 16:30:11,028 - scripts.download_utils - INFO - Downloaded 2018-03: 459.8MB in 6m 27s
+2025-07-30 16:30:13,033 - scripts.download_utils - INFO - Downloading 2018-04...
+2025-07-30 16:30:23,224 - ecmwf.datastores.legacy_client - INFO - Request ID is 515a9304-d9da-44e1-a563-6412dc83bf32
+2025-07-30 16:30:23,626 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:30:38,872 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:34:48,380 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:34:49,160 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/6914f3d4cbadf2201e2c7f778888c70c.zip
+2025-07-30 16:36:20,850 - scripts.download_utils - INFO - Downloaded 2018-04: 443.9MB in 6m 7s
+2025-07-30 16:36:22,854 - scripts.download_utils - INFO - Downloading 2018-05...
+2025-07-30 16:36:24,803 - ecmwf.datastores.legacy_client - INFO - Request ID is 49fd9570-30a7-4860-b5e9-f91be9091f01
+2025-07-30 16:36:25,189 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:36:48,522 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:40:49,903 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:40:51,034 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/36a5e9c6baa468872c945f60d5fe3270.zip
+2025-07-30 16:44:24,030 - scripts.download_utils - INFO - Downloaded 2018-05: 458.7MB in 8m 1s
+2025-07-30 16:44:26,031 - scripts.download_utils - INFO - Downloading 2018-06...
+2025-07-30 16:44:27,925 - ecmwf.datastores.legacy_client - INFO - Request ID is 8a801d41-e352-4471-8a6b-61c997a8bc69
+2025-07-30 16:44:28,302 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:44:37,973 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:49:00,631 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:49:01,433 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/72f5f4f96ee7a70874e8ca72a789393d.zip
+2025-07-30 16:50:23,615 - scripts.download_utils - INFO - Downloaded 2018-06: 438.5MB in 5m 57s
+2025-07-30 16:50:25,617 - scripts.download_utils - INFO - Downloading 2018-07...
+2025-07-30 16:50:27,571 - ecmwf.datastores.legacy_client - INFO - Request ID is dc27ab2d-82d1-4620-9956-cd0d6f8b0fb4
+2025-07-30 16:50:27,960 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:50:37,700 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 16:54:52,581 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 16:54:53,358 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/4b4b850c8b0cb79c9dc560623190aa47.zip
+2025-07-30 16:56:22,407 - scripts.download_utils - INFO - Downloaded 2018-07: 451.5MB in 5m 56s
+2025-07-30 16:56:24,413 - scripts.download_utils - INFO - Downloading 2018-08...
+2025-07-30 16:56:26,508 - ecmwf.datastores.legacy_client - INFO - Request ID is b092b282-0d1d-4b23-ac3e-71bb37745d90
+2025-07-30 16:56:26,980 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 16:56:36,946 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:00:52,005 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:00:53,080 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/9e682dfd9d79c2225f5866c243afda6d.zip
+2025-07-30 17:02:19,348 - scripts.download_utils - INFO - Downloaded 2018-08: 451.7MB in 5m 54s
+2025-07-30 17:02:21,350 - scripts.download_utils - INFO - Downloading 2018-09...
+2025-07-30 17:02:23,322 - ecmwf.datastores.legacy_client - INFO - Request ID is 8823ed4d-79ad-4bee-8a29-d482f54c8d0c
+2025-07-30 17:02:23,706 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:02:33,574 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:06:48,792 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:06:49,581 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/10b5f33791f66161c15bb9b294c9cc50.zip
+2025-07-30 17:08:27,737 - scripts.download_utils - INFO - Downloaded 2018-09: 435.3MB in 6m 6s
+2025-07-30 17:08:29,740 - scripts.download_utils - INFO - Downloading 2018-10...
+2025-07-30 17:08:32,705 - ecmwf.datastores.legacy_client - INFO - Request ID is d083f0fd-0a93-418c-8fc5-3d0d3fdc168c
+2025-07-30 17:08:33,098 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:08:42,928 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:12:57,954 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:12:59,004 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/a6757a7ac42a8b23c02e5a529695065a.zip
+2025-07-30 17:17:39,298 - scripts.download_utils - INFO - Downloaded 2018-10: 458.0MB in 9m 9s
+2025-07-30 17:17:41,300 - scripts.download_utils - INFO - Downloading 2018-11...
+2025-07-30 17:17:43,284 - ecmwf.datastores.legacy_client - INFO - Request ID is 9acb7ba2-6ee1-4d34-9e26-e7eeeabb3287
+2025-07-30 17:17:43,689 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:17:49,782 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:24:10,287 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:24:11,067 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/b8048d12c31eded0fb9c5a6b40a6c92c.zip
+2025-07-30 17:26:02,583 - scripts.download_utils - INFO - Downloaded 2018-11: 441.6MB in 8m 21s
+2025-07-30 17:26:04,585 - scripts.download_utils - INFO - Downloading 2018-12...
+2025-07-30 17:26:06,566 - ecmwf.datastores.legacy_client - INFO - Request ID is 2306bb8e-9f6c-4636-b7f3-7c195affad77
+2025-07-30 17:26:06,963 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:26:16,794 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:30:31,945 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:30:32,735 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/f2e35ff7f07ab38ca190c79b60a7f3b3.zip
+2025-07-30 17:34:13,945 - scripts.download_utils - INFO - Downloaded 2018-12: 458.9MB in 8m 9s
+2025-07-30 17:34:13,945 - scripts.download_utils - INFO - Year 2018: 12/12 months downloaded successfully
+2025-07-30 17:34:13,945 - scripts.download_utils - INFO - Merging monthly files for year 2018...
+2025-07-30 17:34:13,965 - scripts.download_utils - ERROR - Failed to merge files for 2018: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 17:34:15,966 - scripts.download_utils - INFO - 
+Progress: 8/8 years
+2025-07-30 17:34:15,966 - scripts.download_utils - INFO - Downloading year 2019 month by month...
+2025-07-30 17:34:15,966 - scripts.download_utils - INFO - Downloading 2019-01...
+2025-07-30 17:34:17,960 - ecmwf.datastores.legacy_client - INFO - Request ID is 273774fa-4a08-4ef0-8389-4d46301d5bdb
+2025-07-30 17:34:18,351 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:34:28,086 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:34:33,598 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:34:41,615 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:34:42,425 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/ee3ec23de4ae85cd6fc901a704725c34.zip
+2025-07-30 17:36:17,561 - scripts.download_utils - INFO - Downloaded 2019-01: 458.0MB in 2m 1s
+2025-07-30 17:36:19,650 - scripts.download_utils - INFO - File for 2019-02 already exists (414.6MB). Skipping.
+2025-07-30 17:36:21,665 - scripts.download_utils - INFO - Downloading 2019-03...
+2025-07-30 17:36:24,396 - ecmwf.datastores.legacy_client - INFO - Request ID is 3cbbab93-2541-4cff-bbda-dda7723f5cd7
+2025-07-30 17:36:24,786 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:36:48,418 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:36:49,206 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/3744d5cbb2168b9ed05205fd6953e959.zip
+2025-07-30 17:38:13,262 - scripts.download_utils - INFO - Downloaded 2019-03: 463.0MB in 1m 51s
+2025-07-30 17:38:15,267 - scripts.download_utils - INFO - Downloading 2019-04...
+2025-07-30 17:38:17,219 - ecmwf.datastores.legacy_client - INFO - Request ID is d1a3dec0-d538-445b-9938-aaf594d41c27
+2025-07-30 17:38:17,710 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:38:23,769 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:38:27,527 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:38:28,251 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/f662826a1b6726f03414216a4f7319d5.zip
+2025-07-30 17:40:03,273 - scripts.download_utils - INFO - Downloaded 2019-04: 443.3MB in 1m 48s
+2025-07-30 17:40:05,276 - scripts.download_utils - INFO - Downloading 2019-05...
+2025-07-30 17:40:07,207 - ecmwf.datastores.legacy_client - INFO - Request ID is 00f0eb68-5b5c-4c90-8dde-6a6c79bec2ce
+2025-07-30 17:40:07,603 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:40:17,285 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:44:32,090 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:44:33,071 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/75acf4e27b040ed954df81db29f394c.zip
+2025-07-30 17:46:01,677 - scripts.download_utils - INFO - Downloaded 2019-05: 460.9MB in 5m 56s
+2025-07-30 17:46:03,678 - scripts.download_utils - INFO - Downloading 2019-06...
+2025-07-30 17:46:05,704 - ecmwf.datastores.legacy_client - INFO - Request ID is 674a9da9-0dbc-4b04-8450-d5e548e97b37
+2025-07-30 17:46:06,127 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:46:15,893 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:50:30,824 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:50:31,645 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/759a09226180ec54102998769b6a54d0.zip
+2025-07-30 17:54:24,068 - scripts.download_utils - INFO - Downloaded 2019-06: 436.4MB in 8m 20s
+2025-07-30 17:54:26,070 - scripts.download_utils - INFO - Downloading 2019-07...
+2025-07-30 17:54:28,540 - ecmwf.datastores.legacy_client - INFO - Request ID is 2d3b18d0-5698-47d6-84d0-d77faf70b483
+2025-07-30 17:54:28,988 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 17:54:34,914 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 17:58:53,734 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 17:58:54,505 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/e455f46a2ad46ca89dfdcdedf5088a54.zip
+2025-07-30 18:01:04,394 - scripts.download_utils - INFO - Downloaded 2019-07: 449.8MB in 6m 38s
+2025-07-30 18:01:06,398 - scripts.download_utils - INFO - Downloading 2019-08...
+2025-07-30 18:01:08,293 - ecmwf.datastores.legacy_client - INFO - Request ID is 5e6faccf-6af7-4f1a-8e95-504c3b7e1ca6
+2025-07-30 18:01:08,731 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:01:23,940 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:05:33,333 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 18:05:35,918 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/2c8e79249ccf37d037b4c5f661b401c7.zip
+2025-07-30 18:06:48,111 - scripts.download_utils - INFO - Downloaded 2019-08: 449.7MB in 5m 41s
+2025-07-30 18:06:50,117 - scripts.download_utils - INFO - Downloading 2019-09...
+2025-07-30 18:06:52,092 - ecmwf.datastores.legacy_client - INFO - Request ID is 04dff25f-1631-43ec-a255-a1667fc43efb
+2025-07-30 18:06:52,698 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:06:58,968 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:11:18,416 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 18:11:19,168 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/25dd5e56773cf7a67bb0331e8b4b8881.zip
+2025-07-30 18:12:56,466 - scripts.download_utils - INFO - Downloaded 2019-09: 434.4MB in 6m 6s
+2025-07-30 18:12:58,470 - scripts.download_utils - INFO - Downloading 2019-10...
+2025-07-30 18:13:00,392 - ecmwf.datastores.legacy_client - INFO - Request ID is 57910f52-c77b-4c14-8094-c76e6c41faa4
+2025-07-30 18:13:00,793 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:13:10,511 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:13:16,288 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:13:24,281 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:17:25,891 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 18:17:26,717 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/c001539af7fda3ed18df0200204ac5c7.zip
+2025-07-30 18:19:16,924 - scripts.download_utils - INFO - Downloaded 2019-10: 456.2MB in 6m 18s
+2025-07-30 18:19:18,926 - scripts.download_utils - INFO - Downloading 2019-11...
+2025-07-30 18:19:20,952 - ecmwf.datastores.legacy_client - INFO - Request ID is 8c63a23e-6468-4815-9850-fd5fae0ad22f
+2025-07-30 18:19:21,380 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:19:36,550 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:23:46,319 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 18:23:47,254 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2025-07-30/1daab8b95baac2e06eaf10ebcbf80298.zip
+2025-07-30 18:25:02,827 - scripts.download_utils - INFO - Downloaded 2019-11: 441.4MB in 5m 43s
+2025-07-30 18:25:04,831 - scripts.download_utils - INFO - Downloading 2019-12...
+2025-07-30 18:25:06,970 - ecmwf.datastores.legacy_client - INFO - Request ID is 849040b8-e9e6-458b-b28a-3730b6d4be59
+2025-07-30 18:25:07,362 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 18:25:17,250 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 18:29:32,054 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 18:29:32,870 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2025-07-30/48f6f1cc1f153aa9aa81f685098ebb5e.zip
+2025-07-30 18:30:56,574 - scripts.download_utils - INFO - Downloaded 2019-12: 459.3MB in 5m 51s
+2025-07-30 18:30:56,574 - scripts.download_utils - INFO - Year 2019: 12/12 months downloaded successfully
+2025-07-30 18:30:56,574 - scripts.download_utils - INFO - Merging monthly files for year 2019...
+2025-07-30 18:30:56,574 - scripts.download_utils - ERROR - Failed to merge files for 2019: did not find a match in any of xarray's currently installed IO backends ['netcdf4']. Consider explicitly selecting one of the installed engines via the ``engine`` parameter, or installing additional IO dependencies, see:
+https://docs.xarray.dev/en/stable/getting-started-guide/installing.html
+https://docs.xarray.dev/en/stable/user-guide/io.html
+2025-07-30 18:30:56,584 - scripts.download_utils - ERROR - 
+Failed to download 8 files

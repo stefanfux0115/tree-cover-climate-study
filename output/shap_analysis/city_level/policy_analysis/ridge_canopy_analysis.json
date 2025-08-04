@@ -1,0 +1,142 @@
+{
+  "model": "ridge",
+  "energy_savings_potential": {
+    "canopy_share": {
+      "avg_log_reduction": 0.03855484624046146,
+      "approx_pct_savings": 3.930772891645029,
+      "samples_with_savings": 412,
+      "total_samples": 1000
+    },
+    "canopy_x_population_high_canopy_low_pop": {
+      "avg_log_reduction": 0.17409000090674673,
+      "approx_pct_savings": 19.016267672033216,
+      "samples_with_savings": 259,
+      "total_samples": 1000
+    },
+    "canopy_x_population": {
+      "avg_log_reduction": 0.01363098617319831,
+      "approx_pct_savings": 1.372431162241794,
+      "samples_with_savings": 224,
+      "total_samples": 1000
+    },
+    "canopy_x_population_high_canopy_high_pop": {
+      "avg_log_reduction": 0.023107756506102726,
+      "approx_pct_savings": 2.337680911535589,
+      "samples_with_savings": 772,
+      "total_samples": 1000
+    },
+    "canopy_x_gdp_no_canopy_high_gdp": {
+      "avg_log_reduction": 3.3500116935904594e-18,
+      "approx_pct_savings": 0.0,
+      "samples_with_savings": 994,
+      "total_samples": 1000
+    },
+    "canopy_x_population_medium_canopy_low_pop": {
+      "avg_log_reduction": 0.5695436363543341,
+      "approx_pct_savings": 76.74602627441483,
+      "samples_with_savings": 11,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight": {
+      "avg_log_reduction": 0.006625073878933972,
+      "approx_pct_savings": 0.6647068225447139,
+      "samples_with_savings": 224,
+      "total_samples": 1000
+    },
+    "canopy_x_gdp_high_canopy_low_gdp": {
+      "avg_log_reduction": 0.001608164478092505,
+      "approx_pct_savings": 0.1609458268036157,
+      "samples_with_savings": 749,
+      "total_samples": 1000
+    },
+    "canopy_x_gdp_high_canopy_high_gdp": {
+      "avg_log_reduction": 0.009624826055290248,
+      "approx_pct_savings": 0.9671293654791802,
+      "samples_with_savings": 260,
+      "total_samples": 1000
+    },
+    "days_in_bin_25_30_x_canopy": {
+      "avg_log_reduction": 0.05692641800610197,
+      "approx_pct_savings": 5.857791525599443,
+      "samples_with_savings": 278,
+      "total_samples": 1000
+    },
+    "canopy_x_population_low_canopy_medium_pop": {
+      "avg_log_reduction": 0.00852297879436016,
+      "approx_pct_savings": 0.8559402784885872,
+      "samples_with_savings": 965,
+      "total_samples": 1000
+    },
+    "canopy_x_humidity_no_canopy_RH_mid": {
+      "avg_log_reduction": 0.0039012279971939036,
+      "approx_pct_savings": 0.39088476926378846,
+      "samples_with_savings": 985,
+      "total_samples": 1000
+    },
+    "canopy_x_population_high_canopy_medium_pop": {
+      "avg_log_reduction": 0.032741074429684054,
+      "approx_pct_savings": 3.3282961221372753,
+      "samples_with_savings": 711,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_medium_canopy_urban_high": {
+      "avg_log_reduction": 0.013711572423921138,
+      "approx_pct_savings": 1.3806007155682254,
+      "samples_with_savings": 976,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_high_canopy_urban_low": {
+      "avg_log_reduction": 0.044961701873375996,
+      "approx_pct_savings": 4.598779976840506,
+      "samples_with_savings": 334,
+      "total_samples": 1000
+    },
+    "days_in_bin_20_25_x_canopy": {
+      "avg_log_reduction": 0.0009405109456324347,
+      "approx_pct_savings": 0.09409533647410928,
+      "samples_with_savings": 695,
+      "total_samples": 1000
+    },
+    "days_in_bin_15_20_x_canopy": {
+      "avg_log_reduction": 0.032159874029512356,
+      "approx_pct_savings": 3.2682591235358327,
+      "samples_with_savings": 236,
+      "total_samples": 1000
+    },
+    "days_in_bin_5_10_x_canopy": {
+      "avg_log_reduction": 0.001339873674091097,
+      "approx_pct_savings": 0.1340771705860666,
+      "samples_with_savings": 154,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_medium_canopy_urban_low": {
+      "avg_log_reduction": 0.05268225450108676,
+      "approx_pct_savings": 5.4094658068830626,
+      "samples_with_savings": 64,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_high_canopy_urban_high": {
+      "avg_log_reduction": 0.015885004314175635,
+      "approx_pct_savings": 1.6011841709419938,
+      "samples_with_savings": 558,
+      "total_samples": 1000
+    },
+    "days_in_bin_10_15_x_canopy": {
+      "avg_log_reduction": 0.0043520289231908146,
+      "approx_pct_savings": 0.4361512754042618,
+      "samples_with_savings": 788,
+      "total_samples": 1000
+    },
+    "days_in_bin_30_35_x_canopy": {
+      "avg_log_reduction": 0.012796161615056022,
+      "approx_pct_savings": 1.2878382822087753,
+      "samples_with_savings": 178,
+      "total_samples": 1000
+    }
+  },
+  "summary_statistics": {
+    "total_canopy_features": 22,
+    "avg_effect_across_features": -0.0012858730954502984,
+    "features_with_energy_savings": 22
+  }
+}

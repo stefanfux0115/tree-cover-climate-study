@@ -1,0 +1,92 @@
+2025-08-02 02:58:03,171 - __main__ - INFO - Starting complete ML pipeline...
+2025-08-02 02:58:03,171 - __main__ - INFO - Loading engineered data and selected features...
+2025-08-02 02:58:06,047 - __main__ - INFO - Loaded train: 12,109,326 rows
+2025-08-02 02:58:06,675 - __main__ - INFO - Loaded validation: 2,717,703 rows
+2025-08-02 02:58:07,402 - __main__ - INFO - Loaded test: 2,717,694 rows
+2025-08-02 02:58:07,403 - __main__ - INFO - Loaded 39 selected features
+2025-08-02 02:58:07,403 - __main__ - INFO - Preparing ML datasets...
+2025-08-02 02:58:16,864 - __main__ - INFO - train: 12,109,326 samples, 39 features
+2025-08-02 02:58:18,835 - __main__ - INFO - validation: 2,717,703 samples, 39 features
+2025-08-02 02:58:20,956 - __main__ - INFO - test: 2,717,694 samples, 39 features
+2025-08-02 02:58:20,956 - __main__ - INFO - Starting training of all models...
+2025-08-02 02:58:20,956 - __main__ - INFO - 
+==================================================
+2025-08-02 02:58:20,956 - __main__ - INFO - Training RIDGE
+2025-08-02 02:58:20,956 - __main__ - INFO - ==================================================
+2025-08-02 02:58:20,956 - __main__ - INFO - Training ridge...
+2025-08-02 02:58:20,958 - __main__ - INFO - Optimizing hyperparameters for ridge...
+2025-08-02 02:58:20,958 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 02:58:21,524 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 02:58:21,524 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 02:59:37,439 - __main__ - ERROR - Error training ridge: Unable to allocate 18.5 MiB for an array with shape (2421612, 1) and data type float64
+2025-08-02 02:59:37,543 - __main__ - INFO - 
+==================================================
+2025-08-02 02:59:37,543 - __main__ - INFO - Training LASSO
+2025-08-02 02:59:37,543 - __main__ - INFO - ==================================================
+2025-08-02 02:59:37,543 - __main__ - INFO - Training lasso...
+2025-08-02 02:59:37,543 - __main__ - INFO - Optimizing hyperparameters for lasso...
+2025-08-02 02:59:37,543 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 02:59:38,865 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 02:59:38,869 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:00:41,526 - __main__ - ERROR - Error training lasso: Unable to allocate 18.5 MiB for an array with shape (2421612, 1) and data type float64
+2025-08-02 03:00:41,627 - __main__ - INFO - 
+==================================================
+2025-08-02 03:00:41,629 - __main__ - INFO - Training SVR
+2025-08-02 03:00:41,629 - __main__ - INFO - ==================================================
+2025-08-02 03:00:41,629 - __main__ - INFO - Training svr...
+2025-08-02 03:00:41,629 - __main__ - INFO - Optimizing hyperparameters for svr...
+2025-08-02 03:00:41,629 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 03:00:42,898 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 03:00:42,902 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:01:39,577 - __main__ - ERROR - Error training svr: Unable to allocate 9.24 MiB for an array with shape (9687714,) and data type bool
+2025-08-02 03:01:39,585 - __main__ - INFO - 
+==================================================
+2025-08-02 03:01:39,585 - __main__ - INFO - Training RANDOM_FOREST
+2025-08-02 03:01:39,585 - __main__ - INFO - ==================================================
+2025-08-02 03:01:39,585 - __main__ - INFO - Training random_forest...
+2025-08-02 03:01:39,585 - __main__ - INFO - Optimizing hyperparameters for random_forest...
+2025-08-02 03:01:39,585 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 03:01:45,164 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 03:01:45,275 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:03:10,783 - __main__ - ERROR - Error training random_forest: Unable to allocate 73.9 MiB for an array with shape (9687714, 1) and data type float64
+2025-08-02 03:03:10,783 - __main__ - INFO - 
+==================================================
+2025-08-02 03:03:10,783 - __main__ - INFO - Training LIGHTGBM
+2025-08-02 03:03:10,783 - __main__ - INFO - ==================================================
+2025-08-02 03:03:10,783 - __main__ - INFO - Training lightgbm...
+2025-08-02 03:03:10,786 - __main__ - INFO - Optimizing hyperparameters for lightgbm...
+2025-08-02 03:03:10,786 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 03:03:11,532 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 03:03:11,534 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:03:38,754 - __main__ - ERROR - Error training lightgbm: Unable to allocate 73.9 MiB for an array with shape (9687625, 1) and data type float64
+2025-08-02 03:03:38,754 - __main__ - INFO - 
+==================================================
+2025-08-02 03:03:38,754 - __main__ - INFO - Training XGBOOST
+2025-08-02 03:03:38,755 - __main__ - INFO - ==================================================
+2025-08-02 03:03:38,755 - __main__ - INFO - Training xgboost...
+2025-08-02 03:03:38,755 - __main__ - INFO - Optimizing hyperparameters for xgboost...
+2025-08-02 03:03:38,755 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 03:03:39,456 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 03:03:39,456 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:04:03,777 - __main__ - ERROR - Error training xgboost: Unable to allocate 9.24 MiB for an array with shape (9687625,) and data type bool
+2025-08-02 03:04:03,778 - __main__ - INFO - 
+==================================================
+2025-08-02 03:04:03,778 - __main__ - INFO - Training CATBOOST
+2025-08-02 03:04:03,778 - __main__ - INFO - ==================================================
+2025-08-02 03:04:03,778 - __main__ - INFO - Training catboost...
+2025-08-02 03:04:03,778 - __main__ - INFO - Optimizing hyperparameters for catboost...
+2025-08-02 03:04:03,778 - __main__ - INFO - Setting up 5-fold city-wise cross-validation...
+2025-08-02 03:04:04,543 - __main__ - INFO - Cross-validation setup: 272 unique cities
+2025-08-02 03:04:04,543 - __main__ - INFO - City size range: 1,278 - 2,278,789 observations
+2025-08-02 03:04:28,934 - __main__ - ERROR - Error training catboost: Unable to allocate 73.9 MiB for an array with shape (9686577,) and data type int64
+2025-08-02 03:04:28,937 - __main__ - INFO - Evaluating all trained models...
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping ridge - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping lasso - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping svr - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping random_forest - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping lightgbm - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping xgboost - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - WARNING - Skipping catboost - training failed or incomplete results
+2025-08-02 03:04:28,937 - __main__ - INFO - Saving comprehensive results...
+2025-08-02 03:04:29,053 - __main__ - INFO - Results saved successfully
+2025-08-02 03:04:29,054 - __main__ - INFO - Complete ML pipeline finished successfully!

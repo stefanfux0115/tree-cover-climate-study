@@ -1,0 +1,287 @@
+{
+  "analysis_info": {
+    "run_date": "2025-08-02T07:56:29.953552",
+    "models_analyzed": [
+      "ridge",
+      "lasso",
+      "random_forest",
+      "lightgbm",
+      "xgboost"
+    ],
+    "total_features_analyzed": 5,
+    "analysis_methods": [
+      "Global SHAP",
+      "Dependence Plots",
+      "Policy Analysis",
+      "Local Explanations"
+    ]
+  },
+  "top_features_by_model": {
+    "ridge": [
+      {
+        "feature": "population",
+        "shap_importance": 0.1842524715209394,
+        "rank": 1
+      },
+      {
+        "feature": "year",
+        "shap_importance": 0.1254297836124326,
+        "rank": 2
+      },
+      {
+        "feature": "pres",
+        "shap_importance": 0.0827759363324749,
+        "rank": 3
+      },
+      {
+        "feature": "wind",
+        "shap_importance": 0.0789882196031511,
+        "rank": 4
+      },
+      {
+        "feature": "population_low_pop",
+        "shap_importance": 0.0789665357904692,
+        "rank": 5
+      },
+      {
+        "feature": "nightlight",
+        "shap_importance": 0.076779007889786,
+        "rank": 6
+      },
+      {
+        "feature": "canopy_x_population_high_canopy_low_pop",
+        "shap_importance": 0.0749436223415629,
+        "rank": 7
+      },
+      {
+        "feature": "population_high_pop",
+        "shap_importance": 0.0723291439224967,
+        "rank": 8
+      },
+      {
+        "feature": "population_x_humidity_high_pop_RH_high",
+        "shap_importance": 0.0618764632870786,
+        "rank": 9
+      },
+      {
+        "feature": "gdp_low_gdp",
+        "shap_importance": 0.0593287598144773,
+        "rank": 10
+      }
+    ],
+    "lasso": [
+      {
+        "feature": "population",
+        "shap_importance": 0.2044445422185964,
+        "rank": 1
+      },
+      {
+        "feature": "population_high_pop",
+        "shap_importance": 0.1890432250666354,
+        "rank": 2
+      },
+      {
+        "feature": "year",
+        "shap_importance": 0.1145856318008149,
+        "rank": 3
+      },
+      {
+        "feature": "nightlight_urban_high",
+        "shap_importance": 0.1027482862717065,
+        "rank": 4
+      },
+      {
+        "feature": "canopy_x_population_high_canopy_low_pop",
+        "shap_importance": 0.0913384121288838,
+        "rank": 5
+      },
+      {
+        "feature": "wind",
+        "shap_importance": 0.0889258159890202,
+        "rank": 6
+      },
+      {
+        "feature": "population_low_pop",
+        "shap_importance": 0.0746264791260741,
+        "rank": 7
+      },
+      {
+        "feature": "pres",
+        "shap_importance": 0.0736118256594139,
+        "rank": 8
+      },
+      {
+        "feature": "nightlight",
+        "shap_importance": 0.0641513150812104,
+        "rank": 9
+      },
+      {
+        "feature": "days_in_bin_25_30",
+        "shap_importance": 0.0560285962315713,
+        "rank": 10
+      }
+    ],
+    "random_forest": [
+      {
+        "feature": "population",
+        "shap_importance": 0.6817961760197492,
+        "rank": 1
+      },
+      {
+        "feature": "year",
+        "shap_importance": 0.2440856486456115,
+        "rank": 2
+      },
+      {
+        "feature": "lon",
+        "shap_importance": 0.1203562909590073,
+        "rank": 3
+      },
+      {
+        "feature": "lat",
+        "shap_importance": 0.1050918048171144,
+        "rank": 4
+      },
+      {
+        "feature": "gdp_per_capita",
+        "shap_importance": 0.0917342858117319,
+        "rank": 5
+      },
+      {
+        "feature": "nightlight",
+        "shap_importance": 0.0541825974897538,
+        "rank": 6
+      },
+      {
+        "feature": "canopy_share",
+        "shap_importance": 0.0298081915524908,
+        "rank": 7
+      },
+      {
+        "feature": "pres",
+        "shap_importance": 0.0239926930476064,
+        "rank": 8
+      },
+      {
+        "feature": "canopy_x_gdp_no_canopy_high_gdp",
+        "shap_importance": 0.0065919549642557,
+        "rank": 9
+      },
+      {
+        "feature": "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+        "shap_importance": 0.0063749433863485,
+        "rank": 10
+      }
+    ],
+    "lightgbm": [
+      {
+        "feature": "population",
+        "shap_importance": 0.582312439433037,
+        "rank": 1
+      },
+      {
+        "feature": "year",
+        "shap_importance": 0.2539074895930093,
+        "rank": 2
+      },
+      {
+        "feature": "gdp_per_capita",
+        "shap_importance": 0.1557917791771612,
+        "rank": 3
+      },
+      {
+        "feature": "lat",
+        "shap_importance": 0.1365518913101612,
+        "rank": 4
+      },
+      {
+        "feature": "nightlight",
+        "shap_importance": 0.1024999581759732,
+        "rank": 5
+      },
+      {
+        "feature": "lon",
+        "shap_importance": 0.101901988894122,
+        "rank": 6
+      },
+      {
+        "feature": "pres",
+        "shap_importance": 0.049102249856767,
+        "rank": 7
+      },
+      {
+        "feature": "wind",
+        "shap_importance": 0.0311554577274153,
+        "rank": 8
+      },
+      {
+        "feature": "days_in_bin_25_30",
+        "shap_importance": 0.0285553507176312,
+        "rank": 9
+      },
+      {
+        "feature": "canopy_share",
+        "shap_importance": 0.0174184122843646,
+        "rank": 10
+      }
+    ],
+    "xgboost": [
+      {
+        "feature": "population",
+        "shap_importance": 0.56599027,
+        "rank": 1
+      },
+      {
+        "feature": "year",
+        "shap_importance": 0.26343167,
+        "rank": 2
+      },
+      {
+        "feature": "lat",
+        "shap_importance": 0.15736763,
+        "rank": 3
+      },
+      {
+        "feature": "gdp_per_capita",
+        "shap_importance": 0.14886941,
+        "rank": 4
+      },
+      {
+        "feature": "lon",
+        "shap_importance": 0.1216074,
+        "rank": 5
+      },
+      {
+        "feature": "nightlight",
+        "shap_importance": 0.10911138,
+        "rank": 6
+      },
+      {
+        "feature": "pres",
+        "shap_importance": 0.07057029,
+        "rank": 7
+      },
+      {
+        "feature": "wind",
+        "shap_importance": 0.03644943,
+        "rank": 8
+      },
+      {
+        "feature": "days_in_bin_25_30",
+        "shap_importance": 0.027063724,
+        "rank": 9
+      },
+      {
+        "feature": "canopy_share",
+        "shap_importance": 0.022018857,
+        "rank": 10
+      }
+    ]
+  },
+  "output_directories": {
+    "global_explanations": "G:\\research\\junmao-tang\\code-test\\code-space\\output\\shap_analysis\\city_level\\global_explanations",
+    "local_explanations": "G:\\research\\junmao-tang\\code-test\\code-space\\output\\shap_analysis\\city_level\\local_explanations",
+    "policy_analysis": "G:\\research\\junmao-tang\\code-test\\code-space\\output\\shap_analysis\\city_level\\policy_analysis",
+    "feature_interactions": "G:\\research\\junmao-tang\\code-test\\code-space\\output\\shap_analysis\\city_level\\feature_interactions"
+  }
+}

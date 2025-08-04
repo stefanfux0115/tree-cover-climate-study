@@ -1,0 +1,79 @@
+2025-08-02 03:47:30,744 - __main__ - INFO - Starting comprehensive feature engineering...
+2025-08-02 03:47:30,744 - __main__ - INFO - Loading data splits...
+2025-08-02 03:47:30,783 - __main__ - INFO - Loaded train: (18699, 30)
+2025-08-02 03:47:30,790 - __main__ - INFO - Loaded validation: (3252, 30)
+2025-08-02 03:47:30,798 - __main__ - INFO - Loaded test: (3252, 30)
+2025-08-02 03:47:30,798 - __main__ - INFO - Engineering features for train split...
+2025-08-02 03:47:30,798 - __main__ - INFO - Creating humidity bins...
+2025-08-02 03:47:30,807 - __main__ - INFO - Created humidity bins: ['RH_low', 'RH_mid', 'RH_high']
+2025-08-02 03:47:30,809 - __main__ - INFO - Humidity distribution: {'RH_high': 10703, 'RH_mid': 7381, 'RH_low': 615}
+2025-08-02 03:47:30,809 - __main__ - INFO - Creating precipitation bins...
+2025-08-02 03:47:30,818 - __main__ - INFO - Created precipitation bins: ['rain_days_0_1mm', 'rain_days_1_10mm', 'rain_days_10_plus']
+2025-08-02 03:47:30,819 - __main__ - INFO - Precipitation distribution: {'unknown': 17886, 'rain_days_10_plus': 763, 'rain_days_1_10mm': 49, 'rain_days_0_1mm': 1}
+2025-08-02 03:47:30,819 - __main__ - INFO - Creating socioeconomic bins...
+2025-08-02 03:47:30,829 - __main__ - INFO - GDP categories created with quantiles: [ 8579.97271872 12109.45964818]
+2025-08-02 03:47:30,839 - __main__ - INFO - Population categories created with quantiles: [289230. 761748.]
+2025-08-02 03:47:30,849 - __main__ - INFO - Nightlight categories created: ['rural', 'urban_low', 'urban_high']
+2025-08-02 03:47:30,849 - __main__ - INFO - Creating canopy bins...
+2025-08-02 03:47:30,862 - __main__ - INFO - Canopy categories: ['no_canopy', 'low_canopy', 'medium_canopy', 'high_canopy']
+2025-08-02 03:47:30,864 - __main__ - INFO - Canopy distribution: {'high_canopy': 14271, 'low_canopy': 2034, 'medium_canopy': 1839, 'no_canopy': 555}
+2025-08-02 03:47:30,864 - __main__ - INFO - Creating two-way interactions...
+2025-08-02 03:47:30,945 - __main__ - INFO - Created two-way interactions with dummy encoding
+2025-08-02 03:47:30,947 - __main__ - INFO - Cleaning and validating features...
+2025-08-02 03:47:31,064 - __main__ - INFO - Feature cleaning completed: (18699, 146)
+2025-08-02 03:47:31,064 - __main__ - INFO - train feature engineering completed: (18699, 30) → (18699, 146)
+2025-08-02 03:47:31,206 - __main__ - INFO - Saved train engineered dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\train_engineered.parquet
+2025-08-02 03:47:31,206 - __main__ - INFO - Engineering features for validation split...
+2025-08-02 03:47:31,206 - __main__ - INFO - Creating humidity bins...
+2025-08-02 03:47:31,211 - __main__ - INFO - Created humidity bins: ['RH_low', 'RH_mid', 'RH_high']
+2025-08-02 03:47:31,211 - __main__ - INFO - Humidity distribution: {'RH_high': 1900, 'RH_mid': 1224, 'RH_low': 128}
+2025-08-02 03:47:31,211 - __main__ - INFO - Creating precipitation bins...
+2025-08-02 03:47:31,212 - __main__ - INFO - Created precipitation bins: ['rain_days_0_1mm', 'rain_days_1_10mm', 'rain_days_10_plus']
+2025-08-02 03:47:31,212 - __main__ - INFO - Precipitation distribution: {'unknown': 3252}
+2025-08-02 03:47:31,214 - __main__ - INFO - Creating socioeconomic bins...
+2025-08-02 03:47:31,217 - __main__ - INFO - GDP categories created with quantiles: [10572.         14808.44533333]
+2025-08-02 03:47:31,221 - __main__ - INFO - Population categories created with quantiles: [294104. 756386.]
+2025-08-02 03:47:31,223 - __main__ - INFO - Nightlight categories created: ['rural', 'urban_low', 'urban_high']
+2025-08-02 03:47:31,223 - __main__ - INFO - Creating canopy bins...
+2025-08-02 03:47:31,227 - __main__ - INFO - Canopy categories: ['no_canopy', 'low_canopy', 'medium_canopy', 'high_canopy']
+2025-08-02 03:47:31,228 - __main__ - INFO - Canopy distribution: {'high_canopy': 2124, 'low_canopy': 588, 'medium_canopy': 408, 'no_canopy': 132}
+2025-08-02 03:47:31,228 - __main__ - INFO - Creating two-way interactions...
+2025-08-02 03:47:31,243 - __main__ - INFO - Created two-way interactions with dummy encoding
+2025-08-02 03:47:31,243 - __main__ - INFO - Cleaning and validating features...
+2025-08-02 03:47:31,280 - __main__ - INFO - Feature cleaning completed: (3252, 128)
+2025-08-02 03:47:31,281 - __main__ - INFO - validation feature engineering completed: (3252, 30) → (3252, 128)
+2025-08-02 03:47:31,303 - __main__ - INFO - Saved validation engineered dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\validation_engineered.parquet
+2025-08-02 03:47:31,303 - __main__ - INFO - Engineering features for test split...
+2025-08-02 03:47:31,303 - __main__ - INFO - Creating humidity bins...
+2025-08-02 03:47:31,308 - __main__ - INFO - Created humidity bins: ['RH_low', 'RH_mid', 'RH_high']
+2025-08-02 03:47:31,309 - __main__ - INFO - Humidity distribution: {'RH_high': 1732, 'RH_mid': 1376, 'RH_low': 144}
+2025-08-02 03:47:31,309 - __main__ - INFO - Creating precipitation bins...
+2025-08-02 03:47:31,311 - __main__ - INFO - Created precipitation bins: ['rain_days_0_1mm', 'rain_days_1_10mm', 'rain_days_10_plus']
+2025-08-02 03:47:31,311 - __main__ - INFO - Precipitation distribution: {'unknown': 3252}
+2025-08-02 03:47:31,311 - __main__ - INFO - Creating socioeconomic bins...
+2025-08-02 03:47:31,315 - __main__ - INFO - GDP categories created with quantiles: [10725.37712665 15220.05022831]
+2025-08-02 03:47:31,318 - __main__ - INFO - Population categories created with quantiles: [295152. 758365.]
+2025-08-02 03:47:31,318 - __main__ - INFO - Nightlight categories created: ['rural', 'urban_low', 'urban_high']
+2025-08-02 03:47:31,321 - __main__ - INFO - Creating canopy bins...
+2025-08-02 03:47:31,323 - __main__ - INFO - Canopy categories: ['no_canopy', 'low_canopy', 'medium_canopy', 'high_canopy']
+2025-08-02 03:47:31,323 - __main__ - INFO - Canopy distribution: {'high_canopy': 2136, 'low_canopy': 576, 'medium_canopy': 420, 'no_canopy': 120}
+2025-08-02 03:47:31,323 - __main__ - INFO - Creating two-way interactions...
+2025-08-02 03:47:31,337 - __main__ - INFO - Created two-way interactions with dummy encoding
+2025-08-02 03:47:31,338 - __main__ - INFO - Cleaning and validating features...
+2025-08-02 03:47:31,377 - __main__ - INFO - Feature cleaning completed: (3252, 127)
+2025-08-02 03:47:31,377 - __main__ - INFO - test feature engineering completed: (3252, 30) → (3252, 127)
+2025-08-02 03:47:31,413 - __main__ - INFO - Saved test engineered dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\test_engineered.parquet
+2025-08-02 03:47:31,413 - __main__ - INFO - Creating feature summary...
+2025-08-02 03:47:31,415 - __main__ - INFO - Feature summary saved: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\feature_engineering_summary.json
+2025-08-02 03:47:31,415 - __main__ - INFO - Feature Engineering Summary:
+2025-08-02 03:47:31,415 - __main__ - INFO -   Total features: 146
+2025-08-02 03:47:31,415 - __main__ - INFO -   target_variables: 2 features
+2025-08-02 03:47:31,415 - __main__ - INFO -   climate_features: 67 features
+2025-08-02 03:47:31,415 - __main__ - INFO -   socioeconomic_features: 83 features
+2025-08-02 03:47:31,415 - __main__ - INFO -   canopy_features: 66 features
+2025-08-02 03:47:31,415 - __main__ - INFO -   temporal_features: 9 features
+2025-08-02 03:47:31,415 - __main__ - INFO -   interaction_features: 91 features
+2025-08-02 03:47:31,417 - __main__ - INFO -   policy_features: 1 features
+2025-08-02 03:47:31,417 - __main__ - INFO -   spatial_features: 33 features
+2025-08-02 03:47:31,417 - __main__ - INFO -   other_features: 8 features
+2025-08-02 03:47:31,417 - __main__ - INFO - Feature engineering completed for all splits!

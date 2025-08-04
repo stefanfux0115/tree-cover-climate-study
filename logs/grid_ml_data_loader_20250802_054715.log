@@ -1,0 +1,30 @@
+2025-08-02 05:47:15,350 - __main__ - INFO - Starting grid-level ML data preparation...
+2025-08-02 05:47:15,350 - __main__ - INFO - Loading integrated grid-level dataset...
+2025-08-02 05:47:22,661 - __main__ - INFO - Loaded integrated grid dataset: 17,544,723 rows, 47 columns
+2025-08-02 05:47:22,661 - __main__ - INFO - Analyzing dataset structure...
+2025-08-02 05:47:22,661 - __main__ - INFO - Dataset Structure:
+2025-08-02 05:47:22,661 - __main__ - INFO -   Total: 17,544,723 rows × 47 columns
+2025-08-02 05:47:22,662 - __main__ - INFO -   Temperature bins: 12
+2025-08-02 05:47:22,662 - __main__ - INFO -   Temperature interactions: 12
+2025-08-02 05:47:22,662 - __main__ - INFO -   Temperature derived: 0
+2025-08-02 05:47:22,761 - __main__ - INFO -   Climate variables: 4
+2025-08-02 05:47:22,761 - __main__ - INFO -   Socioeconomic variables: 3
+2025-08-02 05:47:22,761 - __main__ - INFO -   Canopy variables: 1
+2025-08-02 05:47:22,761 - __main__ - INFO - Validating data quality...
+2025-08-02 05:47:37,226 - __main__ - INFO - Data Quality Validation:
+2025-08-02 05:47:37,226 - __main__ - INFO -   Missing data columns: 17
+2025-08-02 05:47:37,226 - __main__ - INFO -   Temporal coverage: [2012, 2019]
+2025-08-02 05:47:37,226 - __main__ - INFO -   Spatial coverage: 348,806 grids
+2025-08-02 05:47:37,226 - __main__ - INFO -   Data quality issues: 1
+2025-08-02 05:47:37,234 - __main__ - INFO - Preparing data splits for ML analysis...
+2025-08-02 05:47:43,001 - __main__ - INFO - Data splits created:
+2025-08-02 05:47:52,793 - __main__ - INFO -   full: 17,544,723 rows (8872.1 MB)
+2025-08-02 05:47:58,927 - __main__ - INFO -   train: 12,109,326 rows (6351.7 MB)
+2025-08-02 05:48:00,246 - __main__ - INFO -   validation: 2,717,703 rows (1327.1 MB)
+2025-08-02 05:48:01,595 - __main__ - INFO -   test: 2,717,694 rows (1327.1 MB)
+2025-08-02 05:48:22,339 - __main__ - INFO - Saved full dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis_grid\full_dataset.parquet
+2025-08-02 05:48:36,746 - __main__ - INFO - Saved train dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis_grid\train_dataset.parquet
+2025-08-02 05:48:39,600 - __main__ - INFO - Saved validation dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis_grid\validation_dataset.parquet
+2025-08-02 05:48:42,359 - __main__ - INFO - Saved test dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis_grid\test_dataset.parquet
+2025-08-02 05:48:42,361 - __main__ - INFO - Saved metadata: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis_grid\grid_ml_dataset_metadata.json
+2025-08-02 05:48:42,361 - __main__ - INFO - Grid-level ML data preparation completed successfully!

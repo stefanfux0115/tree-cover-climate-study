@@ -1,0 +1,25 @@
+                                   model_high_humid_d.. model_low_humid_de..
+Dependent Var.:                             ln_elec_kwh          ln_elec_kwh
+                                                                            
+days_in_bin_25_30                      0.0032* (0.0014)   0.0077*** (0.0020)
+days_in_bin_30_35                      -0.0024 (0.0016)    0.0075** (0.0027)
+days_in_bin_35_40                      0.0075* (0.0033)      0.0012 (0.0043)
+days_in_bin_40_plus                     0.0341 (0.0519)      0.0047 (0.0174)
+canopy_share                           0.0018* (0.0008)     9.97e-6 (0.0010)
+log1p(population)                       0.0039 (0.0197)    -0.0334* (0.0165)
+log1p(nightlight)                    0.1911*** (0.0232)   0.2693*** (0.0204)
+days_in_bin_25_30 x canopy_share   -0.0002*** (2.38e-5) -0.0002*** (4.66e-5)
+days_in_bin_30_35 x canopy_share    -0.0001** (3.77e-5)  -0.0003*** (6.5e-5)
+days_in_bin_35_40 x canopy_share     -7.14e-5 (9.53e-5)    -0.0003* (0.0001)
+days_in_bin_40_plus x canopy_share     -0.0020 (0.0025)      0.0002 (0.0005)
+Fixed-Effects:                     -------------------- --------------------
+grid_id                                             Yes                  Yes
+year                                                Yes                  Yes
+month                                               Yes                  Yes
+__________________________________ ____________________ ____________________
+S.E. type                                Conley (100km)       Conley (100km)
+Observations                                  5,864,873            5,786,179
+R2                                              0.83482              0.79162
+Within R2                                       0.00578              0.00814
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

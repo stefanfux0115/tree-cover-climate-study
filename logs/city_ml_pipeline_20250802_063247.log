@@ -1,0 +1,20 @@
+2025-08-02 06:32:47,393 - __main__ - INFO - Starting comprehensive ML pipeline...
+2025-08-02 06:32:47,393 - __main__ - INFO - Loading engineered data and selected features...
+2025-08-02 06:32:47,428 - __main__ - INFO - Loaded train: 18,699 rows, 156 features
+2025-08-02 06:32:47,441 - __main__ - INFO - Loaded validation: 3,252 rows, 141 features
+2025-08-02 06:32:47,454 - __main__ - INFO - Loaded test: 3,252 rows, 141 features
+2025-08-02 06:32:47,454 - __main__ - INFO - Loaded 60 selected features
+2025-08-02 06:32:47,454 - __main__ - INFO - Preparing ML data...
+2025-08-02 06:32:47,471 - __main__ - ERROR - Error in ML pipeline: Cannot convert [['high_canopy_low_pop' 'high_canopy_low_pop' 'high_canopy_low_pop' ...
+  'high_canopy_low_pop' 'high_canopy_low_pop' 'high_canopy_low_pop']
+ ['low_pop_RH_mid' 'low_pop_RH_high' 'low_pop_RH_high' ...
+  'low_pop_RH_high' 'low_pop_RH_high' 'low_pop_RH_high']
+ ['low_pop' 'low_pop' 'low_pop' ... 'low_pop' 'low_pop' 'low_pop']
+ ...
+ ['low_gdp' 'low_gdp' 'low_gdp' ... 'medium_gdp' 'medium_gdp'
+  'medium_gdp']
+ ['high_canopy_urban_high' 'high_canopy_urban_low'
+  'high_canopy_urban_high' ... 'high_canopy_urban_high'
+  'high_canopy_urban_high' 'high_canopy_urban_high']
+ ['urban_high' 'urban_low' 'urban_high' ... 'urban_high' 'urban_high'
+  'urban_high']] to numeric

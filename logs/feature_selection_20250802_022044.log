@@ -1,0 +1,23 @@
+2025-08-02 02:20:44,591 - __main__ - INFO - Starting comprehensive feature selection...
+2025-08-02 02:20:44,591 - __main__ - INFO - Loading feature-engineered datasets...
+2025-08-02 02:20:48,058 - __main__ - INFO - Loaded train: 12,109,326 rows, 83 features
+2025-08-02 02:20:48,800 - __main__ - INFO - Loaded validation: 2,717,703 rows, 81 features
+2025-08-02 02:20:49,658 - __main__ - INFO - Loaded test: 2,717,694 rows, 81 features
+2025-08-02 02:20:49,658 - __main__ - INFO - Identifying feature groups...
+2025-08-02 02:20:49,658 - __main__ - INFO -   target: 2 features
+2025-08-02 02:20:49,659 - __main__ - INFO -   spatial: 7 features
+2025-08-02 02:20:49,659 - __main__ - INFO -   temporal: 3 features
+2025-08-02 02:20:49,758 - __main__ - INFO -   location: 3 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   temperature_bins: 12 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   temperature_interactions: 12 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   temperature_derived: 8 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   climate_raw: 4 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   climate_categorical: 6 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   socioeconomic_raw: 3 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   socioeconomic_categorical: 11 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   canopy: 5 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   canopy_categorical: 5 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   seasonal: 6 features
+2025-08-02 02:20:49,759 - __main__ - INFO -   interactions: 2 features
+2025-08-02 02:20:49,759 - __main__ - INFO - Preparing data for ML analysis...
+2025-08-02 02:20:54,197 - __main__ - ERROR - Error during feature selection: "['precipitation_rain_days_10_plus', 'precipitation_rain_days_1_10mm'] not in index"

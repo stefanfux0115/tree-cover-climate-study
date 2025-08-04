@@ -1,0 +1,6 @@
+2025-08-02 06:10:59,734 - __main__ - INFO - Starting comprehensive city-level feature selection pipeline...
+2025-08-02 06:10:59,734 - __main__ - INFO - Loading feature-engineered datasets...
+2025-08-02 06:10:59,734 - __main__ - WARNING - Dataset not found: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\train_engineered.parquet
+2025-08-02 06:10:59,734 - __main__ - WARNING - Dataset not found: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\validation_engineered.parquet
+2025-08-02 06:10:59,734 - __main__ - WARNING - Dataset not found: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\engineered\test_engineered.parquet
+2025-08-02 06:10:59,734 - __main__ - ERROR - Error in feature selection pipeline: 'train'

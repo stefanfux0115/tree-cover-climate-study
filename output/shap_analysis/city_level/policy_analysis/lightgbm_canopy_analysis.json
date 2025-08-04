@@ -1,0 +1,76 @@
+{
+  "model": "lightgbm",
+  "energy_savings_potential": {
+    "canopy_share": {
+      "avg_log_reduction": 0.018724971668681877,
+      "approx_pct_savings": 1.8901383331492383,
+      "samples_with_savings": 597,
+      "total_samples": 1000
+    },
+    "canopy_x_population": {
+      "avg_log_reduction": 0.005553474291443293,
+      "approx_pct_savings": 0.5568923415326887,
+      "samples_with_savings": 104,
+      "total_samples": 1000
+    },
+    "canopy_x_gdp_no_canopy_high_gdp": {
+      "avg_log_reduction": 0.002305656873501324,
+      "approx_pct_savings": 0.23083169443212093,
+      "samples_with_savings": 994,
+      "total_samples": 1000
+    },
+    "canopy_x_population_medium_canopy_low_pop": {
+      "avg_log_reduction": 0.4025105465941677,
+      "approx_pct_savings": 49.55746983611575,
+      "samples_with_savings": 11,
+      "total_samples": 1000
+    },
+    "canopy_x_gdp_high_canopy_low_gdp": {
+      "avg_log_reduction": 0.0052175441395702704,
+      "approx_pct_savings": 0.5231179226569571,
+      "samples_with_savings": 251,
+      "total_samples": 1000
+    },
+    "days_in_bin_25_30_x_canopy": {
+      "avg_log_reduction": 4.537977497297314e-05,
+      "approx_pct_savings": 0.0045380804650552165,
+      "samples_with_savings": 728,
+      "total_samples": 1000
+    },
+    "canopy_x_population_low_canopy_medium_pop": {
+      "avg_log_reduction": 0.0008514731766799943,
+      "approx_pct_savings": 0.08518357828743994,
+      "samples_with_savings": 923,
+      "total_samples": 1000
+    },
+    "canopy_x_humidity_no_canopy_RH_mid": {
+      "avg_log_reduction": 0.002699846445835178,
+      "approx_pct_savings": 0.27034943134061074,
+      "samples_with_savings": 966,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_medium_canopy_urban_high": {
+      "avg_log_reduction": 0.000670466061180797,
+      "approx_pct_savings": 0.06706908737905692,
+      "samples_with_savings": 976,
+      "total_samples": 1000
+    },
+    "days_in_bin_5_10_x_canopy": {
+      "avg_log_reduction": 0.01830552030627429,
+      "approx_pct_savings": 1.8474093378036294,
+      "samples_with_savings": 430,
+      "total_samples": 1000
+    },
+    "canopy_x_nightlight_medium_canopy_urban_low": {
+      "avg_log_reduction": 0.02156243582534834,
+      "approx_pct_savings": 2.1796585058949436,
+      "samples_with_savings": 64,
+      "total_samples": 1000
+    }
+  },
+  "summary_statistics": {
+    "total_canopy_features": 22,
+    "avg_effect_across_features": -0.0003369351027530529,
+    "features_with_energy_savings": 11
+  }
+}

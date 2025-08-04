@@ -1,0 +1,27 @@
+2025-08-02 01:10:15,159 - download_utils - INFO - ============================================================
+2025-08-02 01:10:15,161 - download_utils - INFO - China Urban Analysis Data Download Pipeline
+2025-08-02 01:10:15,161 - download_utils - INFO - ============================================================
+2025-08-02 01:10:15,161 - download_utils - INFO - Target years: 2012-2019 (8 years)
+2025-08-02 01:10:15,161 - download_utils - INFO - Data sources to download:
+2025-08-02 01:10:15,161 - download_utils - INFO -   - ERA5 temperature data
+2025-08-02 01:10:15,161 - download_utils - INFO - Running pre-flight checks...
+2025-08-02 01:10:15,161 - root - INFO - Python version check passed: 3.12
+2025-08-02 01:10:15,248 - root - INFO - Disk space check passed. Available: 1006.50GB
+2025-08-02 01:10:15,248 - download_utils - INFO - All pre-flight checks passed
+2025-08-02 01:10:15,248 - download_utils - INFO - Running validation only mode for ERA5...
+2025-08-02 01:10:15,248 - download_utils - INFO - Starting validation of ERA5 files for years 2012-2019
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2012.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2013.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2014.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2015.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2016.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2017.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2018.nc
+2025-08-02 01:10:15,248 - download_utils - WARNING - File not found: t2m_2019.nc
+2025-08-02 01:10:15,248 - download_utils - INFO - 
+==================================================
+2025-08-02 01:10:15,248 - download_utils - INFO - VALIDATION SUMMARY
+2025-08-02 01:10:15,248 - download_utils - INFO - ==================================================
+2025-08-02 01:10:15,248 - download_utils - INFO - Files found: 0/8
+2025-08-02 01:10:15,248 - download_utils - INFO - Files valid: 0/0
+2025-08-02 01:10:15,248 - download_utils - WARNING - Missing years: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]

@@ -1,0 +1,38 @@
+2025-08-02 03:43:02,952 - __main__ - INFO - Starting comprehensive city-level feature selection pipeline...
+2025-08-02 03:43:02,952 - __main__ - INFO - Loading feature-engineered datasets...
+2025-08-02 03:43:02,978 - __main__ - INFO - Loaded train: 18,699 rows, 65 features
+2025-08-02 03:43:02,987 - __main__ - INFO - Loaded validation: 3,252 rows, 65 features
+2025-08-02 03:43:02,998 - __main__ - INFO - Loaded test: 3,252 rows, 65 features
+2025-08-02 03:43:02,998 - __main__ - INFO - Identifying feature groups...
+2025-08-02 03:43:02,998 - __main__ - INFO -   target: 2 features
+2025-08-02 03:43:02,998 - __main__ - INFO -   spatial: 2 features
+2025-08-02 03:43:02,998 - __main__ - INFO -   temporal: 3 features
+2025-08-02 03:43:02,998 - __main__ - INFO -   location: 3 features
+2025-08-02 03:43:02,998 - __main__ - INFO -   climate_raw: 3 features
+2025-08-02 03:43:02,998 - __main__ - INFO -   climate_categorical: 5 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   socioeconomic_raw: 3 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   socioeconomic_derived: 5 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   socioeconomic_categorical: 3 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   canopy_raw: 1 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   canopy_derived: 4 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   temporal_derived: 7 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   policy_features: 6 features
+2025-08-02 03:43:02,999 - __main__ - INFO -   interactions: 8 features
+2025-08-02 03:43:02,999 - __main__ - INFO - Preparing data for ML analysis...
+2025-08-02 03:43:02,999 - __main__ - INFO - Found 57 common features between train and validation
+2025-08-02 03:43:03,111 - __main__ - INFO - Prepared features: 57 columns
+2025-08-02 03:43:03,111 - __main__ - INFO - Training samples: 18,699
+2025-08-02 03:43:03,111 - __main__ - INFO - Validation samples: 3,252
+2025-08-02 03:43:03,111 - __main__ - INFO - Creating feature distribution visualizations...
+2025-08-02 03:43:06,159 - __main__ - INFO - Feature distribution visualizations completed
+2025-08-02 03:43:06,159 - __main__ - INFO - Analyzing feature correlations...
+2025-08-02 03:43:07,340 - __main__ - INFO - Correlation analysis completed
+2025-08-02 03:43:07,340 - __main__ - INFO - Performing feature importance analysis...
+2025-08-02 03:43:16,855 - __main__ - INFO - Feature importance analysis completed
+2025-08-02 03:43:16,871 - __main__ - INFO - Creating feature importance visualizations...
+2025-08-02 03:43:18,852 - __main__ - INFO - Feature importance visualizations completed
+2025-08-02 03:43:18,852 - __main__ - INFO - Selecting final feature set...
+2025-08-02 03:43:18,854 - __main__ - INFO - Selected 30 features using 95.0% cumulative importance threshold
+2025-08-02 03:43:18,854 - __main__ - INFO - Saving final results...
+2025-08-02 03:43:18,861 - __main__ - INFO - Final results saved to G:\research\junmao-tang\code-test\code-space\output\feature_selection\city_level\final_selection
+2025-08-02 03:43:18,861 - __main__ - INFO - City-level feature selection pipeline completed successfully!

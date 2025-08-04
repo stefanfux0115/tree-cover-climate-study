@@ -1,0 +1,30 @@
+2025-08-01 02:52:58,603 - scripts.download_utils - INFO - ============================================================
+2025-08-01 02:52:58,603 - scripts.download_utils - INFO - China Urban Analysis Data Download Pipeline
+2025-08-01 02:52:58,604 - scripts.download_utils - INFO - ============================================================
+2025-08-01 02:52:58,604 - scripts.download_utils - INFO - Target years: 2012-2019 (8 years)
+2025-08-01 02:52:58,604 - scripts.download_utils - INFO - Data sources to download:
+2025-08-01 02:52:58,604 - scripts.download_utils - INFO -   - Tree cover data from Zenodo
+2025-08-01 02:52:58,604 - scripts.download_utils - INFO - Running pre-flight checks...
+2025-08-01 02:52:58,605 - root - INFO - Python version check passed: 3.12
+2025-08-01 02:52:58,605 - root - INFO - Disk space check passed. Available: 1340.99GB
+2025-08-01 02:52:58,605 - scripts.download_utils - INFO - All pre-flight checks passed
+2025-08-01 02:53:04,451 - scripts.download_utils - INFO - 
+Estimated tree cover download: ~53.3GB
+2025-08-01 02:53:04,451 - scripts.download_utils - INFO - Starting tree cover downloads in 5 seconds... (Press Ctrl+C to cancel)
+2025-08-01 02:53:09,452 - scripts.download_zenodo - INFO - 
+============================================================
+2025-08-01 02:53:09,452 - scripts.download_zenodo - INFO - Downloading Tree Cover Data from Zenodo
+2025-08-01 02:53:09,452 - scripts.download_zenodo - INFO - ============================================================
+2025-08-01 02:53:09,452 - scripts.download_zenodo - INFO - Target years: 2012-2019 (8 years)
+2025-08-01 02:53:09,452 - scripts.download_zenodo - INFO - Output directory: data\raw\tree_cover_zenodo
+2025-08-01 02:53:11,051 - scripts.download_zenodo - INFO - 
+Record 11047923 - CATCD: The First 30m China Annual Tree Cover Dataset from 1985 to 2023 (Part ¢õ: 2013-2018)
+2025-08-01 02:53:11,051 - scripts.download_zenodo - INFO - Total files: 7
+2025-08-01 02:53:11,051 - scripts.download_zenodo - INFO - Files matching years [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]: 6
+2025-08-01 02:53:11,051 - scripts.download_zenodo - INFO -   Downloading CATCD_2017_v01.tif (6827.8 MB)...
+2025-08-01 03:25:57,955 - scripts.download_zenodo - INFO -     Downloaded successfully
+2025-08-01 03:25:57,970 - scripts.download_zenodo - INFO -   Downloading CATCD_2014_v01.tif (6802.3 MB)...
+2025-08-01 03:31:57,073 - scripts.download_zenodo - ERROR -     Error downloading CATCD_2014_v01.tif: ('Connection broken: IncompleteRead(16789316 bytes read, 7115897969 more expected)', IncompleteRead(16789316 bytes read, 7115897969 more expected))
+2025-08-01 03:31:57,077 - scripts.download_zenodo - INFO -   Downloading CATCD_2016_v01.tif (6815.6 MB)...
+2025-08-01 03:38:53,215 - scripts.download_zenodo - ERROR -     Error downloading CATCD_2016_v01.tif: ('Connection broken: IncompleteRead(8193984 bytes read, 7138478734 more expected)', IncompleteRead(8193984 bytes read, 7138478734 more expected))
+2025-08-01 03:38:53,232 - scripts.download_zenodo - INFO -   Downloading CATCD_2013_v01.tif (6799.5 MB)...

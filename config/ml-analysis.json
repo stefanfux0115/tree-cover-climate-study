@@ -1,0 +1,204 @@
+{
+    "data_split": {
+        "train_years": [2012, 2013, 2014, 2015, 2016, 2017],
+        "validation_years": [2018],
+        "test_years": [2019],
+        "cv_strategy": "city_wise_blocking",
+        "cv_folds": 5
+    },
+    "models": {
+        "linear_regression": {
+            "name": "Linear/Ridge Regression",
+            "type": "linear",
+            "gpu_support": false,
+            "hyperparameters": {
+                "alpha": [0.1, 1.0, 10.0, 100.0],
+                "fit_intercept": [true, false],
+                "normalize": [true, false]
+            },
+            "preprocessing": "z_score_standardization"
+        },
+        "svr": {
+            "name": "Support Vector Regression",
+            "type": "kernel",
+            "gpu_support": false,
+            "hyperparameters": {
+                "C": [0.1, 1.0, 10.0, 100.0],
+                "kernel": ["rbf", "poly"],
+                "gamma": ["scale", "auto", 0.001, 0.01, 0.1],
+                "epsilon": [0.01, 0.1, 0.2]
+            },
+            "preprocessing": "z_score_standardization"
+        },
+        "random_forest": {
+            "name": "Random Forest",
+            "type": "tree_ensemble",
+            "gpu_support": false,
+            "hyperparameters": {
+                "n_estimators": [100, 200, 300],
+                "max_depth": [10, 20, 30, null],
+                "min_samples_split": [2, 5, 10],
+                "min_samples_leaf": [1, 2, 4],
+                "max_features": ["sqrt", "log2", null]
+            },
+            "preprocessing": "none"
+        },
+        "lightgbm": {
+            "name": "LightGBM",
+            "type": "gradient_boosting",
+            "gpu_support": true,
+            "primary_shap": true,
+            "hyperparameters": {
+                "objective": ["regression"],
+                "boosting_type": ["gbdt"],
+                "num_leaves": [31, 50, 100],
+                "learning_rate": [0.05, 0.1, 0.2],
+                "feature_fraction": [0.8, 0.9, 1.0],
+                "bagging_fraction": [0.8, 0.9, 1.0],
+                "bagging_freq": [5],
+                "min_child_samples": [20, 50, 100],
+                "reg_alpha": [0.0, 0.1, 1.0],
+                "reg_lambda": [0.0, 0.1, 1.0]
+            },
+            "preprocessing": "none"
+        },
+        "xgboost": {
+            "name": "XGBoost",
+            "type": "gradient_boosting",
+            "gpu_support": true,
+            "hyperparameters": {
+                "objective": ["reg:squarederror"],
+                "n_estimators": [100, 200, 300],
+                "max_depth": [3, 6, 10],
+                "learning_rate": [0.05, 0.1, 0.2],
+                "subsample": [0.8, 0.9, 1.0],
+                "colsample_bytree": [0.8, 0.9, 1.0],
+                "reg_alpha": [0.0, 0.1, 1.0],
+                "reg_lambda": [0.0, 0.1, 1.0]
+            },
+            "preprocessing": "none"
+        },
+        "catboost": {
+            "name": "CatBoost",
+            "type": "gradient_boosting",
+            "gpu_support": true,
+            "hyperparameters": {
+                "objective": ["RMSE"],
+                "iterations": [500, 1000, 1500],
+                "depth": [4, 6, 8],
+                "learning_rate": [0.05, 0.1, 0.2],
+                "l2_leaf_reg": [1, 3, 5, 7, 9],
+                "bootstrap_type": ["Bayesian", "Bernoulli", "MVS"]
+            },
+            "preprocessing": "none"
+        }
+    },
+    "feature_engineering": {
+        "interaction_terms": {
+            "temperature_canopy": {
+                "description": "Temperature bins × canopy coverage",
+                "variables": [
+                    "days_below_0 × canopy_share",
+                    "days_0_5 × canopy_share",
+                    "days_5_10 × canopy_share",
+                    "days_10_15 × canopy_share",
+                    "days_15_20 × canopy_share",
+                    "days_20_25 × canopy_share",
+                    "days_25_30 × canopy_share",
+                    "days_30_35 × canopy_share",
+                    "days_35_40 × canopy_share",
+                    "days_40_plus × canopy_share"
+                ]
+            },
+            "humidity_temperature_canopy": {
+                "description": "Key temperature-humidity-canopy interactions",
+                "variables": [
+                    "days_30_35 × RH_low × canopy_share",
+                    "days_30_35 × RH_high × canopy_share",
+                    "days_35_40 × RH_low × canopy_share",
+                    "days_35_40 × RH_high × canopy_share"
+                ]
+            },
+            "socioeconomic_canopy": {
+                "description": "Socioeconomic × canopy interactions",
+                "variables": [
+                    "canopy_share × gdp_log",
+                    "canopy_share × population_log",
+                    "canopy_share × urban_dummy",
+                    "canopy_share × suburban_dummy"
+                ]
+            },
+            "climate_socioeconomic": {
+                "description": "Climate × socioeconomic interactions",
+                "variables": [
+                    "days_35_40 × gdp_log",
+                    "days_35_40 × population_log",
+                    "days_30_35 × gdp_log",
+                    "RH_high × gdp_log",
+                    "RH_low × population_log"
+                ]
+            }
+        },
+        "time_encoding": {
+            "month_sin": "sin(2π * month / 12)",
+            "month_cos": "cos(2π * month / 12)"
+        },
+        "socioeconomic_transforms": {
+            "gdp_log": "log(gdp_per_capita)",
+            "population_log": "log(population + 1)"
+        }
+    },
+    "evaluation_metrics": [
+        "r2_score",
+        "rmse",
+        "mae",
+        "mse"
+    ],
+    "shap_analysis": {
+        "primary_model": "lightgbm",
+        "feature_selection_threshold": 0.95,
+        "key_dependence_plots": [
+            "canopy_share",
+            "days_35_40 × canopy_share",
+            "days_30_35 × RH_low × canopy_share",
+            "canopy_share × gdp_log",
+            "canopy_share × population_log",
+            "days_35_40 × gdp_log",
+            "days_35_40 × population_log",
+            "RH_high × gdp_log"
+        ],
+        "policy_quantification": {
+            "canopy_increase": 10,
+            "climate_scenarios": [
+                "days_35_40_dry_heat",
+                "days_35_40_wet_heat",
+                "days_30_35_dry_heat",
+                "days_30_35_wet_heat"
+            ],
+            "socioeconomic_strata": [
+                "gdp_high_vs_low",
+                "population_urban_vs_rural"
+            ]
+        }
+    },
+    "optimization": {
+        "hyperparameter_optimization": {
+            "method": "optuna",
+            "n_trials": 100,
+            "direction": "minimize",
+            "metric": "rmse"
+        },
+        "early_stopping": {
+            "monitor": "validation_rmse",
+            "patience": 50,
+            "min_delta": 0.001
+        }
+    },
+    "output_settings": {
+        "save_models": true,
+        "save_predictions": true,
+        "save_shap_values": true,
+        "generate_plots": true,
+        "statistical_significance": 0.05
+    }
+}

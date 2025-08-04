@@ -1,0 +1,19 @@
+{
+  "model_name": "xgboost",
+  "hyperparameters": {
+    "colsample_bytree": 0.9,
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 200,
+    "subsample": 0.9
+  },
+  "performance_metrics": {
+    "train_r2": 0.9002147964553864,
+    "validation_r2": 0.16899778195469872,
+    "train_rmse": 0.37980352134174244,
+    "validation_rmse": 1.115026393903147,
+    "train_mae": 0.29479256032368945,
+    "validation_mae": 0.9741211531951021,
+    "cv_rmse": 0.6513177257659957
+  }
+}

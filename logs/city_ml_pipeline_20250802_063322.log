@@ -1,0 +1,29 @@
+2025-08-02 06:33:22,268 - __main__ - INFO - Starting comprehensive ML pipeline...
+2025-08-02 06:33:22,268 - __main__ - INFO - Loading engineered data and selected features...
+2025-08-02 06:33:22,297 - __main__ - INFO - Loaded train: 18,699 rows, 156 features
+2025-08-02 06:33:22,310 - __main__ - INFO - Loaded validation: 3,252 rows, 141 features
+2025-08-02 06:33:22,322 - __main__ - INFO - Loaded test: 3,252 rows, 141 features
+2025-08-02 06:33:22,322 - __main__ - INFO - Loaded 60 selected features
+2025-08-02 06:33:22,322 - __main__ - INFO - Preparing ML data...
+2025-08-02 06:33:22,322 - __main__ - INFO - Creating encoder for categorical feature: canopy_x_population
+2025-08-02 06:33:22,426 - __main__ - INFO - Creating encoder for categorical feature: population_x_humidity
+2025-08-02 06:33:22,426 - __main__ - INFO - Creating encoder for categorical feature: population_category
+2025-08-02 06:33:22,430 - __main__ - INFO - Creating encoder for categorical feature: gdp_x_humidity
+2025-08-02 06:33:22,430 - __main__ - INFO - Creating encoder for categorical feature: gdp_x_precipitation
+2025-08-02 06:33:22,430 - __main__ - INFO - Creating encoder for categorical feature: gdp_category
+2025-08-02 06:33:22,435 - __main__ - INFO - Creating encoder for categorical feature: canopy_x_nightlight
+2025-08-02 06:33:22,435 - __main__ - INFO - Creating encoder for categorical feature: nightlight_category
+2025-08-02 06:33:22,514 - __main__ - INFO - Prepared train: 18,699 samples, 60 features
+2025-08-02 06:33:22,533 - __main__ - INFO - Prepared validation: 3,252 samples, 60 features
+2025-08-02 06:33:22,552 - __main__ - INFO - Prepared test: 3,252 samples, 60 features
+2025-08-02 06:33:22,552 - __main__ - INFO - Training all models...
+2025-08-02 06:33:22,552 - __main__ - INFO - Defining ML models...
+2025-08-02 06:33:22,552 - __main__ - INFO - Training ridge...
+2025-08-02 06:33:26,522 - __main__ - INFO - ridge - Train R²: 0.6468, Val R²: 0.0771, CV RMSE: 0.7522
+2025-08-02 06:33:26,624 - __main__ - INFO - Training lasso...
+2025-08-02 06:33:42,909 - __main__ - INFO - lasso - Train R²: 0.6443, Val R²: 0.1338, CV RMSE: 0.7537
+2025-08-02 06:33:42,913 - __main__ - INFO - Training random_forest...
+2025-08-02 06:36:16,651 - __main__ - ERROR - Error training random_forest: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+
+Detailed tracebacks of the workers should have been printed to stderr in the executor process if faulthandler was not disabled.
+2025-08-02 06:36:16,651 - __main__ - INFO - Training lightgbm...

@@ -1,0 +1,155 @@
+# Large Data Files (but keep folder structure)
+# Raw data files - exclude contents but keep folders
+data/raw/*
+!data/raw/.gitkeep
+
+# Processed data files - exclude contents but keep folders  
+data/processed/*
+!data/processed/.gitkeep
+
+# Shapefile components - exclude from data/shp folder
+data/shp/*.shp
+data/shp/*.shx
+data/shp/*.dbf
+data/shp/*.prj
+data/shp/*.sbn
+data/shp/*.sbx
+data/shp/*.cpg
+data/shp/*.CPG
+data/shp/*.shp.xml
+
+# Output - keep all files and structure
+# (Output folder contents will be tracked)
+
+# Allow logs to be tracked in git
+# (Logs folder and contents will be visible)
+
+# Allow r-analysis figures and results to be tracked
+# (Remove any exclusions for r-analysis/figs and r-analysis/results)
+
+# Presentation folder (contains large PDFs and images)
+presentation/
+
+# R-analysis - keep all files and structure except large workspace files
+# (R-analysis folder contents will be tracked)
+r-analysis/*.RData
+
+# Python Cache (including scripts folder)
+__pycache__/
+scripts/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model files (large)
+*.joblib
+*.pkl
+*.h5
+*.model
+
+# Large image files (but allow in output/ and r-analysis/)
+*.tif
+*.tiff
+!output/**/*.png
+!output/**/*.jpg
+!output/**/*.jpeg
+!r-analysis/**/*.png
+!r-analysis/**/*.jpg
+!r-analysis/**/*.jpeg
+# Exclude images elsewhere
+data/**/*.png
+data/**/*.jpg
+data/**/*.jpeg
+presentation/**/*.png
+presentation/**/*.jpg
+presentation/**/*.jpeg
+
+# Compressed files
+*.zip
+*.rar
+*.tar.gz
+
+# NetCDF files
+*.nc
+
+# Document files
+*.pdf
+*.doc
+*.docx
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Claude configuration
+.claude/

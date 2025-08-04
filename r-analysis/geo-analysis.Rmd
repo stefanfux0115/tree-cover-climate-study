@@ -1,0 +1,1143 @@
+---
+title: "geo-analysis"
+output: html_document
+date: "2025-08-01"
+---
+
+# Package loading
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+library(fixest)
+library(sf)
+library(terra)
+library(fst)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(arrow)
+library(car)
+library(glmnet)
+library(caTools)
+library(caret)
+library(corrplot)
+library(stargazer)
+library(ggridges)
+library(viridis)
+
+#Function Loading
+correlation_matrix <- function(df, 
+                               type = "pearson",
+                               digits = 3, 
+                               decimal.mark = ".",
+                               use = "all", 
+                               show_significance = TRUE, 
+                               replace_diagonal = FALSE, 
+                               replacement = ""){
+  
+  # check arguments
+  stopifnot({
+    is.numeric(digits)
+    digits >= 0
+    use %in% c("all", "upper", "lower")
+    is.logical(replace_diagonal)
+    is.logical(show_significance)
+    is.character(replacement)
+  })
+  require(Hmisc)
+  
+  # retain only numeric and boolean columns
+  isNumericOrBoolean <- vapply(df, function(x) is.numeric(x) | is.logical(x), logical(1))
+  if (any(!isNumericOrBoolean)) {
+    cat(
+      "Dropping non-numeric/-boolean column(s):",
+      paste(names(isNumericOrBoolean)[!isNumericOrBoolean], collapse = ", "), "\n\n"
+    )
+  }
+  # <<< FIX: subset columns, not rows >>>
+  if ("data.table" %in% class(df)) {
+    df <- df[, isNumericOrBoolean, with = FALSE]
+  } else {
+    df <- df[, isNumericOrBoolean, drop = FALSE]
+  }
+  
+  x <- as.matrix(df)
+  corr <- Hmisc::rcorr(x, type = type)
+  R <- corr$r
+  p <- corr$P
+  
+  Rfmt <- formatC(R, format = "f", digits = digits, decimal.mark = decimal.mark)
+  if (any(!is.na(R) & R < 0)) {
+    Rfmt <- ifelse(!is.na(R) & R > 0, paste0(" ", Rfmt), Rfmt)
+  }
+  
+  if (show_significance) {
+    stars <- ifelse(is.na(p), "",
+                    ifelse(p < .001, "***",
+                           ifelse(p < .01, "**",
+                                  ifelse(p < .05, "*", ""))))
+    Rfmt <- paste0(Rfmt, stars)
+  }
+  
+  max_len <- max(nchar(Rfmt))
+  Rfmt <- vapply(Rfmt, function(x) {
+    paste0(x, strrep(" ", max_len - nchar(x)))
+  }, FUN.VALUE = character(1))
+  
+  Rnew <- matrix(Rfmt, ncol = ncol(x))
+  rownames(Rnew) <- colnames(Rnew) <- colnames(x)
+  
+  if (use == "upper") {
+    Rnew[lower.tri(Rnew, diag = replace_diagonal)] <- replacement
+  } else if (use == "lower") {
+    Rnew[upper.tri(Rnew, diag = replace_diagonal)] <- replacement
+  } else if (replace_diagonal) {
+    diag(Rnew) <- replacement
+  }
+  
+  return(Rnew)
+}
+
+replace_outliers <- function(x) {
+  # Check if the column is numeric
+  if (is.numeric(x)) {
+    q1 <- quantile(x, 0.25)
+    q3 <- quantile(x, 0.75)
+    iqr <- q3 - q1
+    x[x < (q1 - 1.5 * iqr) | x > (q3 + 1.5 * iqr)] <- median(x)
+  }
+  return(x)
+}
+
+
+## create df for explaner fucntion
+create_df_from_explainers <- function(x, ..., loss_function, ptlabel = "name") {
+  # extract residuals
+  # combine into a single object
+  if (length(list(...)) == 0) {
+    # if single explainer
+    df <- x$residuals
+  } else {
+    # if multiple explainers
+    args <- lapply(list(...),
+                   function(tmp) tmp$residuals)
+    args[["x"]] <- x$residuals
+    df <- do.call(combine_explainers, rev(args))
+  }
+
+  df$label <- reorder(df$label, df$diff, loss_function)
+  if (ptlabel == "name") {
+    df$name <- NULL
+    df$name <- rownames(df)
+  }
+  
+  return(df)
+}
+
+
+
+combine_explainers <- function(x, ...) {
+  df <- x
+  df$label <- as.character(df$label)
+  all_labels <- unique(df$label)
+  class(df) <- "data.frame"
+  df$name <- seq.int(nrow(df))
+  dfl <- list(...)
+  if (length(dfl) > 0) {
+    for (resp in dfl) {
+      class(resp) <- "data.frame"
+      resp$label <- as.character(resp$label)
+      resp$name <- seq.int(nrow(resp))
+
+      #if labels are duplicated, fix it
+      if (any(unique(resp$label) %in% all_labels)) {
+        old_labels_corrected <- unique(resp$label)
+        all_labels <- make.unique(c(all_labels, old_labels_corrected))
+        all_labels_corrected <- tail(all_labels, length(old_labels_corrected))
+        for (i in seq_along(old_labels_corrected)) {
+          resp[resp[,"label"] == old_labels_corrected[i], "label"] <- all_labels_corrected[i]
+         }
+      }
+      all_labels <- c(all_labels, unique(resp$label))
+      df <- rbind(df, resp)
+    }
+  }
+  df
+}
+
+loss_function = function(x) sqrt(mean(x^2))
+```
+
+
+# data loading
+```{r}
+# Load your panel data
+cor_data <- read_parquet("G:/research/junmao-tang/code-test/code-space/data/processed/grid_level/integrated/final\\grid_month_panel.parquet")
+setDT(cor_data)
+
+# Check data structure
+dim(cor_data)
+names(cor_data)
+
+# Load your panel data
+cor_data_city <- read_csv("G:/research/junmao-tang/code-test/code-space/data/processed/city_level/integrated/final/city_month_panel.csv")
+setDT(cor_data_city)
+
+# Check data structure
+dim(cor_data_city)
+names(cor_data_city)
+```
+
+
+# data mutation
+```{r}
+
+# city data
+engineered_cor_data_city <- cor_data_city %>%
+  mutate(
+    humidity_category = case_when(
+      rhu < 40 ~ "dry",
+      rhu >= 40 & rhu < 70 ~ "moderate",
+      rhu >= 70 ~ "humid",
+      TRUE ~ "unknown"
+    ),
+    precipitation_category = case_when(
+      prec < 25 ~ "dry",
+      prec >= 25 & prec < 75 ~ "light",
+      prec >= 75 & prec < 150 ~ "moderate",
+      prec >= 150 ~ "heavy",
+      TRUE ~ "unknown"
+    ),
+    canopy_category = case_when(
+      canopy_share < 0.1 ~ "very_low_canopy",
+      canopy_share >= 0.1 & canopy_share < 0.3 ~ "low_canopy",
+      canopy_share >= 0.3 & canopy_share < 0.6~ "medium_canopy",
+      canopy_share >= 0.6 ~ "high_canopy",
+      TRUE ~ "unknown"
+    ),1
+  ) %>%
+  
+  # --- Create Socioeconomic Bins (using quantiles) ---
+  mutate(
+    gdp_category = cut(gdp_per_capita, 
+                       breaks = quantile(gdp_per_capita, probs = c(0, 0.33, 0.67, 1), na.rm = TRUE),
+                       labels = c("low_gdp", "medium_gdp", "high_gdp"),
+                       include.lowest = TRUE),
+    population_category = cut(population,
+                              breaks = quantile(population, probs = c(0, 0.33, 0.67, 1), na.rm = TRUE),
+                              labels = c("low_pop", "medium_pop", "high_pop"),
+                              include.lowest = TRUE)
+  ) %>%
+
+  # --- Create Temporal Features ---
+  mutate(
+    season = case_when(
+      month %in% c(12, 1, 2) ~ "winter",
+      month %in% c(3, 4, 5) ~ "spring",
+      month %in% c(6, 7, 8) ~ "summer",
+      month %in% c(9, 10, 11) ~ "autumn"
+    ),
+    ln_elec_kwh = log(elec_kwh + 1) # Log transformation for electricity consumption
+  ) #%>%
+  
+  # --- Create Interaction Terms ---
+  #mutate(
+    #canopy_x_humidity = paste(canopy_category, humidity_category, sep = "_"),
+    #gdp_x_humidity = paste(gdp_category, humidity_category, sep = "_")
+  #)
+
+
+# Create dummy variables for all categorical features
+engineered_cor_data_city <- fastDummies::dummy_cols(
+  engineered_cor_data_city,
+  select_columns = c("humidity_category", "precipitation_category", "gdp_category","canopy_category", 
+                     "population_category", "season"),
+  remove_first_dummy = TRUE,
+  remove_selected_columns = TRUE
+)
+
+
+# Check data structure
+dim(engineered_cor_data_city)
+names(engineered_cor_data_city)
+
+# gridlevel data
+engineered_cor_data <- cor_data %>%
+  mutate(
+    humidity_category = case_when(
+      rhu < 40 ~ "dry",
+      rhu >= 40 & rhu < 70 ~ "moderate",
+      rhu >= 70 ~ "humid",
+      TRUE ~ "unknown"
+    ),
+    precipitation_category = case_when(
+      prec < 25 ~ "dry",
+      prec >= 25 & prec < 75 ~ "light",
+      prec >= 75 & prec < 150 ~ "moderate",
+      prec >= 150 ~ "heavy",
+      TRUE ~ "unknown"
+    ),
+    canopy_category = case_when(
+      canopy_share < 0.1 ~ "very_low_canopy",
+      canopy_share >= 0.1 & canopy_share < 0.3 ~ "low_canopy",
+      canopy_share >= 0.3 & canopy_share < 0.6~ "medium_canopy",
+      canopy_share >= 0.6 ~ "high_canopy",
+      TRUE ~ "unknown"
+    ),1
+  ) %>%
+  
+  # --- Create Socioeconomic Bins (using quantiles) ---
+  mutate(
+    gdp_category = cut(gdp_per_capita, 
+                       breaks = quantile(gdp_per_capita, probs = c(0, 0.33, 0.67, 1), na.rm = TRUE),
+                       labels = c("low_gdp", "medium_gdp", "high_gdp"),
+                       include.lowest = TRUE),
+    population_category = cut(population,
+                              breaks = quantile(population, probs = c(0, 0.33, 0.67, 1), na.rm = TRUE),
+                              labels = c("low_pop", "medium_pop", "high_pop"),
+                              include.lowest = TRUE)
+  ) %>%
+
+  # --- Create Temporal Features ---
+  mutate(
+    season = case_when(
+      month %in% c(12, 1, 2) ~ "winter",
+      month %in% c(3, 4, 5) ~ "spring",
+      month %in% c(6, 7, 8) ~ "summer",
+      month %in% c(9, 10, 11) ~ "autumn"
+    )
+  ) #%>%
+  
+  # --- Create Interaction Terms ---
+  #mutate(
+   # canopy_x_humidity = paste(canopy_category, humidity_category, sep = "_"),
+    #gdp_x_humidity = paste(gdp_category, humidity_category, sep = "_")
+  #)
+
+
+# Create dummy variables for all categorical features
+engineered_cor_data <- fastDummies::dummy_cols(
+  engineered_cor_data,
+  select_columns = c("humidity_category", "precipitation_category", "gdp_category","canopy_category", 
+                     "population_category", "season"),
+  remove_first_dummy = TRUE, # To avoid multicollinearity
+  remove_selected_columns = TRUE
+)
+
+
+# Check data structure
+dim(engineered_cor_data)
+names(engineered_cor_data)
+
+
+```
+
+# grid level
+
+## exploratory data analysis
+### summary-stats
+
+```{r}
+
+sum_data <- engineered_cor_data[,c(7,12,16:37,37:47,49:65)]
+
+stargazer(sum_data,
+          type = "html",
+          out = "docs/summaryStat_grid.doc",
+          model.names = T,
+          digits = 4,
+          font.size = "tiny",
+          column.sep.width = "1pt",
+          header = FALSE,
+          no.space = TRUE,
+          summary.stat = c("n",
+                           "max",
+                           "min",
+                           "mean",
+                           "median",
+                           "p25",
+                           "p75",
+                           "sd"
+                           ))
+```
+
+### Key variable distibrution
+
+```{r}
+
+set.seed(42)
+
+engineered_cor_data_sample <- engineered_cor_data %>%
+  sample_frac(0.2)
+
+vars <- c(
+  "ln_elec_kwh",
+  "rhu",
+  "prec",
+  "pres",
+  "wind",
+  "canopy_share",
+  "days_in_bin_below_neg10",
+  "days_in_bin_neg10_neg5",
+  "days_in_bin_neg5_0",
+  "days_in_bin_0_5",
+  "days_in_bin_5_10",
+  "days_in_bin_10_15",
+  "days_in_bin_15_20",
+  "days_in_bin_20_25",
+  "days_in_bin_25_30",
+  "days_in_bin_30_35",
+  "days_in_bin_35_40",
+  "days_in_bin_40_plus"
+)
+
+var_labels <- c(
+  "ln(Electricity kWh)",   # 1
+  "Relative Humidity (%)", # 2
+  "Precipitation (mm)",    # 3
+  "Surface Pressure (hPa)",# 4
+  "Wind Speed (m/s)",      # 5
+  "Tree Coverage (%)",     # 6
+  "Days < –10 °C",         # 7
+  "Days –10––5 °C",        # 8
+  "Days –5–0 °C",          # 9
+  "Days 0–5 °C",           #10
+  "Days 5–10 °C",          #11
+  "Days 10–15 °C",         #12
+  "Days 15–20 °C",         #13
+  "Days 20–25 °C",         #14
+  "Days 25–30 °C",         #15
+  "Days 30–35 °C",         #16
+  "Days 35–40 °C",         #17
+  "Days > 40 °C"           #18
+)
+
+names(var_labels) <- vars
+
+
+long_dat <- engineered_cor_data_sample %>%
+  select(year, all_of(vars)) %>%
+  pivot_longer(-year, names_to = "variable_name", values_to = "value") %>%
+  drop_na(value) %>%                      
+  mutate(variable_name = factor(variable_name,
+                                levels = vars,
+                                labels = var_labels))
+
+ridgeline_plot <- ggplot(long_dat,
+       aes(x = value, y = variable_name,
+           fill = after_stat(x))) +           
+  geom_density_ridges_gradient(scale = 1.1,
+                               rel_min_height = .005,
+                               alpha = .6,
+                               color = "black") +
+  scale_fill_viridis_c(option = "C", name = "Value") +
+  facet_grid(variable_name ~ ., scales = "free_y", space = "free") +
+  labs(x = "Value", y = NULL) +
+  theme_classic(base_size = 11) +
+  theme(legend.position = "bottom")
+
+ggsave("ridgeline_by_variable.png",
+       ridgeline_plot, width = 10, height = 9, dpi = 450)
+
+
+box_jitter <- ggplot(long_dat,
+      aes(x = factor(year),
+          y = value,
+          color = factor(year))) +
+  geom_boxplot(outlier.shape = NA,
+               alpha = .25,
+               width  = .6) +
+  geom_jitter(width = .25, alpha = .4, size = .6) +
+  scale_color_viridis_d(name = "Year") +
+  facet_grid(variable_name ~ ., scales = "free_y", space = "free") +
+  labs(x = "Year", y = NULL) +
+  theme_classic(base_size = 12) +
+  theme(legend.position = "none")
+
+ggsave("box_jitter_by_variable.png",
+       box_jitter, width = 10, height = 9, dpi = 450)
+
+```
+
+### cor-plot
+
+```{r}
+
+engineered_cor_data_city <- as.data.frame(engineered_cor_data_city)
+
+# 1) rebuild your subset (you did 2:4,6:79 — that still includes year_month at 41)
+cor_data <- engineered_cor_data_city[, c(2:4, 8:19,20:27,28:39,43:44,)]
+
+# 2) detect which columns are truly numeric
+numeric_cols <- vapply(cor_data, is.numeric, logical(1))
+
+# 3) subset to only those
+cor_num <- cor_data[, numeric_cols, drop = FALSE]
+
+# (optional) drop any zero-variance columns to avoid later NA issues
+zero_var <- vapply(cor_num, function(x) {
+  s <- sd(x, na.rm = TRUE)
+  is.na(s) || s == 0
+}, logical(1))
+if (any(zero_var)) {
+  message("Dropping constant columns: ", paste(names(zero_var)[zero_var], collapse = ", "))
+  cor_num <- cor_num[, !zero_var, drop = FALSE]
+}
+
+# 4) compute the Pearson matrix (pairwise complete obs)
+cor_mat <- cor(cor_num, use = "pairwise.complete.obs")
+
+# 5) finally plot
+corrplot(cor_mat,
+         method = "color",
+         type   = "lower",
+         diag   = FALSE,
+         tl.cex = 0.7,
+         order  = "hclust")
+
+```
+
+
+### empirical analysis
+```{r}
+# ===============================================================================
+# 1. Basic Model Series - Stepwise Variable Addition
+# ===============================================================================
+
+engineered_cor_data$season_spring
+
+model_1 <- feols(ln_elec_kwh ~
+    days_in_bin_below_neg10 + days_in_bin_neg10_neg5 + days_in_bin_neg5_0 +
+    days_in_bin_0_5 + days_in_bin_5_10 + days_in_bin_10_15 +
+    days_in_bin_20_25 + days_in_bin_25_30 + days_in_bin_30_35 +
+    days_in_bin_35_40 + days_in_bin_40_plus + 
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+  
+model_2 <- feols(ln_elec_kwh ~
+    days_in_bin_below_neg10 + days_in_bin_neg10_neg5 + days_in_bin_neg5_0 +
+    days_in_bin_0_5 + days_in_bin_5_10 + days_in_bin_10_15 +
+    days_in_bin_20_25 + days_in_bin_25_30 + days_in_bin_30_35 +
+    days_in_bin_35_40 + days_in_bin_40_plus + 
+    # Add significant interaction terms with tree cover
+    days_in_bin_0_5_x_canopy + days_in_bin_25_30_x_canopy + 
+    days_in_bin_30_35_x_canopy + days_in_bin_35_40_x_canopy +
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+
+
+model_3 <- feols(ln_elec_kwh ~
+    days_in_bin_below_neg10 + days_in_bin_neg10_neg5 + days_in_bin_neg5_0 +
+    days_in_bin_0_5 + days_in_bin_5_10 + days_in_bin_10_15 +
+    days_in_bin_20_25 + days_in_bin_25_30 + days_in_bin_30_35 +
+    days_in_bin_35_40 + days_in_bin_40_plus + 
+    days_in_bin_neg10_neg5_x_canopy + days_in_bin_neg5_0_x_canopy + 
+    days_in_bin_0_5_x_canopy + days_in_bin_5_10_x_canopy + 
+    days_in_bin_10_15_x_canopy + days_in_bin_15_20_x_canopy + 
+    days_in_bin_20_25_x_canopy + days_in_bin_25_30_x_canopy + 
+    days_in_bin_30_35_x_canopy + days_in_bin_35_40_x_canopy + 
+    days_in_bin_40_plus_x_canopy + 
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+  
+
+etable(model_1, model_2, model_3, 
+       title = "Temperature Effects and Tree Cover Interactions: Model Comparison",
+       tex = FALSE)
+
+capture.output(
+  etable(model_1, model_2, model_3,
+         title = "Temperature Effects and Tree Cover Interactions",
+         tex = FALSE),
+  file = "results/Temperature Effects and Tree Cover Interactions.txt"
+)
+
+# ===============================================================================
+# 2. Create Aggregated Temperature Indicators for Simplified Analysis
+# ===============================================================================
+
+
+# Create aggregated temperature indicators
+engineered_cor_data <- engineered_cor_data %>%
+  mutate(
+    # Extreme heat days (30°C+)
+    extreme_heat_days = days_in_bin_30_35 + days_in_bin_35_40 + days_in_bin_40_plus,
+    # High temperature days (25°C+)  
+    high_temp_days = days_in_bin_25_30 + days_in_bin_30_35 + days_in_bin_35_40 + days_in_bin_40_plus,
+    # Moderate temperature days (15-25°C)
+    moderate_temp_days = days_in_bin_15_20 + days_in_bin_20_25,
+    # Cold days (below 5°C)
+    cold_days = days_in_bin_below_neg10 + days_in_bin_neg10_neg5 + days_in_bin_neg5_0 + days_in_bin_0_5,
+    
+    # Corresponding interaction terms with tree cover
+    extreme_heat_x_canopy = days_in_bin_30_35_x_canopy + days_in_bin_35_40_x_canopy + days_in_bin_40_plus_x_canopy,
+    high_temp_x_canopy = days_in_bin_25_30_x_canopy + days_in_bin_30_35_x_canopy + days_in_bin_35_40_x_canopy + days_in_bin_40_plus_x_canopy,
+    moderate_temp_x_canopy = days_in_bin_15_20_x_canopy + days_in_bin_20_25_x_canopy,
+    cold_days_x_canopy = days_in_bin_below_neg10_x_canopy + days_in_bin_neg10_neg5_x_canopy + days_in_bin_neg5_0_x_canopy + days_in_bin_0_5_x_canopy
+  )
+
+# Simplified Model 1: Extreme heat effects
+model_simple_1 <- feols(ln_elec_kwh ~ 
+    extreme_heat_days + extreme_heat_x_canopy + 
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+
+# Simplified Model 2: High temperature effects
+model_simple_2 <- feols(ln_elec_kwh ~ 
+    high_temp_days + high_temp_x_canopy + 
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+
+# Simplified Model 3: By temperature intervals
+model_simple_3 <- feols(ln_elec_kwh ~ 
+    cold_days + moderate_temp_days + high_temp_days + 
+    moderate_temp_x_canopy + high_temp_x_canopy + 
+    canopy_share + log1p(population) + log1p(nightlight) + cold_days_x_canopy |
+    grid_id + year + month,
+    data = engineered_cor_data,
+    conley(100))
+
+etable(model_simple_1, model_simple_2, model_simple_3,
+       title = "Simplified Models: Aggregated Temperature Indicators and Tree Cover Interactions",
+       tex = FALSE)
+
+capture.output(
+  etable(model_simple_1, model_simple_2, model_simple_3,
+       title = "Simplified Models: Aggregated Temperature Indicators and Tree Cover Interactions",
+       tex = FALSE),
+  file = "results/Simplified Models Aggregated Temperature Indicators and Tree Cover Interactions.txt"
+)
+
+
+# ===============================================================================
+# 3. Heterogeneity Analysis: Based on Key Temperature Intervals
+# ===============================================================================
+
+# Based on regression results, focus on significant temperature intervals
+cat("=== Key Findings from Basic Regression Results ===\n")
+cat("1. Significant high temperature interval effects: 20-25°C, 25-30°C, 30-35°C, 35-40°C\n")
+cat("2. Strongest tree cover moderation in: 35-40°C interval (coefficient -0.0002)\n") 
+cat("3. In simplified models, interval-based method outperforms aggregation\n\n")
+
+# Create tree cover quantiles
+canopy_quantiles <- quantile(engineered_cor_data$canopy_share, c(0.33, 0.67), na.rm = TRUE)
+
+engineered_cor_data <- engineered_cor_data %>%
+  mutate(
+    canopy_level = case_when(
+      canopy_share <= canopy_quantiles[1] ~ "Low",
+      canopy_share <= canopy_quantiles[2] ~ "Medium",
+      TRUE ~ "High"
+    )
+  )
+
+cat("Tree Cover Quantiles: Low ≤", round(canopy_quantiles[1], 3), 
+    ", Medium ≤", round(canopy_quantiles[2], 3), ", High >", round(canopy_quantiles[2], 3), "\n\n")
+
+# Group regression by tree cover level - focus on significant temperature intervals
+data_low_canopy <- engineered_cor_data %>% filter(canopy_level == "Low")
+data_med_canopy <- engineered_cor_data %>% filter(canopy_level == "Medium") 
+data_high_canopy <- engineered_cor_data %>% filter(canopy_level == "High")
+
+# Low tree cover areas - expect stronger temperature effects
+model_low_canopy <- feols(ln_elec_kwh ~ 
+    days_in_bin_20_25 + days_in_bin_25_30 + days_in_bin_30_35 + 
+    days_in_bin_35_40 + days_in_bin_40_plus +
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = data_low_canopy,
+    conley(100))
+
+# High tree cover areas - expect mitigated temperature effects
+model_high_canopy <- feols(ln_elec_kwh ~ 
+    days_in_bin_20_25 + days_in_bin_25_30 + days_in_bin_30_35 + 
+    days_in_bin_35_40 + days_in_bin_40_plus +
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = data_high_canopy,
+    conley(100))
+
+etable(model_low_canopy, model_high_canopy,
+       title = "Heterogeneity Analysis: Temperature Effects in Different Canopy Level Areas",
+       tex = FALSE)
+
+capture.output(
+  etable(model_low_canopy, model_high_canopy,
+       title = "Heterogeneity Analysis: Temperature Effects in Different Canopy Level Areas",
+       tex = FALSE),
+  file = "results/Heterogeneity Analysis Temperature Effects in Different Canopy Level Areas.txt"
+)
+
+# ===============================================================================
+# 3.1 Quantifying Tree Cover Mitigation Effects
+# ===============================================================================
+
+# Extract key temperature interval coefficients (based on actual results)
+temp_effects_comparison <- data.frame(
+  Temperature_Bin = c("20-25°C", "25-30°C", "30-35°C", "35-40°C", "40+°C"),
+  Low_Tree_Cover = c(0.0101, 0.0104, 0.0100, 0.0136, 0.0108),
+  High_Tree_Cover = c(0.0093, 0.0069, 0.0052, 0.0073, 0.0108),
+  Low_SE = c(0.0013, 0.0014, 0.0024, 0.0035, 0.0165),
+  High_SE = c(0.0016, 0.0011, 0.0016, 0.0020, 0.0096)
+) %>%
+  mutate(
+    Difference = Low_Tree_Cover - High_Tree_Cover,
+    Reduction_Pct = (Difference / Low_Tree_Cover) * 100,
+    Significance_Low = case_when(
+      Temperature_Bin %in% c("20-25°C", "25-30°C", "30-35°C", "35-40°C") ~ "***",
+      TRUE ~ "Not Significant"
+    ),
+    Significance_High = case_when(
+      Temperature_Bin %in% c("20-25°C", "25-30°C", "35-40°C") ~ "***",
+      Temperature_Bin == "30-35°C" ~ "**",
+      TRUE ~ "Not Significant"
+    )
+  )
+
+print(temp_effects_comparison)
+
+cat("\n=== Key Findings Summary ===\n")
+cat("1. **Strongest mitigation effect**: 30-35°C interval, 48.0% reduction\n")
+cat("2. **Second strongest effect**: 35-40°C interval, 46.3% reduction\n") 
+cat("3. **Consistent mitigation**: 25-30°C interval, 33.7% reduction\n")
+cat("4. **Pattern consistency**: All temperature intervals show Low tree cover > High tree cover\n")
+cat("5. **Statistical significance**: All intervals except 40+°C show significant differences\n\n")
+
+# Prepare plotting data
+plot_data <- temp_effects_comparison %>%
+  select(Temperature_Bin, Low_Tree_Cover, High_Tree_Cover) %>%
+  pivot_longer(cols = c(Low_Tree_Cover, High_Tree_Cover), 
+               names_to = "Tree_Cover_Level", 
+               values_to = "Coefficient") %>%
+  mutate(
+    Tree_Cover_Level = case_when(
+      Tree_Cover_Level == "Low_Tree_Cover" ~ "Low Tree Cover",
+      Tree_Cover_Level == "High_Tree_Cover" ~ "High Tree Cover"
+    ),
+    Temperature_Bin = factor(Temperature_Bin, 
+                            levels = c("20-25°C", "25-30°C", "30-35°C", "35-40°C", "40+°C"))
+  )
+
+# Coefficient comparison plot
+p1 <- ggplot(plot_data, aes(x = Temperature_Bin, y = Coefficient, fill = Tree_Cover_Level)) +
+  geom_col(position = "dodge", alpha = 0.8, width = 0.7) +
+  scale_fill_viridis_d() +  # viridis discrete scale
+  labs(title = "Temperature Effects Comparison by Tree Cover Level",
+       subtitle = "Electricity consumption sensitivity to temperature",
+       x = "Temperature Interval", 
+       y = "Coefficient",
+       fill = "Tree Cover Level") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  geom_text(aes(label = round(Coefficient, 4)), 
+            position = position_dodge(width = 0.7), 
+            vjust = -0.5, size = 3)
+print(p1)
+
+# Mitigation effect percentage plot
+reduction_plot_data <- temp_effects_comparison %>%
+  filter(Temperature_Bin != "40+°C") %>%  # Exclude non-significant interval
+  mutate(Temperature_Bin = factor(Temperature_Bin, 
+                                 levels = c("20-25°C", "25-30°C", "30-35°C", "35-40°C")))
+
+p2 <- ggplot(reduction_plot_data, aes(x = Temperature_Bin, y = Reduction_Pct, fill = Temperature_Bin)) +
+  geom_col(alpha = 0.7, width = 0.6) +
+  scale_fill_viridis_d() +
+  geom_text(aes(label = paste0(round(Reduction_Pct, 1), "%")), 
+            vjust = -0.5, size = 4) +
+  labs(title = "Temperature Effect Mitigation by Tree Cover Level",
+       subtitle = "Reduction in high coverage compared to low coverage areas",
+       x = "Temperature Interval", 
+       y = "Mitigation Effect (%)") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none",) +
+  ylim(0, max(reduction_plot_data$Reduction_Pct) * 1.1)
+
+print(p2)
+
+
+# combined p1 and p2 using pacthworkl
+
+library(patchwork)
+
+combined_plot <- p1 + p2 + 
+  plot_layout(ncol = 2) +
+  plot_annotation(
+                  theme = theme(plot.title = element_text(hjust = 0.5, size = 16),
+                                plot.subtitle = element_text(hjust = 0.5, size = 14)))
+
+ggsave("figs/temperature_effects_mitigation_plot.png", 
+       combined_plot, width = 12, height = 6, dpi = 450)
+
+# ===============================================================================
+# 4. Humidity Moderation Effects Analysis
+# ===============================================================================
+# Create high humidity indicator
+engineered_cor_data <- engineered_cor_data %>%
+  mutate(
+    high_humidity = ifelse(humidity_category_humid == 1, 1, 0),
+    # High temperature-humidity interaction
+    high_temp_high_humid = high_temp_days * high_humidity,
+    # Tree cover effects under high temperature-humidity conditions
+    canopy_high_temp_humid = canopy_share * high_temp_days * high_humidity
+  )
+
+# Method 3: Split humidity condition regression - direct comparison of tree cover effects
+data_high_humid <- engineered_cor_data %>% filter(high_humidity == 1)
+data_low_humid <- engineered_cor_data %>% filter(high_humidity == 0)
+
+cat("Sample distribution: High humidity", nrow(data_high_humid), "obs, Low humidity", nrow(data_low_humid), "obs\n\n")
+
+# Interval-based regression under high humidity conditions
+model_high_humid_detailed <- feols(ln_elec_kwh ~ 
+    days_in_bin_25_30 + days_in_bin_30_35 + days_in_bin_35_40 + days_in_bin_40_plus +
+    days_in_bin_25_30:canopy_share + days_in_bin_30_35:canopy_share + 
+    days_in_bin_35_40:canopy_share + days_in_bin_40_plus:canopy_share +
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = data_high_humid,
+    conley(100))
+
+# Interval-based regression under low humidity conditions  
+model_low_humid_detailed <- feols(ln_elec_kwh ~ 
+    days_in_bin_25_30 + days_in_bin_30_35 + days_in_bin_35_40 + days_in_bin_40_plus +
+    days_in_bin_25_30:canopy_share + days_in_bin_30_35:canopy_share + 
+    days_in_bin_35_40:canopy_share + days_in_bin_40_plus:canopy_share +
+    canopy_share + log1p(population) + log1p(nightlight) |
+    grid_id + year + month,
+    data = data_low_humid,
+    conley(100))
+data_low_humid$
+etable(model_high_humid_detailed, model_low_humid_detailed,
+       title = "Humidity Moderation Effects: Changes in Canopy Function under High Temperature-Humidity",
+       tex = FALSE)
+
+capture.output(
+  etable(model_high_humid_detailed, model_low_humid_detailed,
+       title = "Humidity Moderation Effects: Changes in Canopy Function under High Temperature-Humidity",
+       tex = FALSE),
+  file = "results/Humidity Moderation Effects Changes in Canopy Function under High Temperature-Humidity.txt"
+)
+
+```
+
+# city level
+
+## exploratory data analysis
+
+### summary-stats
+
+```{r}
+
+sum_data <- engineered_cor_data_city[,c(4,8:39,43:58)]
+
+stargazer(sum_data,
+          type = "html",
+          out = "docs/summaryStat_city.doc",
+          model.names = T,
+          digits = 4,
+          font.size = "tiny",
+          column.sep.width = "1pt",
+          header = FALSE,
+          no.space = TRUE,
+          summary.stat = c("n",
+                           "max",
+                           "min",
+                           "mean",
+                           "median",
+                           "p25",
+                           "p75",
+                           "sd"
+                           ))
+
+```
+
+### Key variable distibrution
+```{r}
+
+engineered_cor_data_city_sample <- engineered_cor_data_city
+
+vars <- c(
+  "ln_elec_kwh",
+  "rhu",
+  "pres",
+  "wind",
+  "canopy_share"
+)
+
+var_labels <- c(
+  "ln(Electricity kWh)",   # 1
+  "Relative Humidity (%)", # 2
+  "Surface Pressure (hPa)",# 4
+  "Wind Speed (m/s)",      # 5
+  "Tree Coverage (%)"
+)
+
+names(var_labels) <- vars
+
+
+temp_bins <- engineered_cor_data_city %>%
+  pivot_longer(starts_with("days_in_bin_"),
+               names_to = "bin", values_to = "days") %>%
+  filter(bin %in% c("days_in_bin_below_neg10",
+                    "days_in_bin_neg10_neg5",
+                    "days_in_bin_neg5_0",
+                    "days_in_bin_0_5",
+                    "days_in_bin_5_10",
+                    "days_in_bin_10_15",
+                    "days_in_bin_15_20",
+                    "days_in_bin_20_25",
+                    "days_in_bin_25_30",
+                    "days_in_bin_30_35",
+                    "days_in_bin_35_40",
+                    "days_in_bin_40_plus")) %>%
+  mutate(bin = factor(bin,
+           levels = c("days_in_bin_below_neg10","days_in_bin_neg10_neg5",
+                      "days_in_bin_neg5_0","days_in_bin_0_5","days_in_bin_5_10",
+                      "days_in_bin_10_15","days_in_bin_15_20","days_in_bin_20_25",
+                      "days_in_bin_25_30","days_in_bin_30_35","days_in_bin_35_40",
+                      "days_in_bin_40_plus"),
+           labels = c("<-10","-10--5","-5-0","0-5","5-10",
+                      "10-15","15-20","20-25","25-30",
+                      "30-35","35-40",">40")))
+
+distribution_1 <- ggplot(temp_bins, aes(bin, days, fill = bin)) +
+  stat_summary(fun = mean, geom = "col", width = .85) +
+  scale_fill_viridis(option = "D", name = NULL,discrete = TRUE) +
+  theme_bw(base_size = 11) +
+  labs(title = "Average Monthly Days in Each Temperature Bin",
+       x = "Temperature Bin (°C)", y = "Average Days / Month") +
+  theme(legend.position = "none")          # 如果不想显示图例
+
+#ggsave("figs/distribution_1.png",
+       #distribution_1, width = 10, height = 6, dpi = 450)
+
+cont_vars <- c("ln_elec_kwh","rhu","pres","wind","canopy_share")
+
+long_cont <- engineered_cor_data_city_sample %>%
+  pivot_longer(all_of(cont_vars), names_to = "var", values_to = "value") %>%
+  mutate(var = factor(var, levels = cont_vars,
+                      labels = var_labels[cont_vars]))
+
+distribution_2 <- ggplot(long_cont, aes(value)) +
+  geom_histogram(bins = 30, fill = "steelblue", alpha = .7) +
+  facet_grid(~ var, scales = "free") +
+  theme_bw() +
+  labs(title = "Distributions of Key Continuous Variables",
+       x = NULL, y = "Count")
+
+
+#ggsave("figs/distribution_2.png",
+       #distribution_2, width = 10, height = 6, dpi = 450)
+
+
+# pactchwork distribvution_1 and distribution_2
+
+library(patchwork)
+
+combined_distribution <- distribution_1 + distribution_2 +
+  plot_layout(ncol = 1) +
+  plot_annotation(
+                  theme = theme(plot.title = element_text(size = 16, face = "bold")))
+
+ggsave("figs/distribution.png",
+       combined_distribution, width = 8, height = 6, dpi = 300)
+
+```
+
+
+### cor-plot
+```{r}
+
+engineered_cor_data_city <- as.data.frame(engineered_cor_data_city)
+
+# 1) rebuild your subset (you did 2:4,6:79 — that still includes year_month at 41)
+cor_data <- engineered_cor_data_city[,c(4,8:28)]
+
+# 2) detect which columns are truly numeric
+numeric_cols <- vapply(cor_data, is.numeric, logical(1))
+
+# 3) subset to only those
+cor_num <- cor_data[, numeric_cols, drop = FALSE]
+
+# (optional) drop any zero-variance columns to avoid later NA issues
+zero_var <- vapply(cor_num, function(x) {
+  s <- sd(x, na.rm = TRUE)
+  is.na(s) || s == 0
+}, logical(1))
+if (any(zero_var)) {
+  message("Dropping constant columns: ", paste(names(zero_var)[zero_var], collapse = ", "))
+  cor_num <- cor_num[, !zero_var, drop = FALSE]
+}
+
+# 4) compute the Pearson matrix (pairwise complete obs)
+cor_mat <- cor(cor_num, use = "pairwise.complete.obs")
+
+# 5) finally plot
+png("figs/cor_plot_city.png", units="in", res=300, width = 7, height = 6)
+corrplot(cor_mat,
+         method = "ellipse",
+         type   = "upper",
+         diag   = FALSE,
+         tl.cex = 0.7,
+         order  = "hclust",
+         col = COL2("PuOr"))
+dev.off()
+
+```
+
+### Map
+
+
+```{r}
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(viridis)
+library(gridExtra)
+
+shp_city <- st_read("G:/research/junmao-tang/code-test/code-space/data/shp\\chn_admbnda_adm2_ocha_2020.shp")
+shp_city <- shp_city %>%
+  rename("city_name" = "ADM2_EN")
+
+shp_province <- st_read("G:/research/junmao-tang/code-test/code-space/data/shp\\chn_admbnda_adm1_ocha_2020.shp")
+shp_province <- shp_province %>%
+  rename("province" = "ADM1_EN")
+
+shp_country <- st_read("G:/research/junmao-tang/code-test/code-space/data/shp\\chn_admbnda_adm0_ocha_2020.shp")
+
+target_years <- c(2012, 2014, 2016, 2018)
+map_data_filtered <- map_data %>%
+  filter(year %in% target_years)
+
+map_data_filtered <- map_data_filtered %>%
+  mutate(high_temp_days = days_in_bin_30_35 + days_in_bin_35_40 + days_in_bin_40_plus)
+
+
+annual_data <- map_data_filtered %>%
+  group_by(year, ADM2_PCODE, city_name, province, ADM1_ZH, geometry) %>%
+  summarise(
+    canopy_share = mean(canopy_share, na.rm = TRUE),
+    ln_elec_kwh = mean(ln_elec_kwh, na.rm = TRUE),
+    high_temp_days = sum(high_temp_days, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+
+annual_data <- st_as_sf(annual_data)
+
+
+create_choropleth_map <- function(data, variable, var_name, title_text, legend_name, 
+                                country_boundary = shp_country, 
+                                province_boundary = shp_province,
+                                city_boundary = shp_city) {
+  ggplot() +
+    # 1. First draw complete national outline as base map
+    geom_sf(data = country_boundary, fill = "grey95", color = "black", size = 0.3) +
+    
+    # 2. Draw provincial boundaries (hollow, only show borders)
+    geom_sf(data = province_boundary, fill = NA, color = "grey60", size = 0.2) +
+    
+    # 3. Draw all city boundaries (including areas without data)
+    geom_sf(data = city_boundary, fill = "grey95", color = "grey80", size = 0.1) +
+    
+    # 4. Draw city-level areas with data (overlay on city boundaries)
+    geom_sf(data = data, aes(fill = !!sym(variable)), 
+            size = 0.1) +
+    # 5. Re-overlay provincial boundaries to ensure clarity
+    geom_sf(data = province_boundary, fill = NA, color = "grey40", size = 0.3) +
+    
+    # 6. Finally overlay national boundaries
+    geom_sf(data = country_boundary, fill = NA, color = "black", size = 0.5) +
+    
+    scale_fill_viridis_c(name = legend_name, 
+                         option = "viridis", 
+                         na.value = "grey95",  # NA values displayed as light grey
+                         guide = guide_colourbar(barwidth = 1.5, barheight = 4),
+                         direction = 1) +
+    labs(title = title_text,
+         subtitle = paste("Year:", unique(data$year))) +
+    theme_bw() +
+    theme(
+      legend.position = "right",
+      legend.title = element_text(size = 10),
+      legend.text = element_text(size = 8),
+      plot.title = element_text(size = 12, hjust = 0.5),
+      plot.subtitle = element_text(size = 10, hjust = 0.5))
+}
+
+
+canopy_maps <- list()
+for(yr in target_years) {
+  data_yr <- annual_data %>% filter(year == yr)
+  canopy_maps[[as.character(yr)]] <- create_choropleth_map(
+    data_yr, 
+    "canopy_share", 
+    "Canopy Share",
+    "Forest Canopy Cover Distribution",
+    "Canopy Share"
+  )
+}
+
+# 2. Create electricity consumption distribution maps
+elec_maps <- list()
+for(yr in target_years) {
+  data_yr <- annual_data %>% filter(year == yr)
+  elec_maps[[as.character(yr)]] <- create_choropleth_map(
+    data_yr, 
+    "ln_elec_kwh", 
+    "Log Electricity Consumption",
+    "Electricity Consumption Distribution (Log)",
+    "ln(Electricity)"
+  )
+}
+
+
+temp_maps <- list()
+for(yr in target_years) {
+  data_yr <- annual_data %>% filter(year == yr)
+  temp_maps[[as.character(yr)]] <- create_choropleth_map(
+    data_yr, 
+    "high_temp_days", 
+    "High Temperature Days",
+    "High Temperature Days Distribution (≥30°C)",
+    "High Temp Days"
+  )
+}
+
+# Save individual maps
+# Forest canopy cover maps
+png("figs/canopy_share_maps_2012_2018.png", units="in", width=10, height=8, res=300)
+grid.arrange(grobs = canopy_maps, ncol = 2, nrow = 2,
+             top = "Forest Canopy Cover Distribution (2012, 2014, 2016, 2018)")
+dev.off()
+
+# Electricity consumption maps
+png("figs/electricity_consumption_maps_2012_2018.png", units="in", width=10, height=8, res=300)
+grid.arrange(grobs = elec_maps, ncol = 2, nrow = 2,
+             top = "Electricity Consumption Distribution (2012, 2014, 2016, 2018)")
+dev.off()
+
+# High temperature days maps
+png("figs/high_temperature_days_maps_2012_2018.png", units="in", width=10, height=8, res=300)
+grid.arrange(grobs = temp_maps, ncol = 2, nrow = 2,
+             top = "High Temperature Days Distribution (2012, 2014, 2016, 2018)")
+dev.off()
+```
+

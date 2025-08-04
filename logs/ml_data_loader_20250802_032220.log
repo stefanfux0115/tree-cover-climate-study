@@ -1,0 +1,11 @@
+2025-08-02 03:22:20,304 - __main__ - INFO - Starting ML data preparation...
+2025-08-02 03:22:20,304 - __main__ - INFO - Loading city-level datasets...
+2025-08-02 03:22:20,335 - __main__ - INFO - Loaded electricity: (25203, 10)
+2025-08-02 03:22:20,338 - __main__ - INFO - Loaded canopy: (2168, 7)
+2025-08-02 03:22:20,355 - __main__ - INFO - Loaded gdp: (26016, 8)
+2025-08-02 03:22:20,373 - __main__ - INFO - Loaded population: (26016, 8)
+2025-08-02 03:22:20,392 - __main__ - INFO - Loaded nightlight: (26016, 8)
+2025-08-02 03:22:20,394 - __main__ - INFO - Loaded prec: (1626, 8)
+2025-08-02 03:22:20,418 - __main__ - INFO - Loaded pres: (26016, 8)
+2025-08-02 03:22:20,435 - __main__ - INFO - Loaded rhu: (26016, 8)
+2025-08-02 03:22:20,438 - __main__ - ERROR - Error during ML data preparation: 'city_id'

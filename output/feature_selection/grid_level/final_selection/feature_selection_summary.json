@@ -1,0 +1,137 @@
+{
+  "selection_summary": {
+    "total_features_available": 57,
+    "features_selected": 25,
+    "selection_date": "2025-08-02T03:37:15.871325"
+  },
+  "selected_features": [
+    "ln_population",
+    "population",
+    "population_density_proxy",
+    "n_grids_population",
+    "gdp_per_capita",
+    "pres",
+    "canopy_share",
+    "ln_elec_per_capita",
+    "n_grids",
+    "elec_per_capita",
+    "city_id",
+    "ln_gdp_per_capita",
+    "n_grids_nightlight",
+    "n_grids_pres",
+    "socioeconomic_index",
+    "nightlight",
+    "population_x_season",
+    "canopy_x_humidity",
+    "canopy_x_precipitation",
+    "elec_per_gdp",
+    "canopy_density_score",
+    "ln_elec_per_gdp",
+    "n_grids_rhu",
+    "year_month_gdp",
+    "canopy_effectiveness"
+  ],
+  "feature_categories": {
+    "climate": [
+      "canopy_x_humidity",
+      "canopy_x_precipitation"
+    ],
+    "socioeconomic": [
+      "ln_population",
+      "population",
+      "population_density_proxy",
+      "n_grids_population",
+      "gdp_per_capita",
+      "ln_gdp_per_capita",
+      "n_grids_nightlight",
+      "socioeconomic_index",
+      "nightlight",
+      "population_x_season",
+      "elec_per_gdp",
+      "ln_elec_per_gdp",
+      "year_month_gdp"
+    ],
+    "canopy": [
+      "canopy_share",
+      "canopy_density_score",
+      "canopy_effectiveness"
+    ],
+    "temporal": [],
+    "interaction": [],
+    "policy": [
+      "ln_elec_per_capita",
+      "elec_per_capita"
+    ],
+    "spatial": [
+      "city_id"
+    ],
+    "other": [
+      "pres",
+      "n_grids",
+      "n_grids_pres",
+      "n_grids_rhu"
+    ]
+  },
+  "category_counts": {
+    "climate": 2,
+    "socioeconomic": 13,
+    "canopy": 3,
+    "temporal": 0,
+    "interaction": 0,
+    "policy": 2,
+    "spatial": 1,
+    "other": 4
+  },
+  "top_10_features": [
+    {
+      "feature": "ln_population",
+      "average_rank": 1.6,
+      "average_score": 0.899417473524607
+    },
+    {
+      "feature": "population",
+      "average_rank": 6.8,
+      "average_score": 0.6716414626054041
+    },
+    {
+      "feature": "population_density_proxy",
+      "average_rank": 9.6,
+      "average_score": 0.45074735951372136
+    },
+    {
+      "feature": "n_grids_population",
+      "average_rank": 10.6,
+      "average_score": 0.24634167061656895
+    },
+    {
+      "feature": "gdp_per_capita",
+      "average_rank": 12.6,
+      "average_score": 0.20407091342469727
+    },
+    {
+      "feature": "pres",
+      "average_rank": 12.6,
+      "average_score": 0.07010370636371249
+    },
+    {
+      "feature": "canopy_share",
+      "average_rank": 14.2,
+      "average_score": 0.1454328371824251
+    },
+    {
+      "feature": "ln_elec_per_capita",
+      "average_rank": 15.3,
+      "average_score": 0.36333001257895503
+    },
+    {
+      "feature": "n_grids",
+      "average_rank": 15.7,
+      "average_score": 0.24504338203859852
+    },
+    {
+      "feature": "elec_per_capita",
+      "average_rank": 15.9,
+      "average_score": 0.4413811024584092
+    }
+  ]
+}

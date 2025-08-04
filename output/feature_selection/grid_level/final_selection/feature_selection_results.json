@@ -1,0 +1,593 @@
+{
+  "feature_selection_summary": {
+    "total_original_features": 70,
+    "selected_features_count": 39,
+    "selection_ratio": 0.5571428571428572,
+    "group_distribution": {
+      "temperature_bins": 8,
+      "socioeconomic_categorical": 7,
+      "climate_raw": 4,
+      "socioeconomic_raw": 3,
+      "canopy": 3,
+      "climate_categorical": 3,
+      "temperature_derived": 3,
+      "spatial": 2,
+      "temporal": 2,
+      "seasonal": 2,
+      "interactions": 1,
+      "temperature_interactions": 1
+    },
+    "selection_date": "2025-08-02T02:46:45.541939"
+  },
+  "selected_features": [
+    "nightlight",
+    "lat",
+    "gdp_per_capita",
+    "lon",
+    "nightlight_urban_high",
+    "year",
+    "population",
+    "pres",
+    "nightlight_urban_low",
+    "rhu",
+    "hot_days_x_urban_high",
+    "wind",
+    "gdp_low_gdp",
+    "temperature_entropy",
+    "population_medium_pop",
+    "gdp_high_gdp",
+    "population_high_pop",
+    "days_in_bin_25_30",
+    "days_in_bin_below_neg10",
+    "days_in_bin_5_10",
+    "days_in_bin_0_5",
+    "precipitation_rain_days_0_1mm",
+    "days_in_bin_20_25",
+    "humidity_RH_high",
+    "canopy_share",
+    "canopy_no_canopy",
+    "humidity_RH_low",
+    "extreme_hot_share",
+    "days_in_bin_10_15",
+    "season_spring",
+    "prec",
+    "days_in_bin_20_25_x_canopy",
+    "cooling_season",
+    "days_in_bin_15_20",
+    "month",
+    "canopy_unknown",
+    "moderate_temp_share",
+    "population_low_pop",
+    "days_in_bin_neg10_neg5"
+  ],
+  "feature_details": [
+    {
+      "feature": "nightlight",
+      "mean_importance": 0.7838772884104135,
+      "std_importance": 0.34583504393612524,
+      "min_importance": 0.18593563766388557,
+      "max_importance": 1.0,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "lat",
+      "mean_importance": 0.6365553160018198,
+      "std_importance": 0.2718801758933283,
+      "min_importance": 0.2954377176350953,
+      "max_importance": 1.0,
+      "methods_count": 4,
+      "group": "spatial"
+    },
+    {
+      "feature": "gdp_per_capita",
+      "mean_importance": 0.5178531318755147,
+      "std_importance": 0.1894739826698017,
+      "min_importance": 0.22293723712253083,
+      "max_importance": 0.7509797294854824,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "lon",
+      "mean_importance": 0.49256454883800677,
+      "std_importance": 0.24540106610687049,
+      "min_importance": 0.17267114857338475,
+      "max_importance": 0.8438617401668653,
+      "methods_count": 4,
+      "group": "spatial"
+    },
+    {
+      "feature": "nightlight_urban_high",
+      "mean_importance": 0.4046026286322352,
+      "std_importance": 0.42604592240010836,
+      "min_importance": 0.0,
+      "max_importance": 1.0,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "year",
+      "mean_importance": 0.21564555001510893,
+      "std_importance": 0.09242744182264573,
+      "min_importance": 0.14309644675733668,
+      "max_importance": 0.37367713985304357,
+      "methods_count": 4,
+      "group": "temporal"
+    },
+    {
+      "feature": "population",
+      "mean_importance": 0.16042781942327877,
+      "std_importance": 0.10329308333020247,
+      "min_importance": 0.0716457423476508,
+      "max_importance": 0.33643843868172324,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "pres",
+      "mean_importance": 0.15985847963532152,
+      "std_importance": 0.04507690230220087,
+      "min_importance": 0.08513956329323112,
+      "max_importance": 0.1966626936829559,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "nightlight_urban_low",
+      "mean_importance": 0.15460575313580938,
+      "std_importance": 0.2669564633776885,
+      "min_importance": 0.0,
+      "max_importance": 0.6169867958464393,
+      "methods_count": 2,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "rhu",
+      "mean_importance": 0.1423838443760473,
+      "std_importance": 0.13937064536852006,
+      "min_importance": 0.028605482717520857,
+      "max_importance": 0.38038186978673644,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "hot_days_x_urban_high",
+      "mean_importance": 0.13747147802150983,
+      "std_importance": 0.11362490047982275,
+      "min_importance": 0.01907032181168057,
+      "max_importance": 0.2721687264423432,
+      "methods_count": 4,
+      "group": "interactions"
+    },
+    {
+      "feature": "wind",
+      "mean_importance": 0.1265236707863523,
+      "std_importance": 0.09191959646415508,
+      "min_importance": 0.044074113485043025,
+      "max_importance": 0.28156769661033676,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "gdp_low_gdp",
+      "mean_importance": 0.09819641413164625,
+      "std_importance": 0.09553080125948109,
+      "min_importance": 0.0021850796449833032,
+      "max_importance": 0.2153422862320565,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "temperature_entropy",
+      "mean_importance": 0.09445374115477885,
+      "std_importance": 0.054080540584870496,
+      "min_importance": 0.033373063170441,
+      "max_importance": 0.18144616161699945,
+      "methods_count": 4,
+      "group": "temperature_derived"
+    },
+    {
+      "feature": "population_medium_pop",
+      "mean_importance": 0.07536173598198968,
+      "std_importance": 0.09500945257991576,
+      "min_importance": 0.0059594755661501785,
+      "max_importance": 0.23699716748814223,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_high_gdp",
+      "mean_importance": 0.06466378562254982,
+      "std_importance": 0.10165857320530351,
+      "min_importance": 0.0017361538519357162,
+      "max_importance": 0.24059326568662817,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_high_pop",
+      "mean_importance": 0.054508120153416016,
+      "std_importance": 0.09268419834861921,
+      "min_importance": 0.0,
+      "max_importance": 0.21502780062802485,
+      "methods_count": 2,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "days_in_bin_25_30",
+      "mean_importance": 0.05356469298417371,
+      "std_importance": 0.04962778425551895,
+      "min_importance": 0.019567391690877838,
+      "max_importance": 0.13909265714885768,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "days_in_bin_below_neg10",
+      "mean_importance": 0.050822235754855546,
+      "std_importance": 0.07759780637824513,
+      "min_importance": 0.003644173576226978,
+      "max_importance": 0.18519275991285633,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "days_in_bin_5_10",
+      "mean_importance": 0.050693112251183815,
+      "std_importance": 0.037362865412021065,
+      "min_importance": 0.01907032181168057,
+      "max_importance": 0.1131799029581801,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "days_in_bin_0_5",
+      "mean_importance": 0.04966524267668647,
+      "std_importance": 0.04253407779232296,
+      "min_importance": 0.0166865315852205,
+      "max_importance": 0.1214146268840727,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "precipitation_rain_days_0_1mm",
+      "mean_importance": 0.04887857740144035,
+      "std_importance": 0.08409671447969187,
+      "min_importance": 0.0,
+      "max_importance": 0.19453671935542685,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "days_in_bin_20_25",
+      "mean_importance": 0.0405959448602184,
+      "std_importance": 0.03188479611460925,
+      "min_importance": 0.0059594755661501785,
+      "max_importance": 0.09263787527106385,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "humidity_RH_high",
+      "mean_importance": 0.03981089907644286,
+      "std_importance": 0.04755836373373754,
+      "min_importance": 0.0,
+      "max_importance": 0.11743407224540071,
+      "methods_count": 3,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_share",
+      "mean_importance": 0.038967948161351906,
+      "std_importance": 0.04031718813831752,
+      "min_importance": 0.0056391602152424765,
+      "max_importance": 0.10667237292528542,
+      "methods_count": 4,
+      "group": "canopy"
+    },
+    {
+      "feature": "canopy_no_canopy",
+      "mean_importance": 0.035828429094685255,
+      "std_importance": 0.03993645143690442,
+      "min_importance": 0.008081760903929203,
+      "max_importance": 0.10479260858805581,
+      "methods_count": 4,
+      "group": "canopy"
+    },
+    {
+      "feature": "humidity_RH_low",
+      "mean_importance": 0.03563588088050945,
+      "std_importance": 0.059360149291328004,
+      "min_importance": 0.0,
+      "max_importance": 0.1384232504061489,
+      "methods_count": 3,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "extreme_hot_share",
+      "mean_importance": 0.03271125121959131,
+      "std_importance": 0.03647664761068768,
+      "min_importance": 0.0023837902264600714,
+      "max_importance": 0.09459803991450297,
+      "methods_count": 4,
+      "group": "temperature_derived"
+    },
+    {
+      "feature": "days_in_bin_10_15",
+      "mean_importance": 0.03211158828415796,
+      "std_importance": 0.019311295833736204,
+      "min_importance": 0.014302741358760428,
+      "max_importance": 0.06446526993193866,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "season_spring",
+      "mean_importance": 0.03114680376842572,
+      "std_importance": 0.052193696665748184,
+      "min_importance": 0.0,
+      "max_importance": 0.12152296827369065,
+      "methods_count": 2,
+      "group": "seasonal"
+    },
+    {
+      "feature": "prec",
+      "mean_importance": 0.026485824460268762,
+      "std_importance": 0.03229656105958871,
+      "min_importance": 0.005962296170923529,
+      "max_importance": 0.08238641254027959,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "days_in_bin_20_25_x_canopy",
+      "mean_importance": 0.024792914952186607,
+      "std_importance": 0.028797156602910868,
+      "min_importance": 0.007115857597262689,
+      "max_importance": 0.07465656966143908,
+      "methods_count": 4,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "cooling_season",
+      "mean_importance": 0.0219931183063326,
+      "std_importance": 0.03340820097590877,
+      "min_importance": 0.0003025528199411896,
+      "max_importance": 0.0797481221314349,
+      "methods_count": 4,
+      "group": "seasonal"
+    },
+    {
+      "feature": "days_in_bin_15_20",
+      "mean_importance": 0.021753427473403756,
+      "std_importance": 0.013777124512689833,
+      "min_importance": 0.001903693269691289,
+      "max_importance": 0.0380282874152446,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "month",
+      "mean_importance": 0.02153083605235764,
+      "std_importance": 0.005068643863384999,
+      "min_importance": 0.013110846245530394,
+      "max_importance": 0.026339678540609302,
+      "methods_count": 4,
+      "group": "temporal"
+    },
+    {
+      "feature": "canopy_unknown",
+      "mean_importance": 0.020964951053483633,
+      "std_importance": 0.028759489949781503,
+      "min_importance": 0.000690379967056573,
+      "max_importance": 0.07058498422458502,
+      "methods_count": 4,
+      "group": "canopy"
+    },
+    {
+      "feature": "moderate_temp_share",
+      "mean_importance": 0.020541658741575677,
+      "std_importance": 0.012402767364401312,
+      "min_importance": 0.0,
+      "max_importance": 0.03300526753930183,
+      "methods_count": 3,
+      "group": "temperature_derived"
+    },
+    {
+      "feature": "population_low_pop",
+      "mean_importance": 0.019578081603568172,
+      "std_importance": 0.02293612873583129,
+      "min_importance": 0.0,
+      "max_importance": 0.05758192031973368,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "days_in_bin_neg10_neg5",
+      "mean_importance": 0.01926958784858091,
+      "std_importance": 0.02128914104167827,
+      "min_importance": 0.003575685339690107,
+      "max_importance": 0.055611547930119985,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    }
+  ],
+  "feature_groups": {
+    "target": [],
+    "spatial": [
+      "lon",
+      "lat"
+    ],
+    "temporal": [
+      "year",
+      "month"
+    ],
+    "location": [],
+    "temperature_bins": [
+      "days_in_bin_below_neg10",
+      "days_in_bin_neg10_neg5",
+      "days_in_bin_0_5",
+      "days_in_bin_5_10",
+      "days_in_bin_10_15",
+      "days_in_bin_15_20",
+      "days_in_bin_20_25",
+      "days_in_bin_25_30"
+    ],
+    "temperature_interactions": [
+      "days_in_bin_20_25_x_canopy"
+    ],
+    "temperature_derived": [
+      "extreme_hot_share",
+      "moderate_temp_share",
+      "temperature_entropy"
+    ],
+    "climate_raw": [
+      "prec",
+      "pres",
+      "rhu",
+      "wind"
+    ],
+    "climate_categorical": [
+      "humidity_RH_high",
+      "humidity_RH_low",
+      "precipitation_rain_days_0_1mm"
+    ],
+    "socioeconomic_raw": [
+      "nightlight",
+      "population",
+      "gdp_per_capita"
+    ],
+    "socioeconomic_categorical": [
+      "gdp_per_capita",
+      "gdp_high_gdp",
+      "gdp_low_gdp",
+      "population_high_pop",
+      "population_low_pop",
+      "population_medium_pop",
+      "nightlight_urban_high",
+      "nightlight_urban_low"
+    ],
+    "canopy": [
+      "canopy_share",
+      "canopy_no_canopy",
+      "canopy_unknown"
+    ],
+    "canopy_categorical": [
+      "canopy_share",
+      "canopy_no_canopy",
+      "canopy_unknown"
+    ],
+    "seasonal": [
+      "season_spring",
+      "cooling_season"
+    ],
+    "interactions": [
+      "hot_days_x_urban_high"
+    ]
+  },
+  "correlation_summary": {
+    "top_correlated_features": [
+      {
+        "feature": "nightlight_urban_high",
+        "correlation": 0.4323604257252272,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "nightlight_urban_low",
+        "correlation": 0.43168510336021415,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "nightlight",
+        "correlation": 0.41989700611063374,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "gdp_per_capita",
+        "correlation": 0.33785178560179396,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "gdp_high_gdp",
+        "correlation": 0.2926915251596343,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "population_high_pop",
+        "correlation": 0.26060218366092647,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "hot_days_x_urban_high",
+        "correlation": 0.25012234413483264,
+        "group": "interactions"
+      },
+      {
+        "feature": "gdp_low_gdp",
+        "correlation": 0.2482168609647808,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "population",
+        "correlation": 0.2387889526983137,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "lat",
+        "correlation": 0.21538762741424852,
+        "group": "spatial"
+      },
+      {
+        "feature": "population_medium_pop",
+        "correlation": 0.1388925289193733,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "temperature_entropy",
+        "correlation": 0.12973229291349217,
+        "group": "temperature_derived"
+      },
+      {
+        "feature": "year",
+        "correlation": 0.12140358089639865,
+        "group": "temporal"
+      },
+      {
+        "feature": "population_low_pop",
+        "correlation": 0.1206407232324805,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "humidity_RH_high",
+        "correlation": 0.09789473432470835,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "days_in_bin_5_10",
+        "correlation": 0.09683474924163006,
+        "group": "temperature_bins"
+      },
+      {
+        "feature": "humidity_RH_mid",
+        "correlation": 0.09198991968738865,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "days_in_bin_0_5",
+        "correlation": 0.08943598548934457,
+        "group": "temperature_bins"
+      },
+      {
+        "feature": "moderate_temp_share",
+        "correlation": 0.08582769848380324,
+        "group": "temperature_derived"
+      },
+      {
+        "feature": "moderate_temp_days",
+        "correlation": 0.08525584806389278,
+        "group": "temperature_derived"
+      }
+    ]
+  }
+}

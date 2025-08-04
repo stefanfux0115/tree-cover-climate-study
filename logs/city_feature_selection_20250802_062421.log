@@ -1,0 +1,30 @@
+2025-08-02 06:24:21,698 - __main__ - INFO - Starting comprehensive feature selection...
+2025-08-02 06:24:21,698 - __main__ - INFO - Loading feature-engineered datasets...
+2025-08-02 06:24:21,727 - __main__ - INFO - Loaded train: 18,699 rows, 156 features
+2025-08-02 06:24:21,742 - __main__ - INFO - Loaded validation: 3,252 rows, 141 features
+2025-08-02 06:24:21,751 - __main__ - INFO - Loaded test: 3,252 rows, 141 features
+2025-08-02 06:24:21,751 - __main__ - INFO - Identifying feature groups...
+2025-08-02 06:24:21,756 - __main__ - INFO -   target: 2 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   spatial: 3 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   temporal: 3 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   location: 2 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   temperature_bins: 12 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   temperature_interactions: 12 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   climate_raw: 4 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   climate_categorical: 59 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   socioeconomic_raw: 3 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   socioeconomic_categorical: 72 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   canopy: 6 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   canopy_categorical: 6 features
+2025-08-02 06:24:21,756 - __main__ - INFO -   interactions: 89 features
+2025-08-02 06:24:21,756 - __main__ - INFO - Preparing data for ML analysis...
+2025-08-02 06:24:21,756 - __main__ - INFO - Found 133 common features between train and validation
+2025-08-02 06:24:21,756 - __main__ - WARNING - Features in train but not validation: ['precipitation_rain_days_1_10mm', 'gdp_x_precipitation_low_gdp_rain_days_1_10mm', 'gdp_x_precipitation_high_gdp_rain_days_10_plus', 'canopy_x_precipitation_high_canopy_rain_days_10_plus', 'canopy_x_precipitation_low_canopy_rain_days_1_10mm', 'gdp_x_precipitation_medium_gdp_rain_days_10_plus', 'gdp_x_precipitation_high_gdp_rain_days_1_10mm', 'canopy_x_precipitation_medium_canopy_rain_days_10_plus', 'gdp_x_precipitation_low_gdp_rain_days_10_plus', 'gdp_x_precipitation_medium_gdp_rain_days_1_10mm', 'canopy_x_precipitation_no_canopy_rain_days_1_10mm', 'canopy_x_precipitation_medium_canopy_rain_days_1_10mm', 'precipitation_rain_days_10_plus', 'canopy_x_precipitation_no_canopy_rain_days_10_plus', 'canopy_x_precipitation_high_canopy_rain_days_1_10mm', 'canopy_x_precipitation_low_canopy_rain_days_10_plus']
+2025-08-02 06:24:21,756 - __main__ - WARNING - Features in validation but not train: ['canopy_x_population_no_canopy_medium_pop']
+2025-08-02 06:24:21,866 - __main__ - INFO - Prepared features: 133 columns
+2025-08-02 06:24:21,866 - __main__ - INFO - Training samples: 18,699
+2025-08-02 06:24:21,866 - __main__ - INFO - Validation samples: 3,252
+2025-08-02 06:24:21,866 - __main__ - INFO - Creating feature distribution visualizations...
+2025-08-02 06:24:25,420 - __main__ - INFO - Feature distribution visualizations saved
+2025-08-02 06:24:25,420 - __main__ - INFO - Computing correlation analysis...
+2025-08-02 06:24:25,423 - __main__ - ERROR - Error during feature selection: could not convert string to float: 'urban_high'

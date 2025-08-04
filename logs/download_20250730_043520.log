@@ -1,0 +1,31 @@
+2025-07-30 04:35:21,343 - scripts.download_utils - INFO - ============================================================
+2025-07-30 04:35:21,343 - scripts.download_utils - INFO - ERA5-Land Temperature Data Download Pipeline
+2025-07-30 04:35:21,343 - scripts.download_utils - INFO - ============================================================
+2025-07-30 04:35:21,343 - scripts.download_utils - INFO - Target years: 2012-2019 (8 years)
+2025-07-30 04:35:21,344 - scripts.download_utils - INFO - Running pre-flight checks...
+2025-07-30 04:35:21,344 - root - INFO - Python version check passed: 3.12
+2025-07-30 04:35:21,344 - root - INFO - Disk space check passed. Available: 1422.73GB
+2025-07-30 04:35:21,344 - scripts.download_utils - INFO - All pre-flight checks passed
+2025-07-30 04:35:21,346 - root - INFO - CDS credentials loaded from config file
+2025-07-30 04:35:22,940 - ecmwf.datastores.legacy_client - INFO - [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2025-07-30 04:35:22,940 - scripts.download_utils - INFO - CDS API client initialized successfully
+2025-07-30 04:35:22,940 - scripts.download_utils - INFO - Monthly download mode enabled - will download data month by month
+2025-07-30 04:35:22,940 - scripts.download_utils - INFO - Estimated download size: 24.0GB for 8 years
+2025-07-30 04:35:22,940 - scripts.download_utils - INFO - 
+Estimated download: ~24.0GB
+2025-07-30 04:35:22,940 - scripts.download_utils - INFO - Starting downloads in 5 seconds... (Press Ctrl+C to cancel)
+2025-07-30 04:35:27,942 - scripts.download_utils - INFO - Starting ERA5 downloads for 8 years: 2012-2019
+2025-07-30 04:35:27,943 - scripts.download_utils - INFO - 
+Progress: 1/8 years
+2025-07-30 04:35:27,943 - scripts.download_utils - INFO - Downloading year 2012 month by month...
+2025-07-30 04:35:27,943 - scripts.download_utils - INFO - Downloading 2012-01...
+2025-07-30 04:35:28,801 - ecmwf.datastores.legacy_client - INFO - Request ID is 68f3c373-1a3e-4437-89d5-c7509842bb9c
+2025-07-30 04:35:29,197 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:35:38,944 - ecmwf.datastores.legacy_client - INFO - status has been updated to running
+2025-07-30 04:39:53,880 - ecmwf.datastores.legacy_client - INFO - status has been updated to successful
+2025-07-30 04:39:54,645 - multiurl.base - INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2025-07-30/2239205291020c8b0d7f1b9e8e1a1bb6.zip
+2025-07-30 04:43:44,005 - scripts.download_utils - INFO - Downloaded 2012-01: 456.1MB in 8m 16s
+2025-07-30 04:43:46,008 - scripts.download_utils - INFO - Downloading 2012-02...
+2025-07-30 04:43:48,297 - ecmwf.datastores.legacy_client - INFO - Request ID is 98a164d8-92b2-490a-ae06-c6d939b3b1a2
+2025-07-30 04:43:48,692 - ecmwf.datastores.legacy_client - INFO - status has been updated to accepted
+2025-07-30 04:44:11,953 - ecmwf.datastores.legacy_client - INFO - status has been updated to running

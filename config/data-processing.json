@@ -1,0 +1,183 @@
+{
+    "temperature_bins": [
+        {
+            "name": "bin_below_neg10",
+            "min": -50,
+            "max": -10,
+            "label": "Below -10°C"
+        },
+        {
+            "name": "bin_neg10_neg5",
+            "min": -10,
+            "max": -5,
+            "label": "-10 to -5°C"
+        },
+        {
+            "name": "bin_neg5_0",
+            "min": -5,
+            "max": 0,
+            "label": "-5 to 0°C"
+        },
+        {
+            "name": "bin_0_5",
+            "min": 0,
+            "max": 5,
+            "label": "0 to 5°C"
+        },
+        {
+            "name": "bin_5_10",
+            "min": 5,
+            "max": 10,
+            "label": "5 to 10°C"
+        },
+        {
+            "name": "bin_10_15",
+            "min": 10,
+            "max": 15,
+            "label": "10 to 15°C"
+        },
+        {
+            "name": "bin_15_20",
+            "min": 15,
+            "max": 20,
+            "label": "15 to 20°C"
+        },
+        {
+            "name": "bin_20_25",
+            "min": 20,
+            "max": 25,
+            "label": "20 to 25°C (reference)"
+        },
+        {
+            "name": "bin_25_30",
+            "min": 25,
+            "max": 30,
+            "label": "25 to 30°C"
+        },
+        {
+            "name": "bin_30_35",
+            "min": 30,
+            "max": 35,
+            "label": "30 to 35°C"
+        },
+        {
+            "name": "bin_35_40",
+            "min": 35,
+            "max": 40,
+            "label": "35 to 40°C"
+        },
+        {
+            "name": "bin_40_plus",
+            "min": 40,
+            "max": 50,
+            "label": "40°C+"
+        }
+    ],
+    "humidity_bins": [
+        {
+            "name": "RH_low",
+            "min": 0,
+            "max": 40,
+            "label": "Low humidity (<40%)"
+        },
+        {
+            "name": "RH_mid",
+            "min": 40,
+            "max": 70,
+            "label": "Moderate humidity (40-70%)"
+        },
+        {
+            "name": "RH_high",
+            "min": 70,
+            "max": 100,
+            "label": "High humidity (>70%)"
+        }
+    ],
+    "precipitation_bins": [
+        {
+            "name": "rain_days_0_1mm",
+            "min": 0,
+            "max": 1,
+            "label": "Dry days (≤1mm)"
+        },
+        {
+            "name": "rain_days_1_10mm",
+            "min": 1,
+            "max": 10,
+            "label": "Light rain (1-10mm)"
+        },
+        {
+            "name": "rain_days_10_plus",
+            "min": 10,
+            "max": 1000,
+            "label": "Heavy rain (>10mm)"
+        }
+    ],
+    "socioeconomic_bins": {
+        "population": [
+            {
+                "name": "rural",
+                "min": 0,
+                "max": 500,
+                "label": "Rural (<500 people)"
+            },
+            {
+                "name": "suburban",
+                "min": 500,
+                "max": 2000,
+                "label": "Suburban (500-2000 people)"
+            },
+            {
+                "name": "urban",
+                "min": 2000,
+                "max": 100000,
+                "label": "Urban (>2000 people)"
+            }
+        ],
+        "gdp": [
+            {
+                "name": "low_gdp",
+                "min": 0,
+                "max": 10000,
+                "label": "Low income (<¥10k)"
+            },
+            {
+                "name": "mid_gdp",
+                "min": 10000,
+                "max": 20000,
+                "label": "Middle income (¥10k-20k)"
+            },
+            {
+                "name": "high_gdp",
+                "min": 20000,
+                "max": 100000,
+                "label": "High income (>¥20k)"
+            }
+        ]
+    },
+    "processing_settings": {
+        "canopy_event_threshold": 5,
+        "coordinate_transformation": "Albers to WGS84",
+        "time_zone": "UTC+8",
+        "grid_resolution": "1km",
+        "temporal_aggregation": "monthly"
+    },
+    "data_integration": {
+        "primary_variables": [
+            "grid_id", "year", "month", "city_id", "city_name", "province",
+            "lon", "lat", "elec_kwh", "ln_elec_kwh", "canopy_share"
+        ],
+        "temperature_variables": [
+            "days_in_bin_below_neg10", "days_in_bin_neg10_neg5", "days_in_bin_neg5_0",
+            "days_in_bin_0_5", "days_in_bin_5_10", "days_in_bin_10_15",
+            "days_in_bin_15_20", "days_in_bin_20_25", "days_in_bin_25_30",
+            "days_in_bin_30_35", "days_in_bin_35_40", "days_in_bin_40_plus"
+        ],
+        "socioeconomic_variables": [
+            "gdp_per_capita", "population", "nightlight"
+        ],
+        "meteorological_variables": [
+            "rhu", "prec", "wind", "pres"
+        ]
+    }
+}

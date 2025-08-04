@@ -1,0 +1,29 @@
+2025-08-02 01:47:21,583 - __main__ - INFO - Starting ML data preparation...
+2025-08-02 01:47:21,583 - __main__ - INFO - Loading integrated grid_month_panel dataset...
+2025-08-02 01:47:25,762 - __main__ - INFO - Loaded integrated dataset: 17,544,723 rows, 47 columns
+2025-08-02 01:47:25,762 - __main__ - INFO - Analyzing dataset structure...
+2025-08-02 01:47:25,762 - __main__ - INFO - Dataset Structure:
+2025-08-02 01:47:25,762 - __main__ - INFO -   Total: 17,544,723 rows × 47 columns
+2025-08-02 01:47:25,762 - __main__ - INFO -   Temperature bins: 12
+2025-08-02 01:47:25,762 - __main__ - INFO -   Temperature interactions: 12
+2025-08-02 01:47:25,762 - __main__ - INFO -   Climate variables: 4
+2025-08-02 01:47:25,864 - __main__ - INFO -   Socioeconomic variables: 3
+2025-08-02 01:47:25,864 - __main__ - INFO -   Canopy variables: 1
+2025-08-02 01:47:25,864 - __main__ - INFO - Validating data quality...
+2025-08-02 01:47:38,107 - __main__ - INFO - Data Quality Validation:
+2025-08-02 01:47:38,107 - __main__ - INFO -   Missing data columns: 17
+2025-08-02 01:47:38,107 - __main__ - INFO -   Temporal coverage: [2012, 2019]
+2025-08-02 01:47:38,107 - __main__ - INFO -   Spatial coverage: 348,806 grids
+2025-08-02 01:47:38,107 - __main__ - INFO -   Data quality issues: 0
+2025-08-02 01:47:38,107 - __main__ - INFO - Preparing data splits for ML analysis...
+2025-08-02 01:47:47,060 - __main__ - INFO - Data splits created:
+2025-08-02 01:47:47,060 - __main__ - INFO -   full: 17,544,723 rows
+2025-08-02 01:47:47,060 - __main__ - INFO -   train: 12,109,326 rows
+2025-08-02 01:47:47,060 - __main__ - INFO -   validation: 2,717,703 rows
+2025-08-02 01:47:47,060 - __main__ - INFO -   test: 2,717,694 rows
+2025-08-02 01:48:09,071 - __main__ - INFO - Saved full dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\full_dataset.parquet
+2025-08-02 01:48:24,738 - __main__ - INFO - Saved train dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\train_dataset.parquet
+2025-08-02 01:48:27,827 - __main__ - INFO - Saved validation dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\validation_dataset.parquet
+2025-08-02 01:48:30,947 - __main__ - INFO - Saved test dataset: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\test_dataset.parquet
+2025-08-02 01:48:30,951 - __main__ - INFO - Saved metadata: G:\research\junmao-tang\code-test\code-space\data\processed\ml_analysis\ml_dataset_metadata.json
+2025-08-02 01:48:30,951 - __main__ - INFO - ML data preparation completed successfully!

@@ -1,0 +1,22 @@
+                      model_low_canopy  model_high_canopy
+Dependent Var.:            ln_elec_kwh        ln_elec_kwh
+                                                         
+days_in_bin_20_25   0.0101*** (0.0013) 0.0093*** (0.0016)
+days_in_bin_25_30   0.0104*** (0.0014) 0.0069*** (0.0011)
+days_in_bin_30_35   0.0100*** (0.0024)  0.0052** (0.0016)
+days_in_bin_35_40   0.0136*** (0.0035) 0.0073*** (0.0020)
+days_in_bin_40_plus    0.0108 (0.0165)    0.0108 (0.0096)
+log1p(population)     -0.0238 (0.0173)   -0.0137 (0.0191)
+log1p(nightlight)   0.2231*** (0.0186) 0.1825*** (0.0185)
+canopy_share                              0.0005 (0.0005)
+Fixed-Effects:      ------------------ ------------------
+grid_id                            Yes                Yes
+year                               Yes                Yes
+month                              Yes                Yes
+___________________ __________________ __________________
+S.E. type               Conley (100km)     Conley (100km)
+Observations                 9,426,153          2,224,899
+R2                             0.80622            0.84025
+Within R2                      0.00828            0.00939
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

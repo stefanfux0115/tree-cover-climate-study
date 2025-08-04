@@ -1,0 +1,852 @@
+{
+  "feature_selection_summary": {
+    "total_original_features": 130,
+    "selected_features_count": 60,
+    "selection_ratio": 0.46153846153846156,
+    "group_distribution": {
+      "socioeconomic_categorical": 25,
+      "climate_categorical": 11,
+      "temperature_interactions": 6,
+      "temperature_bins": 5,
+      "climate_raw": 3,
+      "socioeconomic_raw": 3,
+      "spatial": 2,
+      "temporal": 2,
+      "interactions": 2,
+      "canopy": 1
+    },
+    "selection_date": "2025-08-02T06:25:23.746954"
+  },
+  "selected_features": [
+    "population",
+    "lat",
+    "lon",
+    "gdp_per_capita",
+    "canopy_share",
+    "year",
+    "population_high_pop",
+    "pres",
+    "nightlight",
+    "canopy_x_population_high_canopy_low_pop",
+    "wind",
+    "canopy_x_population",
+    "population_low_pop",
+    "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+    "population_x_humidity",
+    "population_category",
+    "nightlight_urban_high",
+    "gdp_x_humidity",
+    "gdp_x_precipitation",
+    "days_in_bin_25_30",
+    "gdp_category",
+    "canopy_x_population_high_canopy_high_pop",
+    "gdp_low_gdp",
+    "gdp_high_gdp",
+    "precipitation_rain_days_0_1mm",
+    "canopy_x_gdp_no_canopy_high_gdp",
+    "canopy_x_population_medium_canopy_low_pop",
+    "canopy_x_nightlight",
+    "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+    "days_in_bin_30_35",
+    "canopy_x_gdp_high_canopy_low_gdp",
+    "population_x_humidity_high_pop_RH_high",
+    "canopy_x_gdp_high_canopy_high_gdp",
+    "population_x_humidity_low_pop_RH_high",
+    "days_in_bin_25_30_x_canopy",
+    "gdp_x_humidity_high_gdp_RH_mid",
+    "canopy_x_population_low_canopy_medium_pop",
+    "canopy_x_humidity_no_canopy_RH_mid",
+    "canopy_x_population_high_canopy_medium_pop",
+    "population_medium_pop",
+    "nightlight_urban_low",
+    "canopy_x_nightlight_medium_canopy_urban_high",
+    "nightlight_category",
+    "month",
+    "population_x_humidity_high_pop_RH_mid",
+    "gdp_x_humidity_low_gdp_RH_high",
+    "canopy_x_nightlight_high_canopy_urban_low",
+    "days_in_bin_below_neg10",
+    "gdp_x_humidity_high_gdp_RH_high",
+    "days_in_bin_20_25_x_canopy",
+    "days_in_bin_15_20_x_canopy",
+    "days_in_bin_10_15",
+    "rhu",
+    "days_in_bin_5_10_x_canopy",
+    "canopy_x_nightlight_medium_canopy_urban_low",
+    "population_x_humidity_medium_pop_RH_high",
+    "canopy_x_nightlight_high_canopy_urban_high",
+    "days_in_bin_10_15_x_canopy",
+    "days_in_bin_5_10",
+    "days_in_bin_30_35_x_canopy"
+  ],
+  "feature_details": [
+    {
+      "feature": "population",
+      "mean_importance": 0.9158476377311275,
+      "std_importance": 0.10001114133091789,
+      "min_importance": 0.7552674230145867,
+      "max_importance": 1.0,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "lat",
+      "mean_importance": 0.5472730484438719,
+      "std_importance": 0.4362928499365471,
+      "min_importance": 0.08012255748046862,
+      "max_importance": 1.0,
+      "methods_count": 4,
+      "group": "spatial"
+    },
+    {
+      "feature": "lon",
+      "mean_importance": 0.5216821157339208,
+      "std_importance": 0.40075348526390814,
+      "min_importance": 0.11379344635538442,
+      "max_importance": 1.0,
+      "methods_count": 4,
+      "group": "spatial"
+    },
+    {
+      "feature": "gdp_per_capita",
+      "mean_importance": 0.36253866005543517,
+      "std_importance": 0.23464270749659946,
+      "min_importance": 0.07944917961820092,
+      "max_importance": 0.667891543046989,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "canopy_share",
+      "mean_importance": 0.26744648352029293,
+      "std_importance": 0.17587184574831116,
+      "min_importance": 0.044869539153108706,
+      "max_importance": 0.45705024311183146,
+      "methods_count": 4,
+      "group": "canopy"
+    },
+    {
+      "feature": "year",
+      "mean_importance": 0.2167345355085783,
+      "std_importance": 0.11441383548030665,
+      "min_importance": 0.07135260417759834,
+      "max_importance": 0.3419773095623987,
+      "methods_count": 4,
+      "group": "temporal"
+    },
+    {
+      "feature": "population_high_pop",
+      "mean_importance": 0.2052153302598138,
+      "std_importance": 0.23882499260400364,
+      "min_importance": 0.0,
+      "max_importance": 0.5833017673210866,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "pres",
+      "mean_importance": 0.16904817292356444,
+      "std_importance": 0.08252551261428713,
+      "min_importance": 0.0317793811924988,
+      "max_importance": 0.24937742381728964,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "nightlight",
+      "mean_importance": 0.14953760923611806,
+      "std_importance": 0.06862409124938552,
+      "min_importance": 0.03242989414714541,
+      "max_importance": 0.20367878901798728,
+      "methods_count": 4,
+      "group": "socioeconomic_raw"
+    },
+    {
+      "feature": "canopy_x_population_high_canopy_low_pop",
+      "mean_importance": 0.13090362573270456,
+      "std_importance": 0.1366000249860936,
+      "min_importance": 0.000539741191301339,
+      "max_importance": 0.341208854118279,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "wind",
+      "mean_importance": 0.11719958955362984,
+      "std_importance": 0.12284110748631394,
+      "min_importance": 0.003322636945042233,
+      "max_importance": 0.32183387642474603,
+      "methods_count": 4,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "canopy_x_population",
+      "mean_importance": 0.10096435745949744,
+      "std_importance": 0.16682079827111398,
+      "min_importance": 0.0,
+      "max_importance": 0.3898152553356423,
+      "methods_count": 3,
+      "group": "interactions"
+    },
+    {
+      "feature": "population_low_pop",
+      "mean_importance": 0.10014342830798412,
+      "std_importance": 0.10101295874020312,
+      "min_importance": 0.0,
+      "max_importance": 0.21985431990875354,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+      "mean_importance": 0.0968713177497294,
+      "std_importance": 0.10720772877674657,
+      "min_importance": 0.0,
+      "max_importance": 0.26129309340663015,
+      "methods_count": 3,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "population_x_humidity",
+      "mean_importance": 0.08887106930695877,
+      "std_importance": 0.14819224297599978,
+      "min_importance": 0.0,
+      "max_importance": 0.34545821022687306,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_category",
+      "mean_importance": 0.08501399965756415,
+      "std_importance": 0.13346805216608626,
+      "min_importance": 0.0,
+      "max_importance": 0.3155524262426891,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "nightlight_urban_high",
+      "mean_importance": 0.08061402537294643,
+      "std_importance": 0.10496849940985714,
+      "min_importance": 0.0,
+      "max_importance": 0.25632634142389005,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_x_humidity",
+      "mean_importance": 0.06043658683224194,
+      "std_importance": 0.09958164797656466,
+      "min_importance": 0.0,
+      "max_importance": 0.23283043727918848,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_x_precipitation",
+      "mean_importance": 0.04992781664462318,
+      "std_importance": 0.08508752266824758,
+      "min_importance": 0.0,
+      "max_importance": 0.19730038627895807,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "days_in_bin_25_30",
+      "mean_importance": 0.048244700836953,
+      "std_importance": 0.05312833962794263,
+      "min_importance": 0.0017498876167647362,
+      "max_importance": 0.13854098171200052,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "gdp_category",
+      "mean_importance": 0.047496079576795976,
+      "std_importance": 0.08205953488152853,
+      "min_importance": 0.0,
+      "max_importance": 0.18962713883666119,
+      "methods_count": 2,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "canopy_x_population_high_canopy_high_pop",
+      "mean_importance": 0.0473845009013055,
+      "std_importance": 0.07933950581563556,
+      "min_importance": 0.0,
+      "max_importance": 0.18476653563647216,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_low_gdp",
+      "mean_importance": 0.04687797284059472,
+      "std_importance": 0.050699934290190436,
+      "min_importance": 0.00070717604134929,
+      "max_importance": 0.127387321011804,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "gdp_high_gdp",
+      "mean_importance": 0.042942736090282485,
+      "std_importance": 0.05692397513906244,
+      "min_importance": 0.0,
+      "max_importance": 0.1387648782164918,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "precipitation_rain_days_0_1mm",
+      "mean_importance": 0.04205048353746047,
+      "std_importance": 0.07236895278561853,
+      "min_importance": 0.0,
+      "max_importance": 0.1673960301469033,
+      "methods_count": 3,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_gdp_no_canopy_high_gdp",
+      "mean_importance": 0.04165284166975565,
+      "std_importance": 0.06294304543042256,
+      "min_importance": 0.0016207455429497568,
+      "max_importance": 0.15059441964446948,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "canopy_x_population_medium_canopy_low_pop",
+      "mean_importance": 0.03796521842381743,
+      "std_importance": 0.05327437880200355,
+      "min_importance": 0.001591808096718736,
+      "max_importance": 0.12992875133413898,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "canopy_x_nightlight",
+      "mean_importance": 0.03624439452005375,
+      "std_importance": 0.05025587906776241,
+      "min_importance": 0.0,
+      "max_importance": 0.12210676516982265,
+      "methods_count": 3,
+      "group": "interactions"
+    },
+    {
+      "feature": "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+      "mean_importance": 0.03258900284741159,
+      "std_importance": 0.05635371649567197,
+      "min_importance": 0.0,
+      "max_importance": 0.130196437793513,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "days_in_bin_30_35",
+      "mean_importance": 0.032141753157815096,
+      "std_importance": 0.03837360652825411,
+      "min_importance": 0.0009804754195681283,
+      "max_importance": 0.09772373056066387,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "canopy_x_gdp_high_canopy_low_gdp",
+      "mean_importance": 0.028918087694170758,
+      "std_importance": 0.04566188642706534,
+      "min_importance": 0.0,
+      "max_importance": 0.1078950900506977,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_x_humidity_high_pop_RH_high",
+      "mean_importance": 0.02890987238336992,
+      "std_importance": 0.05006670410081598,
+      "min_importance": 0.0,
+      "max_importance": 0.11562794726942847,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_gdp_high_canopy_high_gdp",
+      "mean_importance": 0.027063705629996892,
+      "std_importance": 0.043977798953142286,
+      "min_importance": 0.0,
+      "max_importance": 0.10316137382133085,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_x_humidity_low_pop_RH_high",
+      "mean_importance": 0.027049093100598103,
+      "std_importance": 0.046814247797379874,
+      "min_importance": 0.0,
+      "max_importance": 0.10813373670768521,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "days_in_bin_25_30_x_canopy",
+      "mean_importance": 0.025293374147677624,
+      "std_importance": 0.022747444137136873,
+      "min_importance": 0.0025665387169056474,
+      "max_importance": 0.06215379180238842,
+      "methods_count": 4,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "gdp_x_humidity_high_gdp_RH_mid",
+      "mean_importance": 0.024983335211625844,
+      "std_importance": 0.024754436418862675,
+      "min_importance": 7.766485533175812e-05,
+      "max_importance": 0.05686707859574682,
+      "methods_count": 4,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_population_low_canopy_medium_pop",
+      "mean_importance": 0.02233544402915142,
+      "std_importance": 0.030891732147082036,
+      "min_importance": 0.00025004355292005157,
+      "max_importance": 0.07564451424511531,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "canopy_x_humidity_no_canopy_RH_mid",
+      "mean_importance": 0.021948653400571057,
+      "std_importance": 0.03052854300491108,
+      "min_importance": 0.00012610477439139523,
+      "max_importance": 0.07448767400433899,
+      "methods_count": 4,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_population_high_canopy_medium_pop",
+      "mean_importance": 0.021809231789136643,
+      "std_importance": 0.032999287374215765,
+      "min_importance": 0.0,
+      "max_importance": 0.078692551491629,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_medium_pop",
+      "mean_importance": 0.02173186164837728,
+      "std_importance": 0.037539896841754274,
+      "min_importance": 0.0,
+      "max_importance": 0.08675275295059044,
+      "methods_count": 2,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "nightlight_urban_low",
+      "mean_importance": 0.02057903527946468,
+      "std_importance": 0.027076422290862975,
+      "min_importance": 0.0,
+      "max_importance": 0.06606686429000079,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "canopy_x_nightlight_medium_canopy_urban_high",
+      "mean_importance": 0.01930856733075278,
+      "std_importance": 0.02267900060777712,
+      "min_importance": 0.0005879923958767942,
+      "max_importance": 0.0579378566584689,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "nightlight_category",
+      "mean_importance": 0.018913820129872992,
+      "std_importance": 0.027498557740747328,
+      "min_importance": 0.0,
+      "max_importance": 0.06606686429000079,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "month",
+      "mean_importance": 0.018768620061796252,
+      "std_importance": 0.024823258466920232,
+      "min_importance": 0.0009017598846683714,
+      "max_importance": 0.06139306432240628,
+      "methods_count": 4,
+      "group": "temporal"
+    },
+    {
+      "feature": "population_x_humidity_high_pop_RH_mid",
+      "mean_importance": 0.018286606798491922,
+      "std_importance": 0.03166506820819654,
+      "min_importance": 0.0,
+      "max_importance": 0.07313211282623001,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "gdp_x_humidity_low_gdp_RH_high",
+      "mean_importance": 0.018141791794130203,
+      "std_importance": 0.03136934107491712,
+      "min_importance": 0.0,
+      "max_importance": 0.07247504528775281,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_nightlight_high_canopy_urban_low",
+      "mean_importance": 0.018044716834012164,
+      "std_importance": 0.0290971429995905,
+      "min_importance": 0.0,
+      "max_importance": 0.06839753985075137,
+      "methods_count": 3,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "days_in_bin_below_neg10",
+      "mean_importance": 0.017946450366469267,
+      "std_importance": 0.02605547076938683,
+      "min_importance": 0.00011670106166597172,
+      "max_importance": 0.06284345228139451,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "gdp_x_humidity_high_gdp_RH_high",
+      "mean_importance": 0.017862368730262482,
+      "std_importance": 0.03089571452141334,
+      "min_importance": 0.0,
+      "max_importance": 0.07137529030708857,
+      "methods_count": 2,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "days_in_bin_20_25_x_canopy",
+      "mean_importance": 0.016386614097087034,
+      "std_importance": 0.025797761255406403,
+      "min_importance": 0.0,
+      "max_importance": 0.06102488474999741,
+      "methods_count": 3,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "days_in_bin_15_20_x_canopy",
+      "mean_importance": 0.0157146418383165,
+      "std_importance": 0.02052192279115425,
+      "min_importance": 0.0,
+      "max_importance": 0.05042315561662502,
+      "methods_count": 3,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "days_in_bin_10_15",
+      "mean_importance": 0.015625573056061402,
+      "std_importance": 0.008499408499752354,
+      "min_importance": 0.0019525674502330244,
+      "max_importance": 0.02412823797983457,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "rhu",
+      "mean_importance": 0.015416007794977886,
+      "std_importance": 0.015707769882715855,
+      "min_importance": 0.0,
+      "max_importance": 0.03859562873499745,
+      "methods_count": 3,
+      "group": "climate_raw"
+    },
+    {
+      "feature": "days_in_bin_5_10_x_canopy",
+      "mean_importance": 0.01458868792909636,
+      "std_importance": 0.01639954895188929,
+      "min_importance": 0.0,
+      "max_importance": 0.04077417074597143,
+      "methods_count": 3,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "canopy_x_nightlight_medium_canopy_urban_low",
+      "mean_importance": 0.014243801371037843,
+      "std_importance": 0.011949654721730001,
+      "min_importance": 0.003375590318714682,
+      "max_importance": 0.03438232384478212,
+      "methods_count": 4,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "population_x_humidity_medium_pop_RH_high",
+      "mean_importance": 0.012494049764054547,
+      "std_importance": 0.020632713731808933,
+      "min_importance": 0.0,
+      "max_importance": 0.048214041609683865,
+      "methods_count": 3,
+      "group": "climate_categorical"
+    },
+    {
+      "feature": "canopy_x_nightlight_high_canopy_urban_high",
+      "mean_importance": 0.012330429244554911,
+      "std_importance": 0.021290530985857512,
+      "min_importance": 0.0,
+      "max_importance": 0.049206620824176296,
+      "methods_count": 2,
+      "group": "socioeconomic_categorical"
+    },
+    {
+      "feature": "days_in_bin_10_15_x_canopy",
+      "mean_importance": 0.012245353558694511,
+      "std_importance": 0.01865766521934962,
+      "min_importance": 0.0,
+      "max_importance": 0.044499236545718586,
+      "methods_count": 3,
+      "group": "temperature_interactions"
+    },
+    {
+      "feature": "days_in_bin_5_10",
+      "mean_importance": 0.011218241165005203,
+      "std_importance": 0.006327842586259374,
+      "min_importance": 0.001695990309143569,
+      "max_importance": 0.017828200972447326,
+      "methods_count": 4,
+      "group": "temperature_bins"
+    },
+    {
+      "feature": "days_in_bin_30_35_x_canopy",
+      "mean_importance": 0.010948722621801854,
+      "std_importance": 0.017457136104556646,
+      "min_importance": 0.0,
+      "max_importance": 0.04116876120943458,
+      "methods_count": 3,
+      "group": "temperature_interactions"
+    }
+  ],
+  "feature_groups": {
+    "target": [],
+    "spatial": [
+      "lon",
+      "lat"
+    ],
+    "temporal": [
+      "year",
+      "month"
+    ],
+    "location": [],
+    "temperature_bins": [
+      "days_in_bin_below_neg10",
+      "days_in_bin_5_10",
+      "days_in_bin_10_15",
+      "days_in_bin_25_30",
+      "days_in_bin_30_35"
+    ],
+    "temperature_interactions": [
+      "days_in_bin_5_10_x_canopy",
+      "days_in_bin_10_15_x_canopy",
+      "days_in_bin_15_20_x_canopy",
+      "days_in_bin_20_25_x_canopy",
+      "days_in_bin_25_30_x_canopy",
+      "days_in_bin_30_35_x_canopy"
+    ],
+    "temperature_derived": [],
+    "climate_raw": [
+      "pres",
+      "rhu",
+      "wind"
+    ],
+    "climate_categorical": [
+      "precipitation_rain_days_0_1mm",
+      "canopy_x_humidity_no_canopy_RH_mid",
+      "gdp_x_humidity_high_gdp_RH_high",
+      "gdp_x_humidity_high_gdp_RH_mid",
+      "gdp_x_humidity_low_gdp_RH_high",
+      "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+      "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+      "population_x_humidity_high_pop_RH_high",
+      "population_x_humidity_high_pop_RH_mid",
+      "population_x_humidity_low_pop_RH_high",
+      "population_x_humidity_medium_pop_RH_high"
+    ],
+    "socioeconomic_raw": [
+      "nightlight",
+      "population",
+      "gdp_per_capita"
+    ],
+    "socioeconomic_categorical": [
+      "gdp_per_capita",
+      "gdp_category",
+      "gdp_high_gdp",
+      "gdp_low_gdp",
+      "population_category",
+      "population_high_pop",
+      "population_low_pop",
+      "population_medium_pop",
+      "nightlight_category",
+      "nightlight_urban_high",
+      "nightlight_urban_low",
+      "gdp_x_humidity",
+      "gdp_x_precipitation",
+      "population_x_humidity",
+      "gdp_x_humidity_high_gdp_RH_high",
+      "gdp_x_humidity_high_gdp_RH_mid",
+      "gdp_x_humidity_low_gdp_RH_high",
+      "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+      "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+      "population_x_humidity_high_pop_RH_high",
+      "population_x_humidity_high_pop_RH_mid",
+      "population_x_humidity_low_pop_RH_high",
+      "population_x_humidity_medium_pop_RH_high",
+      "canopy_x_gdp_high_canopy_high_gdp",
+      "canopy_x_gdp_high_canopy_low_gdp",
+      "canopy_x_gdp_no_canopy_high_gdp",
+      "canopy_x_population_high_canopy_high_pop",
+      "canopy_x_population_high_canopy_low_pop",
+      "canopy_x_population_high_canopy_medium_pop",
+      "canopy_x_population_low_canopy_medium_pop",
+      "canopy_x_population_medium_canopy_low_pop",
+      "canopy_x_nightlight_high_canopy_urban_high",
+      "canopy_x_nightlight_high_canopy_urban_low",
+      "canopy_x_nightlight_medium_canopy_urban_high",
+      "canopy_x_nightlight_medium_canopy_urban_low"
+    ],
+    "canopy": [
+      "canopy_share"
+    ],
+    "canopy_categorical": [
+      "canopy_share"
+    ],
+    "seasonal": [],
+    "interactions": [
+      "gdp_x_humidity",
+      "gdp_x_precipitation",
+      "population_x_humidity",
+      "canopy_x_population",
+      "canopy_x_nightlight",
+      "canopy_x_humidity_no_canopy_RH_mid",
+      "gdp_x_humidity_high_gdp_RH_high",
+      "gdp_x_humidity_high_gdp_RH_mid",
+      "gdp_x_humidity_low_gdp_RH_high",
+      "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+      "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+      "population_x_humidity_high_pop_RH_high",
+      "population_x_humidity_high_pop_RH_mid",
+      "population_x_humidity_low_pop_RH_high",
+      "population_x_humidity_medium_pop_RH_high",
+      "canopy_x_gdp_high_canopy_high_gdp",
+      "canopy_x_gdp_high_canopy_low_gdp",
+      "canopy_x_gdp_no_canopy_high_gdp",
+      "canopy_x_population_high_canopy_high_pop",
+      "canopy_x_population_high_canopy_low_pop",
+      "canopy_x_population_high_canopy_medium_pop",
+      "canopy_x_population_low_canopy_medium_pop",
+      "canopy_x_population_medium_canopy_low_pop",
+      "canopy_x_nightlight_high_canopy_urban_high",
+      "canopy_x_nightlight_high_canopy_urban_low",
+      "canopy_x_nightlight_medium_canopy_urban_high",
+      "canopy_x_nightlight_medium_canopy_urban_low"
+    ]
+  },
+  "correlation_summary": {
+    "top_correlated_features": [
+      {
+        "feature": "population",
+        "correlation": 0.6352027125542891,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "population_high_pop",
+        "correlation": 0.5973763799036125,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "gdp_per_capita",
+        "correlation": 0.5744895170513923,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "canopy_x_population_high_canopy_high_pop",
+        "correlation": 0.5325213894245416,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "population_low_pop",
+        "correlation": 0.529078934294459,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "canopy_x_population_high_canopy_low_pop",
+        "correlation": 0.49197381124226797,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "gdp_high_gdp",
+        "correlation": 0.46486082035426657,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "gdp_low_gdp",
+        "correlation": 0.46055826743275724,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "gdp_x_precipitation_low_gdp_rain_days_0_1mm",
+        "correlation": 0.45395736252971575,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "gdp_x_precipitation_high_gdp_rain_days_0_1mm",
+        "correlation": 0.45056923240213975,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "population_x_humidity_high_pop_RH_high",
+        "correlation": 0.4199219182682362,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "canopy_x_gdp_high_canopy_low_gdp",
+        "correlation": 0.417000103289214,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "nightlight",
+        "correlation": 0.4099685901031944,
+        "group": "socioeconomic_raw"
+      },
+      {
+        "feature": "population_x_humidity_low_pop_RH_high",
+        "correlation": 0.4018230921636614,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "canopy_x_gdp_high_canopy_high_gdp",
+        "correlation": 0.3921883477711913,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "population_category",
+        "correlation": 0.38244143325272795,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "gdp_x_humidity_low_gdp_RH_high",
+        "correlation": 0.3420419163705098,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "population_x_humidity",
+        "correlation": 0.33739393073935675,
+        "group": "socioeconomic_categorical"
+      },
+      {
+        "feature": "population_x_humidity_high_pop_RH_mid",
+        "correlation": 0.32909827429058275,
+        "group": "climate_categorical"
+      },
+      {
+        "feature": "pres",
+        "correlation": 0.3156317523719772,
+        "group": "climate_raw"
+      }
+    ]
+  }
+}

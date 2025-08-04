@@ -1,0 +1,11 @@
+2025-08-02 03:22:49,562 - __main__ - INFO - Starting ML data preparation...
+2025-08-02 03:22:49,562 - __main__ - INFO - Loading city-level datasets...
+2025-08-02 03:22:49,589 - __main__ - INFO - Loaded electricity: (25203, 10)
+2025-08-02 03:22:49,592 - __main__ - INFO - Loaded canopy: (2168, 7)
+2025-08-02 03:22:49,615 - __main__ - INFO - Loaded gdp: (26016, 8)
+2025-08-02 03:22:49,634 - __main__ - INFO - Loaded population: (26016, 8)
+2025-08-02 03:22:49,660 - __main__ - INFO - Loaded nightlight: (26016, 8)
+2025-08-02 03:22:49,663 - __main__ - INFO - Loaded prec: (1626, 8)
+2025-08-02 03:22:49,680 - __main__ - INFO - Loaded pres: (26016, 8)
+2025-08-02 03:22:49,700 - __main__ - INFO - Loaded rhu: (26016, 8)
+2025-08-02 03:22:49,809 - __main__ - ERROR - Error during ML data preparation: The column label 'city_id' is not unique.

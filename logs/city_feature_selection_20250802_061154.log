@@ -1,0 +1,22 @@
+2025-08-02 06:11:54,414 - __main__ - INFO - Starting comprehensive city-level feature selection pipeline...
+2025-08-02 06:11:54,414 - __main__ - INFO - Loading feature-engineered datasets...
+2025-08-02 06:11:54,438 - __main__ - INFO - Loaded train: 18,699 rows, 155 features
+2025-08-02 06:11:54,451 - __main__ - INFO - Loaded validation: 3,252 rows, 140 features
+2025-08-02 06:11:54,463 - __main__ - INFO - Loaded test: 3,252 rows, 140 features
+2025-08-02 06:11:54,463 - __main__ - INFO - Identifying feature groups...
+2025-08-02 06:11:54,463 - __main__ - INFO -   target: 2 features
+2025-08-02 06:11:54,463 - __main__ - INFO -   spatial: 2 features
+2025-08-02 06:11:54,463 - __main__ - INFO -   temporal: 3 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   location: 3 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   climate_raw: 3 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   climate_categorical: 59 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   socioeconomic_raw: 3 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   socioeconomic_categorical: 3 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   canopy_raw: 1 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   canopy_derived: 5 features
+2025-08-02 06:11:54,464 - __main__ - INFO -   interactions: 101 features
+2025-08-02 06:11:54,464 - __main__ - INFO - Preparing data for ML analysis...
+2025-08-02 06:11:54,464 - __main__ - INFO - Found 132 common features between train and validation
+2025-08-02 06:11:54,464 - __main__ - WARNING - Features in train but not validation: ['canopy_x_precipitation_no_canopy_rain_days_10_plus', 'gdp_x_precipitation_high_gdp_rain_days_10_plus', 'gdp_x_precipitation_low_gdp_rain_days_1_10mm', 'gdp_x_precipitation_medium_gdp_rain_days_10_plus', 'precipitation_rain_days_1_10mm', 'canopy_x_precipitation_no_canopy_rain_days_1_10mm', 'gdp_x_precipitation_high_gdp_rain_days_1_10mm', 'canopy_x_precipitation_high_canopy_rain_days_10_plus', 'canopy_x_precipitation_low_canopy_rain_days_1_10mm', 'gdp_x_precipitation_low_gdp_rain_days_10_plus', 'canopy_x_precipitation_low_canopy_rain_days_10_plus', 'gdp_x_precipitation_medium_gdp_rain_days_1_10mm', 'canopy_x_precipitation_medium_canopy_rain_days_1_10mm', 'precipitation_rain_days_10_plus', 'canopy_x_precipitation_high_canopy_rain_days_1_10mm', 'canopy_x_precipitation_medium_canopy_rain_days_10_plus']
+2025-08-02 06:11:54,464 - __main__ - WARNING - Features in validation but not train: ['canopy_x_population_no_canopy_medium_pop']
+2025-08-02 06:11:54,581 - __main__ - ERROR - Error in feature selection pipeline: 'ln_elec_kwh'

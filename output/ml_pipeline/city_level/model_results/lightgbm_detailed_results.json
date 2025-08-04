@@ -1,0 +1,19 @@
+{
+  "model_name": "lightgbm",
+  "hyperparameters": {
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "n_estimators": 100,
+    "num_leaves": 31,
+    "subsample": 0.8
+  },
+  "performance_metrics": {
+    "train_r2": 0.8513511604308586,
+    "validation_r2": 0.21655912507848274,
+    "train_rmse": 0.4635607691800122,
+    "validation_rmse": 1.082647729653207,
+    "train_mae": 0.35908499145927325,
+    "validation_mae": 0.937377604867714,
+    "cv_rmse": 0.6580250708574003
+  }
+}

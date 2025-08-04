@@ -1,0 +1,94 @@
+{
+  "pipeline_info": {
+    "run_date": "2025-08-02T07:20:03.163245",
+    "total_models_trained": 5,
+    "best_model": "Lightgbm",
+    "best_validation_r2": 0.21655912507848274,
+    "feature_count": null
+  },
+  "model_performance": [
+    {
+      "Model": "Lightgbm",
+      "Train R²": 0.8513511604308586,
+      "Validation R²": 0.21655912507848274,
+      "Train RMSE": 0.4635607691800122,
+      "Validation RMSE": 1.082647729653207,
+      "Train MAE": 0.35908499145927325,
+      "Validation MAE": 0.937377604867714,
+      "CV RMSE": 0.6580250708574003,
+      "Overfitting": 0.6347920353523758
+    },
+    {
+      "Model": "Random Forest",
+      "Train R²": 0.9484090226530674,
+      "Validation R²": 0.19882472140025098,
+      "Train RMSE": 0.27309439757197734,
+      "Validation RMSE": 1.094832866437378,
+      "Train MAE": 0.19731017848198626,
+      "Validation MAE": 0.9090663068042097,
+      "CV RMSE": 0.7657495769922978,
+      "Overfitting": 0.7495843012528164
+    },
+    {
+      "Model": "Xgboost",
+      "Train R²": 0.9002147964553864,
+      "Validation R²": 0.16899778195469872,
+      "Train RMSE": 0.37980352134174244,
+      "Validation RMSE": 1.115026393903147,
+      "Train MAE": 0.29479256032368945,
+      "Validation MAE": 0.9741211531951021,
+      "CV RMSE": 0.6513177257659957,
+      "Overfitting": 0.7312170145006877
+    },
+    {
+      "Model": "Lasso",
+      "Train R²": 0.6442622117468936,
+      "Validation R²": 0.1337527840444861,
+      "Train RMSE": 0.7171184786128446,
+      "Validation RMSE": 1.1384264621968774,
+      "Train MAE": 0.5611814696445355,
+      "Validation MAE": 0.9539241428365506,
+      "CV RMSE": 0.7536835959468287,
+      "Overfitting": 0.5105094277024075
+    },
+    {
+      "Model": "Ridge",
+      "Train R²": 0.6468282574606652,
+      "Validation R²": 0.07714652416439427,
+      "Train RMSE": 0.7145273998897886,
+      "Validation RMSE": 1.1750339976930302,
+      "Train MAE": 0.5599267860507461,
+      "Validation MAE": 0.9899649463684895,
+      "CV RMSE": 0.7522214206598955,
+      "Overfitting": 0.5696817332962709
+    }
+  ],
+  "hyperparameters": {
+    "ridge": {
+      "alpha": 1000.0
+    },
+    "lasso": {
+      "alpha": 0.01
+    },
+    "random_forest": {
+      "max_depth": 10,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 100
+    },
+    "lightgbm": {
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "num_leaves": 31,
+      "subsample": 0.8
+    },
+    "xgboost": {
+      "colsample_bytree": 0.9,
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 200,
+      "subsample": 0.9
+    }
+  }
+}
